@@ -1,0 +1,70 @@
+/* -------------------------------------------------------------- 
+	Compass Imports & Variables
+-------------------------------------------------------------- */
+@import "compass"; // Import Compass
+
+
+/* -------------------------------------------------------------- 
+	Global
+-------------------------------------------------------------- */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {   
+	color: #252525;
+}
+
+h1 {
+}
+h2{
+}
+h3 {
+}
+h4 {
+}
+
+p {
+}
+
+a {
+}
+
+// Text highlight - Keep the space here so SASS does not mess this up.
+	::selection {
+		background: #aed6f9;
+		color: #222;
+	}
+	::-moz-selection {
+		background: #aed6f9;
+		color: #222
+	}
+
+// Clear
+.clear {
+	clear: both;
+}
+
+// Clearfix
+.clearfix {
+	@include pie-clearfix;
+}
+
+
+/* -------------------------------------------------------------- 
+	Sprites
+-------------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------------- 
+	General Layout
+-------------------------------------------------------------- */

@@ -1,0 +1,20 @@
+.ir {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	direction: ltr;
+	display: block;
+	overflow: hidden;
+	text-align: left;
+	text-indent: -999em;
+
+	br {
+		display: none;
+	}
+}
+.hidden { 
+	display: none !important;
+	visibility: hidden;
+}
+.invisible { 
+	visibility: hidden;
+}
