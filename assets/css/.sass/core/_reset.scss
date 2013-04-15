@@ -51,9 +51,19 @@ textarea {
 }
 a {
     color: #00e;
+    cursor: pointer;
     outline: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
 abbr[title] {
     border-bottom: 1px dotted;
 }
@@ -256,14 +266,4 @@ table {
 
 td {
     vertical-align: top;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin: 0;
 }
