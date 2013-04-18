@@ -9,6 +9,12 @@
 /* -------------------------------------------------------------- 
 	Global
 -------------------------------------------------------------- */
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	*behavior: url(/assets/css/polyfills/boxsizing.htc); // Make an absolute path
+}
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.4;
@@ -42,12 +48,10 @@ a {
 
 // Text highlight - Keep the space here so SASS does not mess this up.
 	::selection {
-		background: #aed6f9;
-		color: #222;
+		background: #e3e3e1;
 	}
 	::-moz-selection {
-		background: #aed6f9;
-		color: #222
+		background: #e3e3e1;
 	}
 
 // Clear
