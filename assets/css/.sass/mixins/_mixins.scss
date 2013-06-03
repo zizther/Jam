@@ -1,0 +1,187 @@
+/* -------------------------------------------------------------- 
+	SASS Mixins
+-------------------------------------------------------------- */
+
+//============================================================
+//
+// Easing
+//
+// Thanks to Robert Penner for his sterling work on easing,
+// and to Matthew Lein for converting these functions into
+// approximated cubic-bezier functions. Respect.
+//
+// @see http://robertpenner.com/
+// @see http://matthewlein.com/ceaser/
+//
+//============================================================
+
+// Cubic
+$easeInCubic     :  cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeOutCubic    :  cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeInOutCubic  :  cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+// Circ
+$easeInCirc      :  cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeOutCirc     :  cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeInOutCirc   :  cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+// Expo
+$easeInExpo      :  cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeOutExpo     :  cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInOutExpo   :  cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+// Quad
+$easeInQuad      :  cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeOutQuad     :  cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeInOutQuad   :  cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Quart
+$easeInQuart     :  cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeOutQuart    :  cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeInOutQuart  :  cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+// Quint
+$easeInQuint     :  cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeOutQuint    :  cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$easeInOutQuint  :  cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+// Sine
+$easeInSine      :  cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeOutSine     :  cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeInOutSine   :  cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+// Back
+$easeInBack      :  cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeOutBack     :  cubic-bezier(0.175,  0.885, 0.320, 1.275);
+$easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+
+//============================================================
+//
+// HIDPI-media-query 
+//
+// The HIDPI Meda Query will allow you to generate a media
+// query that targes HIDPI devices. It accepts an optional
+// ratio argument, default ratio is 1.3.
+// Find my device pixel ratio. Check out http://bjango.com/articles/min-device-pixel-ratio/
+//
+//============================================================
+@mixin hidpi($ratio: 1.3) {
+	@media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+	only screen and (min--moz-device-pixel-ratio: $ratio),
+	only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+	only screen and (min-resolution: #{round($ratio*96)}dpi),
+	only screen and (min-resolution: #{$ratio}dppx) {
+		@content;
+	}
+}
+
+
+//============================================================
+//
+// Retina image
+//
+// The mixin uses a @2x.png retina filename by default.
+//
+//============================================================
+@mixin retina-image($filepath, $background-size, $extension: png, $retina-filename: null, $ratio: 1.3) {
+    background-image: url($filepath + "." + $extension);
+
+	@media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+	only screen and (min--moz-device-pixel-ratio: $ratio),
+	only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+	only screen and (min-resolution: #{round($ratio*96)}dpi),
+	only screen and (min-resolution: #{$ratio}dppx) {
+		@if $retina-filename {
+			background-image: url($retina-filename + "." + $extension);
+		}
+		@else {
+			background-image: url($filepath + "@2x" + "." + $extension);
+		}
+
+		background-size: $background-size;
+	}
+}
+
+
+//============================================================
+//
+// px to em
+//
+// Converts pixel size to em
+//
+//============================================================
+@function em($pxval, $base: 16) {
+    @return ($pxval / $base) * 1em;
+}
+
+
+//============================================================
+//
+// Hide text
+//
+// Image replace - text indent
+//
+//============================================================
+@mixin hide-text() {
+	overflow: hidden;
+	text-indent: 100%; // Use this instead of -9999px as it means the browser doesn't draw a box to place the text in
+	white-space: nowrap;
+}
+
+
+//============================================================
+//
+// Triangle
+//
+//============================================================
+@mixin triangle ($size, $color, $direction) {
+	height: 0;
+	width: 0;
+	
+	@if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+		border-color: transparent;
+		border-style: solid;
+		border-width: $size / 2;
+		
+		@if $direction == up {
+		    border-bottom-color: $color;
+		
+		}
+		@else if $direction == right {
+		    border-left-color: $color;
+		
+		}
+		@else if $direction == down {
+		    border-top-color: $color;
+		
+		}
+		@else if $direction == left {
+		    border-right-color: $color;
+		}
+	}
+		
+	@else if ($direction == up-right) or ($direction == up-left) {
+		border-top: $size solid $color;
+		
+		@if $direction == up-right {
+		    border-left: $size solid transparent;
+		
+		}
+		@else if $direction == up-left {
+		    border-right: $size solid transparent;
+		}
+	}
+		
+	@else if ($direction == down-right) or ($direction == down-left) {
+		border-bottom: $size solid $color;
+		
+		@if $direction == down-right {
+		    border-left: $size solid transparent;
+		
+		}
+		@else if $direction == down-left {
+		    border-right: $size solid transparent;
+		}
+	}
+}
