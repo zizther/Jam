@@ -1,0 +1,68 @@
+#-----------------------------------
+# Delfate
+#-----------------------------------
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html"
+
+#-- END Delfate
+
+
+#-----------------------------------
+# Fonts - Apache config
+#-----------------------------------
+
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+#-- END Fonts - Apcahe config --
+
+
+#-----------------------------------
+# Although highly unlikely, your host may have +FollowSymLinks enabled at the root level,
+# yet disallow its addition in .htaccess; in which case, 
+# adding +FollowSymLinks will break your setup (probably a 500 error), 
+# so just remove it, and your rules should work fine.
+#-----------------------------------
+
+Options +FollowSymlinks
+
+#-- END +FollowSymLinks
+
+
+#-----------------------------------
+# Simple 404 for missing files
+#-----------------------------------
+
+<FilesMatch "(\.jpe?g|gif|png|bmp|css|js|flv)$">
+	ErrorDocument 404 "File Not Found"
+</FilesMatch>
+
+#-- END Simple 404 for missing files --
+
+
+#-----------------------------------
+# Rewriting will likely already be on, uncomment if it isnt
+#-----------------------------------
+
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteBase /
+</IfModule>
+
+#-- Rewriting --
+
+
+#-----------------------------------
+# Block access to "hidden" directories whose names begin with a period. This
+# includes directories used by version control systems such as Subversion or Git.
+#-----------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+#-- Block access to "hidden" directories --
