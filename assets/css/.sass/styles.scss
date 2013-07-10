@@ -1,11 +1,19 @@
-// Core
-@import 'core/reset';
-@import 'core/print';
-@import 'core/helpers';
+// Import
+@import "compass";
 
 // Mixins
 @import 'mixins/mixins';
 
+// Variables
+@import "project/variables";
+
+// Core & Helpers
+@import 'core/reset';
+@import 'core/helpers';
+
 // Project
 @import 'project/global';
 @import 'project/display';
+
+// Print
+@import 'core/print';
