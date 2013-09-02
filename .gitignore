@@ -1,7 +1,26 @@
-# Ignore Mac files
-.DS_Store*
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
 
-# Ignore sass-cache files.
-*.sass-cache*
-source/assets/.sass-cache
-source/assets/.sass-cache*
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+
+
+# Remove EE stuff
+/system/expressionengine/cache/*
+/images/captchas
