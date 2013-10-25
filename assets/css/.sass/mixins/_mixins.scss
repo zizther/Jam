@@ -107,13 +107,14 @@ $easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 //============================================================
 //
-// px to em
+// Font remxs
 //
-// Converts pixel size to em
+// Adds in px and rem sizes - sizeValue should be 'rem'
 //
 //============================================================
-@function em($pxval, $base: 16) {
-    @return ($pxval / $base) * 1em;
+@mixin font-rem($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
 }
 
 
@@ -185,4 +186,16 @@ $easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 		    border-right: $size solid transparent;
 		}
 	}
+}
+
+
+//============================================================
+//
+// px to em
+//
+// Converts pixel size to em
+//
+//============================================================
+@function em($pxval, $base: 16) {
+    @return ($pxval / $base) * 1em;
 }

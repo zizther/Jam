@@ -1,19 +1,21 @@
-// Import
+// Import Compass
 @import "compass";
 
-// Mixins
+// Add cusomt mixins
 @import 'mixins/mixins';
 
-// Variables
+// Add variables
 @import "project/variables";
 
-// Core & Helpers
+// Core, reset & helpers
 @import 'core/reset';
 @import 'core/helpers';
 
-// Project
+// Project styles
+@import 'project/sprites';
 @import 'project/global';
+@import 'project/xbrowser';
 @import 'project/display';
 
-// Print
+// Print styles
 @import 'core/print';
