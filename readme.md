@@ -4,7 +4,7 @@
  
 * Scaleable directory structure with clear partitions between thirdparty libraries, plugins and project files.
 * Heavy focus on structural granularity with intuitive delegation of responsibility.
-* Set up requires [http://sass-lang.com/](SASS) and [Compass](http://compass-style.org/).
+* Set up requires [SASS](http://sass-lang.com/) and [Compass](http://compass-style.org/).
 * Integrates seamlessly with [CodeKit](http://incident57.com/codekit/) for all your concatenation and minification needs.
  
 ## Suggested Usage
@@ -13,6 +13,7 @@
 * A *graphics* folder and an *images* folder, what's that all about? In a nutshell, if it's referenced as a background-image, it goes in the graphics folder. If it's referenced as the src of an img element, it goes in the images folder.
 * Keep it consistent and adopt the conventions laid out before you. If you are embedding plugins such as SWFs, put them in a embeds folder. If you are referencing videos, put them in a videos folder.
 * If you own a Mac, get [CodeKit](http://incident57.com/codekit/). It will literally change your developing life.
+* Add the assets folder to codekit, the config.rb file will handle the outputs (you do not need to change this).
  
 ## SASS Formatting
  
