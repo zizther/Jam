@@ -19,7 +19,7 @@
  
 Section/Block Comments
  
-```css
+```sass
 /* -------------------------------------------------------------- 
 	Typography
 -------------------------------------------------------------- */
@@ -27,13 +27,13 @@ Section/Block Comments
  
 Heading Line Comments
  
-```css
+```sass
 /*** Header ***/
 ```
  
 Single Line Comments
  
-```css
+```sass
 // Navigation
 ```
  
