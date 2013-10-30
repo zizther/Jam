@@ -1,28 +1,24 @@
 /* -------------------------------------------------------------- 
 	Global
 -------------------------------------------------------------- */
-/*** Only suitable for IE8+ ***/
 * {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+	@include box-sizing(border-box); // Only suitable for IE8+
 }
-/*** ---  ***/
-
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	line-height: 1.4;
+	font-family: $font-helvetica;
+	line-height: $line-height-base;
 	-webkit-font-smoothing: antialiased;
 }
 
+// Headings
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p {   
+h6 { 
 	color: #252525;
+	line-height: 1.1;
 }
 
 h1 {
@@ -33,20 +29,182 @@ h3 {
 }
 h4 {
 }
+h5 {
+}
+h6 {
+}
 
+// Paragraphs
 p {
+	color: #252525;
+	margin: 0 0 16px;
 }
 
+// Links
 a {
+
+	&:hover {
+		
+	}
 }
 
-// Text highlight - Keep the space here so SASS does not mess this up.
+// Text highlight - Keep indented so SASS compilers don't mess this up.
 	::selection {
 		background: #e3e3e1;
 	}
 	::-moz-selection {
 		background: #e3e3e1;
 	}
+
+/*** Emphasis & misc ***/
+small {
+	font-size: 85%; // Ex: 14px base font * 85% = about 12px
+}
+
+cite {
+	font-style: normal;
+}
+
+// Contextual emphasis
+.text-warning {
+	color: $message-warning-text;
+}
+.text-danger {
+	color: $message-danger-text;
+}
+.text-success {
+	color: $message-success-text;
+}
+.text-info {
+	color: $message-info-text;
+}
+
+// Alignment
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+
+// Lists
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 16px;
+    
+    ul,
+    ol {
+    	margin-bottom: 0;
+    }
+}
+
+// Blockquotes
+blockquote {
+    margin: 0 0 16px;
+    padding: 8px 16px;
+
+    p {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.25;
+        
+        &:last-child {
+	        margin-bottom: 0;
+	    }
+    }
+    small {
+        display: block;
+        line-height: $line-height-base;
+        
+        &:before {
+            content: '\2014 \00A0'; // EM DASH, NBSP
+        }
+    }
+
+    // Float right with text-align: right
+    &.pull-right {
+        padding-left: 0;
+        padding-right: 15px;
+        
+        p,
+        small {
+            text-align: right;
+        }
+        small {
+            &:before {
+                content: '';
+            }
+            &:after {
+                content: '\00A0 \2014';// NBSP, EM DASH
+            }
+        }
+    }
+}// END blockquote
+
+/*** Images ***/
+img {
+    vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+    @include img-responsive();
+}
+
+// Perfect circle
+.img-circle {
+    border-radius: 50%; // set radius in percents
+}
+
+// Form
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content/
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Floats
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+// Toggling content
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+.invisible {
+    visibility: hidden;
+}
+.text-hide {
+    @include hide-text();
+}
+
 
 // Clear
 .clear {

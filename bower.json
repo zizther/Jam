@@ -1,0 +1,8 @@
+{
+  "name": "maido-bp",
+  "version": "1.0.1",
+  "main": ["./raw_templates/index.html", "./assets/css/styles.css"],
+  "ignore": [
+      "./.git"
+  ]
+}

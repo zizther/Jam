@@ -1,15 +1,19 @@
 // Import Compass
 @import "compass";
 
-// Add cusomt mixins
+// Custom mixins - outside of Compass
 @import 'mixins/mixins';
 
-// Add variables
-@import "project/variables";
+// Variables
+@import "variables/variables";
 
-// Core, reset & helpers
+// Core setup & reset
 @import 'core/reset';
-@import 'core/helpers';
+@import 'core/tables';
+@import 'core/forms';
+@import 'core/alerts';
+@import 'core/component_animation';
+
 
 // Project styles
 @import 'project/sprites';

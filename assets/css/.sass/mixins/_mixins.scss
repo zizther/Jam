@@ -107,28 +107,112 @@ $easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 //============================================================
 //
-// Font remxs
+// Font rem
 //
-// Adds in px and rem sizes - sizeValue should be 'rem'
+// Adds in px and rem sizes - $size should be 'rem'
+// Keep rem after px on output
 //
 //============================================================
-@mixin font-rem($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
+@mixin font-rem($size: 1.6) {
+    font-size: ($size * 10) + px;
+    font-size: $size + rem;
 }
 
 
 //============================================================
 //
-// Hide text
-//
-// Image replace - text indent
+// Center-align a block level element
 //
 //============================================================
-@mixin hide-text() {
-	overflow: hidden;
-	text-indent: 100%; // Use this instead of -9999px as it means the browser doesn't draw a box to place the text in
-	white-space: nowrap;
+@mixin center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+//============================================================
+//
+// Sizing shortcuts
+//
+//============================================================
+@mixin size($width, $height) {
+	height: $height;
+    width: $width;
+}
+@mixin square($size) {
+    @include size($size, $size);
+}
+
+
+//============================================================
+//
+// Text overflow
+//
+// Requires inline-block or block for proper styling
+//
+//============================================================
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+//============================================================
+//
+// CSS image replacement
+//
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+//
+//============================================================
+@mixin hide-text($font: '~"0/0" a') {
+    background-color: transparent;
+    border: 0;
+    color: transparent;
+    font: $font;
+    text-shadow: none;
+}
+
+
+//============================================================
+//
+// Resize anything
+//
+//============================================================
+@mixin resizable($direction) {
+    overflow: auto; // Safari fix
+    resize: $direction; // Options: horizontal, vertical, both
+}
+
+
+//============================================================
+//
+// Optional hyphenation
+//
+//============================================================
+@mixin hyphens($mode: auto) {
+	hyphens: $mode;
+	word-wrap: break-word;
+	
+	-moz-hyphens: $mode;
+	-ms-hyphens: $mode; // IE10+
+	-o-hyphens: $mode;
+	-webkit-hyphens: $mode;
+}
+
+
+//============================================================
+//
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+//
+//============================================================
+@mixin img-responsive($display: block) {
+    display: $display;
+    height: auto; // Scale the height according to the width, otherwise you get stretching
+    max-width: 100%; // Set a maximum relative to the parent
 }
 
 
