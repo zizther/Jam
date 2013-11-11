@@ -4,6 +4,9 @@
 * {
 	@include box-sizing(border-box); // Only suitable for IE8+
 }
+html {
+	font-size: 62.5%;
+} 
 body {
 	font-family: $font-helvetica;
 	line-height: $line-height-base;

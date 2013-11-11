@@ -13,30 +13,6 @@
       "outputAbbreviatedPath" : "\/js\/libs\/jquery-1.10.2.min_c.js",
       "fileType" : 64
     },
-    "\/css\/.sass\/styles.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/styles.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/styles.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/css\/.sass\/project\/_sprites.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_sprites.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_sprites.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/css\/.sass\/core\/_component_animation.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -49,6 +25,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/css\/.sass\/styles.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/.sass\/styles.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/styles.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/css\/.sass\/core\/_forms.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -58,6 +46,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_forms.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/css\/.sass\/project\/_sprites.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_sprites.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_sprites.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -94,17 +94,25 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/project\/_xbrowser.scss" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_xbrowser.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_xbrowser.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
+    },
+    "\/js\/project\/main.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/project\/main.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/project\/main_c.js",
+      "fileType" : 64
     },
     "\/css\/.sass\/project\/_display.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -118,17 +126,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/project\/main.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/project\/main.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/project\/main_c.js",
-      "fileType" : 64
-    },
     "\/js\/plugins\/jquery.easing.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -140,14 +137,17 @@
       "outputAbbreviatedPath" : "\/js\/plugins\/jquery.easing_c.js",
       "fileType" : 64
     },
-    "\/config.rb" : {
+    "\/css\/.sass\/project\/_xbrowser.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
+      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_xbrowser.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_xbrowser.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/css\/.sass\/variables\/_variables.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -184,18 +184,6 @@
       "outputAbbreviatedPath" : "\/js\/libs\/modernizr_c.js",
       "fileType" : 64
     },
-    "\/css\/.sass\/core\/_print.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_print.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_print.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/css\/.sass\/core\/_reset.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -205,6 +193,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_reset.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/css\/.sass\/core\/_print.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_print.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_print.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
