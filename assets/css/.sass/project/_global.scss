@@ -68,28 +68,38 @@ cite {
 	font-style: normal;
 }
 
+// Outline
+a:hover,
+a:active,
+a:focus,
+object,
+embed,
+input::-moz-focus-inner {
+	outline: 0;
+}
+
 // Contextual emphasis
-.text-warning {
+.text_warning {
 	color: $message-warning-text;
 }
-.text-danger {
+.text_danger {
 	color: $message-danger-text;
 }
-.text-success {
+.text_success {
 	color: $message-success-text;
 }
-.text-info {
+.text_info {
 	color: $message-info-text;
 }
 
 // Alignment
-.text-left {
+.text_left {
 	text-align: left;
 }
-.text-right {
+.text_right {
 	text-align: right;
 }
-.text-center {
+.text_center {
 	text-align: center;
 }
 
@@ -129,7 +139,7 @@ blockquote {
     }
 
     // Float right with text-align: right
-    &.pull-right {
+    &.pull_right {
         padding-left: 0;
         padding-right: 15px;
         
@@ -154,12 +164,12 @@ img {
 }
 
 // Responsive images (ensure images don't scale beyond their parents)
-.img-responsive {
+.img_responsive {
     @include img-responsive();
 }
 
 // Perfect circle
-.img-circle {
+.img_circle {
     border-radius: 50%; // set radius in percents
 }
 
@@ -175,7 +185,7 @@ textarea {
 
 // Only display content to screen readers
 // See: http://a11yproject.com/posts/how-to-hide-content/
-.sr-only {
+.sr_only {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -187,10 +197,10 @@ textarea {
 }
 
 // Floats
-.pull-right {
+.pull_right {
   float: right !important;
 }
-.pull-left {
+.pull_left {
   float: left !important;
 }
 
@@ -204,7 +214,7 @@ textarea {
 .invisible {
     visibility: hidden;
 }
-.text-hide {
+.text_hide {
     @include hide-text();
 }
 

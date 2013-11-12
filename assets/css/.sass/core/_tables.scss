@@ -60,7 +60,7 @@ th {
 
 
 // Condensed table w/ half padding
-.table-condensed {
+.table_condensed {
     thead,
     tbody,
     tfoot {
@@ -76,7 +76,7 @@ th {
 
 // Bordered version
 // Add borders all around the table and between all the columns.
-.table-bordered {
+.table_bordered {
     border: 1px solid $table-border-color;
     
     > thead,
@@ -104,7 +104,7 @@ th {
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
-.table-striped {
+.table_striped {
     > tbody {
         > tr:nth-child(odd) {
             > td,
@@ -118,7 +118,7 @@ th {
 
 // Hover effect
 // Placed here since it has to come after the potential zebra striping
-.table-hover {
+.table_hover {
     > tbody {
         > tr:hover {
             > td,

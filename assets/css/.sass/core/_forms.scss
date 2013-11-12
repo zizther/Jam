@@ -68,7 +68,7 @@ input[type="number"] {
 //
 // Designed to help with the organization and spacing of vertical forms. For
 // horizontal forms, use the predefined grid classes.
-.form-group {
+.form_group {
     margin-bottom: 15px;
 }
 
@@ -93,9 +93,9 @@ input[type="number"] {
     }
 }
 .radio input[type="radio"],
-.radio-inline input[type="radio"],
+.radio_inline input[type="radio"],
 .checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
+.checkbox_inline input[type="checkbox"] {
     float: left;
     margin-left: -20px;
 }
@@ -105,8 +105,8 @@ input[type="number"] {
 }
 
 // Radios and checkboxes on same line
-.radio-inline,
-.checkbox-inline {
+.radio_inline,
+.checkbox_inline {
     display: inline-block;
     padding-left: 20px;
     margin-bottom: 0;
@@ -114,8 +114,8 @@ input[type="number"] {
     font-weight: normal;
     cursor: pointer;
 }
-.radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
+.radio_inline + .radio_inline,
+.checkbox_inline + .checkbox_inline {
     margin-top: 0;
     margin-left: 10px; // space out consecutive inline controls
 }
@@ -126,9 +126,9 @@ input[type="number"] {
 input[type="radio"],
 input[type="checkbox"],
 .radio,
-.radio-inline,
+.radio_inline,
 .checkbox,
-.checkbox-inline {
+.checkbox_inline {
     &[disabled],
     fieldset[disabled] & {
         cursor: not-allowed;
@@ -141,19 +141,19 @@ input[type="checkbox"],
 // Apply contextual and semantic states to individual form controls.
 
 // Warning
-.has-warning {
+.has_warning {
 	background: $message-warning-bg;
 	border: $message-warning-text;
     color: $message-warning-text;
 }
 // Error
-.has-error {
+.has_error {
     background: $message-danger-bg; 
 	border: $message-danger-text;
     color: $message-danger-text;
 }
 // Success
-.has-success {
+.has_success {
 	background: $message-success-bg;
 	border: $message-success-text;
     color: $message-success-text;
@@ -164,7 +164,7 @@ input[type="checkbox"],
 //
 // Apply class to a `p` element to make any string of text align with labels in
 // a horizontal form layout.
-.form-control-static {
+.form_control_static {
     margin-bottom: 0; // Remove default margin from `p`
     padding-top: 17px;
 }
@@ -174,7 +174,7 @@ input[type="checkbox"],
 //
 // Apply to any element you wish to create light text for placement immediately
 // below a form control. Use for general help, formatting, or instructional text.
-.help-block {
+.help_block {
 	color: lighten(#252525, 25%); // lighten the text some for contrast
     display: block; // account for any element using help-block
     margin-top: 5px;
@@ -186,20 +186,20 @@ input[type="checkbox"],
 //
 // Horizontal forms are built on grid classes and allow you to create forms with
 // labels on the left and inputs on the right.
-.form-horizontal {
+.form_horizontal {
     // Consistent vertical alignment of labels, radios, and checkboxes
-    .control-label,
+    .control_label,
     .radio,
     .checkbox,
-    .radio-inline,
-    .checkbox-inline {
+    .radio_inline,
+    .checkbox_inline {
         margin-bottom: 0;
         margin-top: 0;
         padding-top: 17px; // Default padding plus a border
     }
 
     // Make form groups behave like rows
-    .form-group {
+    .form_group {
         display: block;
         width: 100%;
     }
