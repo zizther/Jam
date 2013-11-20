@@ -77,6 +77,10 @@ embed,
 input::-moz-focus-inner {
 	outline: 0;
 }
+:focus {
+	border: none;
+	outline: 0;
+}
 
 // Contextual emphasis
 .text_warning {
@@ -178,6 +182,7 @@ input,
 button,
 select,
 textarea {
+	background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -215,7 +220,7 @@ textarea {
     visibility: hidden;
 }
 .text_hide {
-    @include hide-text();
+    @include hide-text(); // Hide text from an element
 }
 
 
@@ -224,7 +229,13 @@ textarea {
 	clear: both;
 }
 
-// Clearfix - use @extend .clearfix on classes or ID's which require it
+/**
+ * Clearfix - use @extend .clearfix on classes or ID's which require it
+ * e.g.
+ *     .buttons {
+ *         @extend .clearfix;
+ *     }
+**/
 .clearfix {
 	@include pie-clearfix;
 }
