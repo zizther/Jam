@@ -87,6 +87,9 @@ $easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 //============================================================
 @mixin retina-image($filepath, $width, $height, $extension: png) {
 	background-image: url($filepath + '.' + $extension);
+	background-repeat: no-repeat;
+	height: $height;
+	width: $width;
 	
 	@media only screen and (-webkit-min-device-pixel-ratio: 2),
 	only screen and (-moz-min-device-pixel-ratio: 2),
