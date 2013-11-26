@@ -32,6 +32,14 @@
 	Basic default styles have been setup for tables, forms, alerts and component_animation, these can all be found in the ``core`` directory. These offer a basic setup for these elements, modify these as you will.
 	If your not using all the core file you can comment them out from the ``styles.scss`` file so they are not included in the ouput.
 	
+## Sprites
+Manage sprites using Compass. [Find out more here](http://compass-style.org/help/tutorials/spriting/).
+Also watch these videos to get a clear idea of how to work with sprites in Compass.
+
+* [Sprites in Compass](http://www.youtube.com/watch?v=Tl6bceyTjFw)
+* [Advanced sprite config](http://www.youtube.com/watch?v=8ZHZPxIjiS8)
+
+	
 ## SASS structure
 The SASS structure for this boilerplate should remain like this and all assosiated code should be put into its relveant file.
 All imported files should contain an undercore '_' at the start so they do not compile directly.
