@@ -56,5 +56,21 @@ All imported files should contain an undercore '_' at the start so they do not c
 			-- _xbrowser.scss -> Add any x-browser hacks here
 		-- variables
 			-- _variables.scss -> Variables for the project
+			-- _easing.scss -> Easing variables
 		-- styles.scss -> This pulls in all the different elements for the project to output as CSS
 ``
+
+
+## Easing
+There is a variable file called _easing.scss which contains Robert Penner's easing functions converted into cubic-bezier timing functions. These will work with CSS3 transitons.
+
+Here is an example of this being used.
+
+``sass
+	@include single-transition(all, 500ms, $easeOutQuart, 0s);
+``
+
+* The first parameter is the transition property.
+* The second parameter is the transition duration.
+* The third parameter is the transition function (easing).
+* The fourth parameter is the transition delay.
