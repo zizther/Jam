@@ -9,6 +9,7 @@ The HIDPI Meda Query will allow you to generate a media query that targes HIDPI 
 Default value set to 1.3 to target Google Nexus 7.
 
 **Parameters**
+
 1. ratio : Default is 1.3
 
 **Example**
@@ -27,6 +28,7 @@ Note that the mixin assumes your retina files are always named with the @2x betw
 Note the image path needs to be put in single quotes as it will contain a path. Do not put quotes around the any other parameter.
 
 **Parameters**
+
 1. File path
 2. Image width
 3. Image height
@@ -45,6 +47,7 @@ The em unit is relative to the font-size of the parent, which causes the compoun
 This mixin should be used everytime you set a font size. This will output the fon size in rem and px for older browsers.
 
 **Parameters**
+
 1. rem font size : Default is 1.6 (16px)
 
 **Example**
@@ -76,6 +79,7 @@ A shortcut to output the height and width width different values
 A shortcut to output the height and width with the same value.
 
 **Parameters**
+
 1. Width/Height
 
 **Example**
@@ -95,6 +99,7 @@ Hide any text overflow. Requires inline-block or block for proper styling.
 Hide the text inside an element with a CSS image.
 
 **Parameters**
+
 1. Font : Default '~"0/0" a', this probably won't need to be changed.
 
 **Example**
@@ -114,6 +119,7 @@ Resize anything.
 Hyphenate text. More information on the [hyphens](http://css-tricks.com/almanac/properties/h/hyphenate/)
 
 **Parameters**
+
 1. Mode : Default is auto
 
 **Example**
@@ -125,6 +131,7 @@ Hyphenate text. More information on the [hyphens](http://css-tricks.com/almanac/
 Make an image fully responsive. This mixin keeps images from scaling beyond the width of their parents.
 
 **Parameters**
+
 1. Display : Default is block
 
 **Example**
@@ -136,6 +143,7 @@ Make an image fully responsive. This mixin keeps images from scaling beyond the 
 Create a CSS triangle pointing up, down, left or right.
 
 **Parameters**
+
 1. Size : in px
 2. Colour
 3. Direction
@@ -149,6 +157,7 @@ Create a CSS triangle pointing up, down, left or right.
 A simple function which converts px to em.
 
 **Parameters**
+
 1. Pixel size
 2. Base size : Default is 16, this probably won't change
 
