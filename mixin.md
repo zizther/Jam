@@ -14,12 +14,12 @@ Default value set to 1.3 to target Google Nexus 7.
 
 **Example**
 
-``sass
+```sass
 	@include hidpi(2) {
 		float: none;
 		width: 500px;
 	}
-``
+```
 
 ## Retina Image
 The retina image mixin allows you to generation the media query to include a retina sized image.
@@ -37,9 +37,9 @@ Note the image path needs to be put in single quotes as it will contain a path. 
 
 **Example**
 
-``sass
+```sass
 	@include retina-image('../graphics/logo', 300px, 100px)
-``
+```
 
 ## Font rem
 CSS3 introduces the rem unit, which stands for "root em".
@@ -54,18 +54,18 @@ This mixin should be used everytime you set a font size. This will output the fo
 
 **Example**
 
-``sass
+```sass
 	@include font-rem(1.4)
-``
+```
 
 ## Center align
 A shortcut to center align a block level element.
 
 **Example**
 
-``sass
+```sass
 	@include center-block;
-``
+```
 
 ## Size
 A shortcut to output the height and width width different values
@@ -77,9 +77,9 @@ A shortcut to output the height and width width different values
 
 **Example**
 
-``sass
+```sass
 	@include size(300px, 200px);
-``
+```
 
 ## Square
 A shortcut to output the height and width with the same value.
@@ -90,18 +90,18 @@ A shortcut to output the height and width with the same value.
 
 **Example**
 
-``sass
+```sass
 	@include square(300px);
-``
+```
 
 ## Text overflow
 Hide any text overflow. Requires inline-block or block for proper styling.
 
 **Example**
 
-``sass
+```sass
 	@include text-overflow;
-``
+```
 
 ## CSS image replacement
 Hide the text inside an element with a CSS image.
@@ -112,18 +112,18 @@ Hide the text inside an element with a CSS image.
 
 **Example**
 
-``sass
+```sass
 	@include hide-text;
-``
+```
 
 ## Resize
 Resize anything.
 
 **Example**
 
-``sass
+```sass
 	@include resizeable;
-``
+```
 
 ## Hyphenation
 Hyphenate text. More information on the [hyphens](http://css-tricks.com/almanac/properties/h/hyphenate/)
@@ -134,9 +134,9 @@ Hyphenate text. More information on the [hyphens](http://css-tricks.com/almanac/
 
 **Example**
 
-``sass
+```sass
 	@include hyphens(all);
-``
+```
 
 ## Responsive image
 Make an image fully responsive. This mixin keeps images from scaling beyond the width of their parents.
@@ -147,9 +147,9 @@ Make an image fully responsive. This mixin keeps images from scaling beyond the 
 
 **Example**
 
-``sass
+```sass
 	@include img-responsive;
-``
+```
 
 ## Triangle
 Create a CSS triangle pointing up, down, left or right.
@@ -162,9 +162,9 @@ Create a CSS triangle pointing up, down, left or right.
 
 **Example**
 
-``sass
+```sass
 	@include triangle (20px, #f00, down);
-``
+```
 
 ## px to em
 A simple function which converts px to em.
@@ -176,6 +176,6 @@ A simple function which converts px to em.
 
 **Example**
 
-``sass
+```sass
 	width: em(20px);
-``
+```
