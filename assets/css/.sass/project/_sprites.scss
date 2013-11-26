@@ -1,3 +1,22 @@
 /* -------------------------------------------------------------- 
 	Sprites
 -------------------------------------------------------------- */
+
+/**
+ * Example usage
+ 
+ 	// _sprite.scss
+    .sprite_main {
+ 		background-image: url(../graphics/sprite_main.png);
+ 		background-repeat: no-repeat;
+	}
+	
+	In global.scss you can then use @extend this sprite
+	
+	// _global.scss
+	.some_icon {
+		@extend .sprite_main;
+		background-position: 0 -120px;
+	}
+ 	
+**/
