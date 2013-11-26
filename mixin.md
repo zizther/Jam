@@ -15,10 +15,10 @@ Default value set to 1.3 to target Google Nexus 7.
 **Example**
 
 ```sass
-	@include hidpi(2) {
-		float: none;
-		width: 500px;
-	}
+@include hidpi(2) {
+	float: none;
+	width: 500px;
+}
 ```
 
 ## Retina Image
@@ -38,7 +38,7 @@ Note the image path needs to be put in single quotes as it will contain a path. 
 **Example**
 
 ```sass
-	@include retina-image('../graphics/logo', 300px, 100px)
+@include retina-image('../graphics/logo', 300px, 100px);
 ```
 
 ## Font rem
@@ -55,7 +55,7 @@ This mixin should be used everytime you set a font size. This will output the fo
 **Example**
 
 ```sass
-	@include font-rem(1.4)
+@include font-rem(1.4);
 ```
 
 ## Center align
@@ -64,7 +64,7 @@ A shortcut to center align a block level element.
 **Example**
 
 ```sass
-	@include center-block;
+@include center-block;
 ```
 
 ## Size
@@ -78,7 +78,7 @@ A shortcut to output the height and width width different values
 **Example**
 
 ```sass
-	@include size(300px, 200px);
+@include size(300px, 200px);
 ```
 
 ## Square
@@ -91,7 +91,7 @@ A shortcut to output the height and width with the same value.
 **Example**
 
 ```sass
-	@include square(300px);
+@include square(300px);
 ```
 
 ## Text overflow
@@ -100,7 +100,7 @@ Hide any text overflow. Requires inline-block or block for proper styling.
 **Example**
 
 ```sass
-	@include text-overflow;
+@include text-overflow;
 ```
 
 ## CSS image replacement
@@ -113,7 +113,7 @@ Hide the text inside an element with a CSS image.
 **Example**
 
 ```sass
-	@include hide-text;
+@include hide-text;
 ```
 
 ## Resize
@@ -122,7 +122,7 @@ Resize anything.
 **Example**
 
 ```sass
-	@include resizeable;
+@include resizeable;
 ```
 
 ## Hyphenation
@@ -135,7 +135,7 @@ Hyphenate text. More information on the [hyphens](http://css-tricks.com/almanac/
 **Example**
 
 ```sass
-	@include hyphens(all);
+@include hyphens(all);
 ```
 
 ## Responsive image
@@ -148,7 +148,7 @@ Make an image fully responsive. This mixin keeps images from scaling beyond the 
 **Example**
 
 ```sass
-	@include img-responsive;
+@include img-responsive;
 ```
 
 ## Triangle
@@ -163,7 +163,7 @@ Create a CSS triangle pointing up, down, left or right.
 **Example**
 
 ```sass
-	@include triangle (20px, #f00, down);
+@include triangle (20px, #f00, down);
 ```
 
 ## px to em
@@ -177,5 +177,5 @@ A simple function which converts px to em.
 **Example**
 
 ```sass
-	width: em(20px);
+width: em(20px);
 ```

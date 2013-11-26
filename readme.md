@@ -36,7 +36,7 @@
 The SASS structure for this boilerplate should remain like this and all assosiated code should be put into its relveant file.
 All imported files should contain an undercore '_' at the start so they do not compile directly.
 
-``
+```
 -- css
 	-- styles.css -> This is the compiled CSS
 	-- .sass
@@ -58,7 +58,7 @@ All imported files should contain an undercore '_' at the start so they do not c
 			-- _variables.scss -> Variables for the project
 			-- _easing.scss -> Easing variables
 		-- styles.scss -> This pulls in all the different elements for the project to output as CSS
-``
+```
 
 
 ## Easing
@@ -66,9 +66,9 @@ There is a variable file called _easing.scss which contains Robert Penner's easi
 
 Here is an example of this being used.
 
-``sass
-	@include single-transition(all, 500ms, $easeOutQuart, 0s);
-``
+```sass
+@include single-transition(all, 500ms, $easeOutQuart, 0s);
+```
 
 * The first parameter is the transition property.
 * The second parameter is the transition duration.
