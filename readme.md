@@ -37,27 +37,27 @@ The SASS structure for this boilerplate should remain like this and all assosiat
 All imported files should contain an undercore '_' at the start so they do not compile directly.
 
 ```
--- css
-	-- styles.css -> This is the compiled CSS
-	-- .sass
-		-- core
-			-- _alerts.scss -> Setup for alerts
-			-- _component_animation.scss -> Setup for CSS animation
-			-- _forms.scss -> Setup for forms
-			-- _print.scss -> Print styles
-			-- _reset.scss -> Reset CSS, using normalise
-			-- _tables.scss -> Setup for tables
-		-- mixin
-			-- _mixins.scss -> Contains additions mixins
-		-- project
-			-- _display.scss -> Setup for media queries
-			-- _global.scss -> The
-			-- _sprites.scss -> Add in your sprite image calls here so they are global
-			-- _xbrowser.scss -> Add any x-browser hacks here
-		-- variables
-			-- _variables.scss -> Variables for the project
-			-- _easing.scss -> Easing variables
-		-- styles.scss -> This pulls in all the different elements for the project to output as CSS
+css/
+	styles.css  (This is the compiled CSS)
+	.sass/
+		core/
+			_alerts.scss  (Setup for alerts)
+			_component_animation.scss  (Setup for CSS animation)
+			_forms.scss  (Setup for forms)
+			_print.scss  (Print styles)
+			_reset.scss  (Reset CSS, using normalise)
+			_tables.scss  (Setup for tables)
+		mixins/
+			_mixins.scss  (Contains additions mixins)
+		project/
+			_display.scss  (Setup for media queries)
+			_global.scss  (The general styles - Where the bulk if the styles go)
+			_sprites.scss  (Add in your sprite image calls here so they are global)
+			_xbrowser.scss  (Add any x-browser hacks here)
+		variables/
+			_variables.scss  (Variables for the project)
+			_easing.scss  (Easing variables)
+		styles.scss  (This pulls in all the different elements for the project to output as CSS)
 ```
 
 
