@@ -11,12 +11,15 @@
 	In global.scss you can then use @extend this sprite
 	
 	// _global.scss
-	@include all-social-sprites;
-	
-	or
-	
-	.twitter {
-		@include social-sprite(twitter);
+	i {
+		&.icon_name {
+			@include sprite-main-sprite(close-icon, true);
+		}
 	}
+	
+ * Call the <map>-sprite mixin to get the position, height and width for the icon.
+ * Replace <map> with the new of the sprites folder name.
+ * The first parameter is the name of the icon name in the sprite folder.
+ * The second parameter outputs the height and width, removing this or putting false will not output height or width
  	
 **/

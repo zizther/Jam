@@ -1,6 +1,6 @@
 {
     "name": "Jam",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "main": [
     	"./raw_templates/index.html",
     	"./assets/css/styles.css"
