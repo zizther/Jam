@@ -2,135 +2,122 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8403",
   "files" : {
-    "\/css\/.sass\/project\/_global.scss" : {
+    "\/.sass\/project\/_xbrowser.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_global.scss",
+      "inputAbbreviatedPath" : "\/.sass\/project\/_xbrowser.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_global.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_xbrowser.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/core\/_tables.scss" : {
+    "\/.sass\/mixins\/_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_tables.scss",
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_tables.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_mixins.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/mixins\/_mixins.scss" : {
+    "\/.sass\/mixins\/_screen_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/mixins\/_mixins.scss",
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_screen_mixins.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_mixins.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_screen_mixins.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/variables\/_easing.scss" : {
+    "\/.sass\/core\/_forms.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/variables\/_easing.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_forms.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_easing.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_forms.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/core\/_alerts.scss" : {
+    "\/.sass\/project\/_sprites.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_alerts.scss",
+      "inputAbbreviatedPath" : "\/.sass\/project\/_sprites.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_alerts.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_sprites.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/project\/_xbrowser.scss" : {
+    "\/styles.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_xbrowser.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_xbrowser.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
-    "\/css\/.sass\/variables\/_variables.scss" : {
+    "\/.sass\/core\/_component_animation.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/variables\/_variables.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_component_animation.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_variables.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_component_animation.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/core\/_reset.scss" : {
+    "\/.sass\/core\/_tables.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_reset.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_tables.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_reset.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_tables.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/project\/main.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/project\/main.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/project\/main_c.js",
-      "fileType" : 64
-    },
-    "\/css\/.sass\/core\/_print.scss" : {
+    "\/.sass\/variables\/_variables.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_print.scss",
+      "inputAbbreviatedPath" : "\/.sass\/variables\/_variables.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_print.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_variables.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/libs\/modernizr.js" : {
+    "\/.sass\/core\/_reset.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/libs\/modernizr.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/libs\/modernizr_c.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/.sass\/core\/_reset.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_reset.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
@@ -141,108 +128,77 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
-    "\/css\/.sass\/mixins\/_screen_mixins.scss" : {
+    "\/.sass\/core\/_print.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/mixins\/_screen_mixins.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_screen_mixins.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_print.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/styles.scss" : {
+    "\/.sass\/variables\/_easing.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/.sass\/variables\/_easing.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_easing.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/.sass\/styles.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/styles.scss",
+      "inputAbbreviatedPath" : "\/.sass\/styles.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/styles.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/styles.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/plugins\/jquery.easing.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/plugins\/jquery.easing.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/plugins\/jquery.easing_c.js",
-      "fileType" : 64
-    },
-    "\/css\/.sass\/project\/_display.scss" : {
+    "\/.sass\/project\/_global.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_display.scss",
+      "inputAbbreviatedPath" : "\/.sass\/project\/_global.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_display.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_global.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/.sass\/core\/_forms.scss" : {
+    "\/.sass\/project\/_display.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_forms.scss",
+      "inputAbbreviatedPath" : "\/.sass\/project\/_display.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_forms.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_display.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/libs\/jquery-1.10.2.min.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/libs\/jquery-1.10.2.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/libs\/jquery-1.10.2.min_c.js",
-      "fileType" : 64
-    },
-    "\/css\/.sass\/core\/_component_animation.scss" : {
+    "\/.sass\/core\/_alerts.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/core\/_component_animation.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_alerts.scss",
       "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_component_animation.css",
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_alerts.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/css\/.sass\/project\/_sprites.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/.sass\/project\/_sprites.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_sprites.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/css\/styles.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     }
   },
   "manualImportLinks" : [
@@ -288,7 +244,7 @@
     "kitAutoOutputPathRelativePath" : "..\/raw_templates",
     "lessAutoOutputPathReplace2" : "css",
     "jadeAutoOutputPathReplace2" : "",
-    "shouldRunBless" : 0,
+    "shouldRunBless" : 1,
     "stylusAutoOutputPathStyle" : 2,
     "coffeeCheckOutputStyle" : 0,
     "slimOutputStyle" : 1,
@@ -306,7 +262,7 @@
     "javascriptAutoOutputPathReplace1" : "",
     "stylusOutputStyle" : 0,
     "javascriptAutoOutputPathReplace2" : "",
-    "sassAutoOutputPathRelativePath" : "..\/css",
+    "sassAutoOutputPathRelativePath" : "\/",
     "coffeeAutoOutputPathReplace1" : "",
     "hamlUseDoubleQuotes" : 0,
     "coffeeAutoOutputPathReplace2" : "",

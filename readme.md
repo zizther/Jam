@@ -5,32 +5,32 @@
 * Scaleable directory structure with clear partitions between thirdparty libraries, plugins and project files.
 * Heavy focus on structural granularity with intuitive delegation of responsibility.
 * Set up requires [SASS](http://sass-lang.com/) and [Compass](http://compass-style.org/).
-* Integrates seamlessly with [CodeKit](http://incident57.com/codekit/) for all your concatenation and minification needs, it does not require Codekit to be used.
+* Integrates seamlessly with [CodeKit](http://incident57.com/codekit/) for all your concatenation and minification needs. It does not require Codekit to be used.
  
 ## Suggested Usage
  
 * Work with the structure, not against it. Considerable time and thought has been invested in the structure of this boilerplate with the core focus on consistency, granularity and scalability.
-* A *graphics* folder and an *images* folder, what's that all about? In a nutshell, if it's referenced as a background-image, it goes in the graphics folder. If it's referenced as the src of an img element, it goes in the images folder.
+* A *graphics* folder? In a nutshell, if it's referenced as a background-image, it goes in the graphics folder. If it's referenced as the src of an img element, it goes in an uploads or images folder.
 * Keep it consistent and adopt the conventions laid out before you. If you are embedding plugins such as SWFs, put them in a embeds folder. If you are referencing videos, put them in a videos folder.
-* If you own a Mac, get [CodeKit](http://incident57.com/codekit/).
+* If you own a Mac and don't fancy using the Terminal, get [CodeKit](http://incident57.com/codekit/).
 
-## The 1,2,3's
+## Guide
 
-1. You can either pull this project or use [Bower](http://bower.io/) to get a copy of the boilerplate ``bower install jam``
-	* You can also create a custom function in your .bash_profile to install the package and sort the directories.
-2. Add the assets folder to Codekit, the codekit-config.json file will setup the project output directories and minification suffix for JS. The config.rb will handle the compass and SASS output (Do not change these files as they will be required for other developers setups).
-	* Codekit has not yet got the ability to not compile all JS, so when adding JS make sure to set it to not 'compile directly'. Only compress files which will be used, 'main.js' will alwatys be compressed even with imports.
-3. The JS directory has a basic structure, if you are using Backbone and require JS you might want to replace the directory structure with the backbone [boilerplate]()
-	* When using Codekit to manage the JS make sure to combine JS file, for this use the [import function for Codekit](http://incident57.com/codekit/help.php#help-imports). Place ``//@codekit-prepend "file-a.js", "file-b.js"`` and/or ``//@codekit-append "file-a.js", "file-b.js"`` in the file rather than using the 'drag & drop' feature inside the Codekit UI, otherwise these imports will not be avaliable for other developers working on the project. Note: you MUST comment out these lines because they are not valid Javascript. Don't worry, CodeKit will still detect them just fine.
-4. SASS has been setup to work with [Compass](http://compass-style.org/), make sure you have this installed if your not using Codekit. Compass provides a wide range of mixins, familiarise yourself with them and how work and which ones you should use.
-	* You won't need to use mixins such as box-shadow or  border-radius unless you are supporting older versions on FireFox, Chrome and Safari.
+1. You can either pull the repo or use [Bower](http://bower.io/) to get a copy of the boilerplate ``bower install jam``
+	* You can also create a custom function in your .bash_profile to install the package, remove unnessesary files and sort the directories.
+2. A .htaccess file has been provided, with additions to include into your project if you need them.
+3. Add the assets/css folder to Codekit or perform your watch action on this directory in Terminal. A config.rb has been provided for Compass setup and if you are using Codekit the codekit-config.json file whas been included to configure the project settings (There is no need to change these files as they will be required for other developers setups, only modify if you need to add dependencies, etc).
+	* By default only SASS will be monitored by Codekit, if you want Codekit to manage your JS add the folder to Codekit manually.
+4. The JS directory has a basic structure, if you are using Backbone and require JS you might want to replace the directory structure with the backbone [boilerplate - coming soon!](#).
+	* If you are using Codekit to manage the JS and are importing and/or combining mulitple JS files make sure to use the [import function for Codekit](http://incident57.com/codekit/help.php#help-imports). Place ``//@codekit-prepend "file-a.js", "file-b.js"`` and/or ``//@codekit-append "file-a.js", "file-b.js"`` in the file rather than using the 'drag & drop' feature inside the Codekit UI, otherwise these settings will not be avaliable for other developers working on the project. Note: you MUST comment out these lines because they are not valid Javascript. Don't worry, CodeKit will still detect them just fine.
+5. SASS has been setup to work with [Compass](http://compass-style.org/), make sure you have this installed if your not using Codekit. Compass provides a wide range of mixins, familiarise yourself with them and how work and which ones you should use.
 	* A common mixin you will use is [single-transition](http://compass-style.org/reference/compass/css3/transition/#mixin-single-transition) for an all in one short-hand transition
 	
 	The boilerplate has additional mixins included, make sure to have a look at these and familiarise yourself with them. You can find the [documentation for these here](mixin.md)
-5. Variables and Core files. A set of variables have been setup in ``variables.scss`` these are provided to offer a base styling for any project and work with in conjunction with the projects and core scss files. Add any variables you want to use in the project in this file.
+6. Variables and Core files. A set of variables have been setup in ``variables.scss`` these are provided to offer a base styling for any project and work with in conjunction with the projects and core scss files. Add any variables you want to use in the project in this file.
 
-	Basic default styles have been setup for tables, forms, alerts and component_animation, these can all be found in the ``core`` directory. These offer a basic setup for these elements, modify these as you will.
-	If your not using all the core file you can comment them out from the ``styles.scss`` file so they are not included in the ouput.
+	Basic default styles have been setup for tables, forms, alerts and component_animation, these can all be found in the ``core`` directory. These provide a foundation to build on.
+	If your not using all the core files you can comment them out from the ``styles.scss`` file so they are not included in the ouput.
 	
 ## Sprites
 Manage sprites using Compass. [Find out more here](http://compass-style.org/help/tutorials/spriting/).
