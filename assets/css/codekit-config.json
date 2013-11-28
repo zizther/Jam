@@ -26,15 +26,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/mixins\/_screen_mixins.scss" : {
+    "\/.sass\/mixins\/_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/mixins\/_screen_mixins.scss",
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_screen_mixins.css",
+      "outputAbbreviatedPath" : "\/_mixins.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -50,17 +50,26 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/mixins\/_mixins.scss" : {
+    "\/.sass\/mixins\/_screen_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_screen_mixins.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_mixins.css",
+      "outputAbbreviatedPath" : "\/_screen_mixins.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/styles.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/.sass\/core\/_component_animation.scss" : {
       "ignoreWasSetByUser" : 0,
