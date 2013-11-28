@@ -1,8 +1,11 @@
 {
-  "name": "Jam",
-  "version": "1.2.5",
-  "main": ["./raw_templates/index.html", "./assets/css/styles.css"],
-  "ignore": [
-      "./.git"
-  ]
+    "name": "Jam",
+    "version": "1.2.6",
+    "main": [
+    	"./raw_templates/index.html",
+    	"./assets/css/styles.css"
+    ],
+    "ignore": [
+        "./.git"
+    ]
 }
