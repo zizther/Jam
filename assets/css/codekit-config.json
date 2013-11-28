@@ -2,39 +2,15 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8403",
   "files" : {
-    "\/.sass\/project\/_xbrowser.scss" : {
+    "\/.sass\/core\/_alerts.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/project\/_xbrowser.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_alerts.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_xbrowser.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/.sass\/mixins\/_mixins.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_mixins.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/.sass\/mixins\/_screen_mixins.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/mixins\/_screen_mixins.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_screen_mixins.css",
+      "outputAbbreviatedPath" : "\/_alerts.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -50,6 +26,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/styles.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/.sass\/project\/_sprites.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -62,14 +47,29 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/styles.css" : {
+    "\/.sass\/mixins\/_screen_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_screen_mixins.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_screen_mixins.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/.sass\/mixins\/_mixins.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_mixins.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/.sass\/core\/_component_animation.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -128,15 +128,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
-    "\/.sass\/core\/_print.scss" : {
+    "\/.sass\/styles.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
+      "inputAbbreviatedPath" : "\/.sass\/styles.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_print.css",
+      "outputAbbreviatedPath" : "\/styles.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -152,15 +152,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/styles.scss" : {
+    "\/.sass\/core\/_print.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/styles.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "\/_print.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -188,15 +188,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_alerts.scss" : {
+    "\/.sass\/project\/_xbrowser.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_alerts.scss",
+      "inputAbbreviatedPath" : "\/.sass\/project\/_xbrowser.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_alerts.css",
+      "outputAbbreviatedPath" : "\/_xbrowser.css",
       "fileType" : 4,
       "debugStyle" : 0
     }
