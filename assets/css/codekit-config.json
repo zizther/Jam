@@ -26,17 +26,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/mixins\/_mixins.scss" : {
+    "\/styles.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_mixins.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/.sass\/project\/_sprites.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -62,14 +59,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/styles.css" : {
+    "\/.sass\/mixins\/_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_mixins.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/.sass\/core\/_component_animation.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -107,15 +107,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_reset.scss" : {
+    "\/.sass\/styles.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_reset.scss",
+      "inputAbbreviatedPath" : "\/.sass\/styles.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_reset.css",
+      "outputAbbreviatedPath" : "\/styles.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -128,15 +128,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
-    "\/.sass\/styles.scss" : {
+    "\/.sass\/core\/_print.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/styles.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "\/_print.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -152,15 +152,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_print.scss" : {
+    "\/.sass\/core\/_reset.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_reset.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_print.css",
+      "outputAbbreviatedPath" : "\/_reset.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
