@@ -14,15 +14,36 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_forms.scss" : {
+    "\/.sass\/mixins\/_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_forms.scss",
+      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_forms.css",
+      "outputAbbreviatedPath" : "\/_mixins.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/styles.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/.sass\/project\/_sprites.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/.sass\/project\/_sprites.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_sprites.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -38,27 +59,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/project\/_sprites.scss" : {
+    "\/.sass\/core\/_forms.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/project\/_sprites.scss",
+      "inputAbbreviatedPath" : "\/.sass\/core\/_forms.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_sprites.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/.sass\/mixins\/_mixins.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/mixins\/_mixins.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_mixins.css",
+      "outputAbbreviatedPath" : "\/_forms.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -71,6 +80,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 1,
       "outputAbbreviatedPath" : "\/_component_animation.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/.sass\/project\/_fonts.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/.sass\/project\/_fonts.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_fonts.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -110,15 +131,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/config.rb" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
-    },
     "\/.sass\/core\/_print.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -128,6 +140,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 1,
       "outputAbbreviatedPath" : "\/_print.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/.sass\/core\/_reset.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/.sass\/core\/_reset.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_reset.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -143,17 +167,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_reset.scss" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_reset.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_reset.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
     },
     "\/.sass\/project\/_global.scss" : {
       "ignoreWasSetByUser" : 0,
