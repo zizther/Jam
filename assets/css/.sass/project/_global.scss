@@ -77,11 +77,11 @@ a:focus,
 object,
 embed,
 input::-moz-focus-inner {
-	outline: 0;
+	outline: 0 !important;
 }
 :focus {
-	border: none;
-	outline: 0;
+	border: none !important;
+	outline: 0 !important;
 }
 
 // Contextual emphasis

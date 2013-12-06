@@ -14,6 +14,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/.sass\/core\/_forms.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/.sass\/core\/_forms.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_forms.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/.sass\/mixins\/_mixins.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -26,14 +38,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/styles.css" : {
+    "\/.sass\/project\/_fonts.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/.sass\/project\/_fonts.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_fonts.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/.sass\/project\/_sprites.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -59,18 +74,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_forms.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_forms.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_forms.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/.sass\/core\/_component_animation.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -83,17 +86,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/project\/_fonts.scss" : {
+    "\/styles.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/project\/_fonts.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_fonts.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/.sass\/core\/_tables.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -131,17 +131,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/.sass\/core\/_print.scss" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_print.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
     },
     "\/.sass\/core\/_reset.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -167,14 +164,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/config.rb" : {
+    "\/.sass\/core\/_print.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
+      "inputAbbreviatedPath" : "\/.sass\/core\/_print.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_print.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/.sass\/project\/_global.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -391,7 +391,7 @@
   },
   "projectAttributes" : {
     "bourbonEnabled" : 0,
-    "displayValue" : "assets",
+    "displayValue" : "Jam - Assets",
     "displayValueWasSetByUser" : 1,
     "compassEnabled" : 1
   }
