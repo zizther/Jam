@@ -1,30 +1,29 @@
-#echo "$(dirname "$0")"
+cd "$(dirname "$0")"
 
+jam-bower(){
+	CURRENT_DIR=`pwd`
 
-rm bower.json
-
-
-# && jam-finish
-
+	if [[ CURRENT_DIR =~ "bower_components" ]]
+	then
+	    mv * cd ../../
+		
+		# Go to root dir
+		cd ../..
+		
+		# Remove bower directories
+		rm -r bower_components	
+	fi
+}
 
 jam-cleanup(){
-    # 1. Make sure I am in the 'Sites' directory.
-    # 2. Install the Maido FE package.
-    # 3. Call the fe-clean function to sort the directory settings.
-    cd ~/Documents/Sites && bower install jam && fe-clean
-    
-    #mv bower_components/jam/* $DIRECTORY/
-
-	# Remove unnessesary files
-	#cd $DIRECTORY
-	#rm .bower.json
-	#rm bower.json
-	#rm readme.md
-	
-	# Move to parent directory to complete process
-	#cd ..
+	rm .bower.json
+	rm bower.json
+	rm readme.md
+	rm mixin.md
 }
 
 jam-finish(){
-	#rm cleanup.command
+	rm cleanup.command
 }
+
+jam-bower && jam-cleanup && jam-finish
