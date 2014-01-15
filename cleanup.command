@@ -1,9 +1,7 @@
 cd "$(dirname "$0")"
 
 jam-bower(){
-	CURRENT_DIR=`pwd`
-
-	if [[ CURRENT_DIR =~ "bower_components" ]]
+	if [[ "$PWD" =~ bower_components ]]
 	then
 	    mv * cd ../../
 		

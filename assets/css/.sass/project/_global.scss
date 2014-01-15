@@ -12,7 +12,7 @@ html {
 body {
 	font-family: $font-helvetica;
 	line-height: $line-height-base;
-	-webkit-font-smoothing: antialiased;
+	//-webkit-font-smoothing: antialiased; // Use here if needed otherwise use of specific elements
 }
 
 // Headings
