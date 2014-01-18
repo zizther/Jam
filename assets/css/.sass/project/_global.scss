@@ -81,8 +81,7 @@ input::-moz-focus-inner {
 	outline: 0 !important;
 }
 :focus {
-	border: none !important;
-	outline: 0 !important;
+	outline: -webkit-focus-ring-color auto 0; // Stop Chrome's horrid blue outline
 }
 
 // Contextual emphasis
