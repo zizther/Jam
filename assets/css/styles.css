@@ -786,12 +786,6 @@ textarea {
   font-size: inherit;
   line-height: inherit; }
 
-input,
-textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none; }
-
 .sr_only {
   border: 0;
   clip: rect(0 0 0 0);
