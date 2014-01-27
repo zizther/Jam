@@ -184,6 +184,9 @@ input,
 button,
 select,
 textarea {
+	-moz-appearance: none;
+    -webkit-appearance: none;
+	appearance: none;
 	background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
     font-family: inherit;
     font-size: inherit;
