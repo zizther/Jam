@@ -781,13 +781,16 @@ input,
 button,
 select,
 textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
   background-image: none;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
+
+input,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none; }
 
 .sr_only {
   border: 0;
