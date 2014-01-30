@@ -787,14 +787,14 @@ textarea {
   line-height: inherit; }
 
 .sr_only {
+  height: 1px;
+  width: 1px;
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute;
-  width: 1px; }
+  position: absolute; }
 
 .pull_right {
   float: right !important; }
