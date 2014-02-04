@@ -1,6 +1,8 @@
-cd "$(dirname "$0")"
+#!/bin/sh
+directory="`dirname \"$0\"`"
+cd "$directory"
 
-jam-bower(){
+jamBower(){
 	if [[ "$PWD" =~ bower_components ]]
 	then
 	    mv * cd ../../
@@ -12,16 +14,13 @@ jam-bower(){
 		rm -r bower_components	
 	fi
 }
-
-jam-cleanup(){
+jamCleanup(){
 	rm .bower.json
 	rm bower.json
 	rm readme.md
 	rm mixin.md
 }
-
-jam-finish(){
+jamFinish(){
 	rm cleanup.command
 }
-
-jam-bower && jam-cleanup && jam-finish
+jamBower && jamCleanup && jamFinish
