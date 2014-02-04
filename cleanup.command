@@ -15,7 +15,6 @@ jamBower(){
 	fi
 }
 jamCleanup(){
-	rm .bower.json
 	rm bower.json
 	rm readme.md
 	rm mixin.md
