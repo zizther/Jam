@@ -237,7 +237,8 @@ textarea {
  *         @extend .clearfix;
  *     }
 **/
-.clearfix {
+.clearfix,
+%clearfix {
 	@include pie-clearfix;
 }
 

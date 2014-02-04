@@ -640,7 +640,7 @@ input[type="checkbox"],
 	// _global.scss
 	i {
 		&.icon_name {
-			@include sprite-main-sprite(close-icon, true);
+			@include social-sprite(fb_icon, true);
 		}
 	}
 	
