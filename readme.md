@@ -15,29 +15,27 @@
 * Keep it consistent and adopt the conventions laid out before you. If you are embedding plugins such as SWFs, put them in a embeds folder. If you are referencing videos, put them in a videos folder.
 * If you own a Mac and don't fancy using the Terminal, get [CodeKit](http://incident57.com/codekit/).
 
-## Guide
+## Install
+1. You can either pull the repo or use [Bower](http://bower.io/) to get a copy of the boilerplate ``bower install jam``.
+2. Once you have a copy, move the contents of the Jam directory into the website public directory.
 
-1. You can either pull the repo or use [Bower](http://bower.io/) to get a copy of the boilerplate ``bower install jam``
-	* ``cleanup.command`` is included to clean up the unessesary files, double click to run the command.
-2. a ``.editorconfig`` file has been included to define and maintain consistent coding styles between different editors and IDEs [editorconfig.org](http://editorconfig.org).
-3. A .htaccess file has been provided, with additions to include into your project if you need them.
-4. Add the ``css`` (assets/css) folder to Codekit or perform your watch action in this directory in Terminal. A config.rb has been provided for the Compass setup (there is no need to change this file as it will be required for other developers setups, only modify if you need to add dependencies, etc).
+## Guide
+1. a ``.editorconfig`` file has been included to define and maintain consistent coding styles between different editors and IDEs [editorconfig.org](http://editorconfig.org).
+2. A .htaccess file has been provided, with additions to include into your project if you need them. Remove the underscore in the file name to use this.
+3. Add the ``css`` (assets/css) folder to Codekit or perform your watch action in this directory from Terminal. A config.rb has been provided for the Compass setup (there is no need to change this file as it will be required for other developers setups, only modify if you need to add dependencies, etc).
 	* By default only SASS will be monitored by Codekit, if you want Codekit to manage your JS add the folder to Codekit manually.
-5. The JS directory has a basic structure, if you are using Backbone and require JS you will want to replace this setup.
-6. SASS has been setup to work with [Compass](http://compass-style.org/), make sure you have this installed if your not using Codekit. Compass provides a wide range of mixins, familiarise yourself with them and how work and which ones you should use.
+4. The JS directory has a basic structure, if you are using Backbone and/or require JS you may want to replace this setup.
+5. [Compass](http://compass-style.org/) is require for this project, make sure you have this installed if your not using Codekit. Compass provides a wide range of mixins, familiarise yourself with them.
 	
 	The boilerplate has additional mixins included, make sure to have a look at these and familiarise yourself with them. You can find the [documentation for these here](mixin.md)
-7. Variables and Core files. A set of variables have been setup in ``variables.scss`` these are provided to offer a base styling for any project and work with in conjunction with the projects and core scss files. Add any variables you want to use in the project in this file.
+6. Jam offers a few components. These have been developed to help reduce browser inconsistency and enable you to develop faster.
+All components are being called into the style.scss file. If you do not require any of the components, simply comment that line out.
 
-	Basic default styles have been setup for tables, forms, alerts and component_animation, these can all be found in the ``core`` directory. These provide a foundation to build on.
-	If your not using all the core files you can comment them out from the ``styles.scss`` file so they are not included in the ouput.
-	
-## Sprites
-Manage sprites using Compass. [Find out more here](http://compass-style.org/help/tutorials/spriting/).
-Also watch these videos to get a clear idea of how to work with sprites in Compass.
-
-* [Sprites in Compass](http://www.youtube.com/watch?v=Tl6bceyTjFw)
-* [Advanced sprite config](http://www.youtube.com/watch?v=8ZHZPxIjiS8)
+	Components:
+	* Alerts
+	* Component animation
+	* Forms
+	* Tables
 
 	
 ## SASS structure
@@ -69,12 +67,11 @@ css/
 		styles.scss  (This pulls in all the different elements for the project to output as CSS)
 ```
 
+## Bower components
+If you used Bower to install Jam, it will also pull in some other packages for your con
 
-## Easing
-There is a variable file called _easing.scss which contains Robert Penner's easing functions converted into cubic-bezier timing functions. These will work with CSS3 transitons.
-
-Here is an example of this being used.
-
-```sass
-@include transition(all 500ms $easeOutQuart);
-```
+* Backbone
+* Underscore
+* Require JS
+* Animate.css
+* WOW JS

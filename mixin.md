@@ -153,6 +153,19 @@ Create a CSS triangle pointing up, down, left or right.
 @include triangle (20px, #f00, down);
 ```
 
+## Message
+Create a message to display on the site.
+
+**Parameters**
+
+1. Colour
+
+**Example**
+```sass
+@include message (#3a87ad);
+```
+
+
 ## px to em
 A simple function which converts px to em.
 
