@@ -20,7 +20,7 @@
 	    "requirejs": "*",
 	    "backbone": "*",
 	    "underscore": "*",
-	    "Animate.css": "*",
+	    "animate.css": "*",
 	    "WOW": "*"
 	}
 }
