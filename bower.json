@@ -7,5 +7,14 @@
     ],
     "ignore": [
         "./.git"
-    ]
+    ],
+    "dependencies": {
+	    "jquery": "~1.10.2",
+	    "requirejs": "*"
+	},
+	"exportsOverride": {
+	    "requirejs": {
+	        "js": "require.js"
+	    }
+	}
 }

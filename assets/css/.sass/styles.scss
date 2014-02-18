@@ -9,12 +9,14 @@
 @import "variables/variables";
 @import "variables/easing";
 
-// Core setup & reset
+// Reset
 @import 'core/reset';
-@import 'core/tables';
-@import 'core/forms';
-@import 'core/alerts';
-@import 'core/component_animation';
+
+// Components
+@import 'components/tables';
+@import 'components/forms';
+@import 'components/alerts';
+@import 'components/component_animation';
 
 
 // Project styles

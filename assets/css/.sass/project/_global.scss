@@ -86,16 +86,16 @@ input::-moz-focus-inner {
 
 // Contextual emphasis
 .text_warning {
-	color: $message-warning-text;
+	color: $colour-warning;
 }
-.text_danger {
-	color: $message-danger-text;
+.text_error {
+	color: $colour-error;
 }
-.text_success {
-	color: $message-success-text;
+.text_valid {
+	color: $colour-valid;
 }
 .text_info {
-	color: $message-info-text;
+	color: $colour-info;
 }
 
 // Alignment

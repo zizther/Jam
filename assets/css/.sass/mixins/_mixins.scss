@@ -9,8 +9,10 @@
 //
 // The HIDPI Meda Query will allow you to generate a media
 // query that targes HIDPI devices.
-// Default value set to 1.3 to target Google Nexus 7.
 // Find my device pixel ratio. Check out http://bjango.com/articles/min-device-pixel-ratio/
+//
+// Parameters:
+// - Ratio: The device screen ratio. Default value set to 1.3 to target Google Nexus 7.
 //
 //============================================================
 @mixin hidpi($ratio: 1.3) {
@@ -29,8 +31,13 @@
 // Retina image
 //
 // The mixin uses a @2x.png retina filename.
-// Place $filepath in quotes (""), but not $width and $height as this will make browsers ignore background-size
-// 
+// E.g. logo.png and logo@2x.png
+//
+// Parameters:
+// - File path: The path to the file without the file extension. Place this in quotes ""
+// - Width: The width of the image
+// - Height: The height of the image
+// - Extension: The default is .png, only add this parameter is if is different
 //
 //============================================================
 @mixin retina-image($filepath, $width, $height, $extension: png) {
@@ -57,8 +64,11 @@
 //
 // Font rem
 //
-// Adds in px and rem sizes - $size should be 'rem'
-// Keep rem after px on output
+// Adds in px and rem sizes
+// Note: Keep rem after px on output
+//
+// Parameters:
+// - Size: the rem font size - This is usually the px font size divided by 10 (e.g. 16px will be 1.6)
 //
 //============================================================
 @mixin font-rem($size: 1.6) {
@@ -81,13 +91,27 @@
 
 //============================================================
 //
-// Sizing shortcuts
+// Size shortcut
+//
+// Parameters:
+// - Width: The width of the element
+// - Height: The height of the element
 //
 //============================================================
 @mixin size($width, $height) {
 	height: $height;
     width: $width;
 }
+
+
+//============================================================
+//
+// Square shortcut
+//
+// Parameters:
+// - Size: The height and width of the element. Only input a single value
+//
+//============================================================
 @mixin square($size) {
     @include size($size, $size);
 }
@@ -127,10 +151,13 @@
 //
 // Resize anything
 //
+// Parameters:
+//  - Direction: none|both|horizontal|vertical|initial|inherit
+//
 //============================================================
 @mixin resizable($direction) {
     overflow: auto; // Safari fix
-    resize: $direction; // Options: horizontal, vertical, both
+    resize: $direction;
 }
 
 
@@ -138,15 +165,18 @@
 //
 // Optional hyphenation
 //
+// Parameters:
+// - Mode: the CSS hyphens mode
+//
 //============================================================
 @mixin hyphens($mode: auto) {
-	hyphens: $mode;
-	word-wrap: break-word;
-	
 	-moz-hyphens: $mode;
 	-ms-hyphens: $mode; // IE10+
 	-o-hyphens: $mode;
 	-webkit-hyphens: $mode;
+	
+	hyphens: $mode;
+	word-wrap: break-word;
 }
 
 
@@ -155,6 +185,9 @@
 // Responsive image
 //
 // Keep images from scaling beyond the width of their parents.
+//
+// Parameters:
+// - Display: the display type. Defaults to block
 //
 //============================================================
 @mixin img-responsive($display: block) {
@@ -167,6 +200,11 @@
 //============================================================
 //
 // Triangle
+//
+// Parameters:
+// - Size: use px
+// - Color: Any colour option
+// - Direction: up|down|left|right
 //
 //============================================================
 @mixin triangle ($size, $color, $direction) {
@@ -223,9 +261,31 @@
 
 //============================================================
 //
+// Message
+//
+// Paramters:
+// - Color: Any colour option
+//
+//============================================================
+@mixin message($color) {
+    background: lighten($color, 38%);
+    border: 1px solid lighten($color, 20%);
+    border-radius: 3px;
+    color: $color;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+//============================================================
+//
 // px to em
 //
 // Converts pixel size to em
+//
+// Parameters:
+// - pxval: The px value
+// - base: Default is 16 (This can be left)
 //
 //============================================================
 @function em($pxval, $base: 16) {

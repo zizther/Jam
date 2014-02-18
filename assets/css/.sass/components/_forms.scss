@@ -136,30 +136,6 @@ input[type="checkbox"],
 }
 
 
-// Form control feedback states
-//
-// Apply contextual and semantic states to individual form controls.
-
-// Warning
-.has_warning {
-	background: $message-warning-bg;
-	border: $message-warning-text;
-    color: $message-warning-text;
-}
-// Error
-.has_error {
-    background: $message-danger-bg; 
-	border: $message-danger-text;
-    color: $message-danger-text;
-}
-// Success
-.has_success {
-	background: $message-success-bg;
-	border: $message-success-text;
-    color: $message-success-text;
-}
-
-
 // Static form control text
 //
 // Apply class to a `p` element to make any string of text align with labels in

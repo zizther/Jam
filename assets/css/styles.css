@@ -534,21 +534,6 @@ input[type="checkbox"],
 .checkbox_inline {
   cursor: not-allowed; }
 
-.has_warning {
-  background: #fcf8e3;
-  border: #c09853;
-  color: #c09853; }
-
-.has_error {
-  background: #f2dede;
-  border: #b94a48;
-  color: #b94a48; }
-
-.has_success {
-  background: #dff0d8;
-  border: #468847;
-  color: #468847; }
-
 .form_control_static {
   margin-bottom: 0;
   padding-top: 17px; }
@@ -574,40 +559,42 @@ input[type="checkbox"],
 /* -------------------------------------------------------------- 
 	Alerts
 -------------------------------------------------------------- */
-.alert {
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 15px; }
+.message_error {
+  background: #efd5d4;
+  border: 1px solid #d59392;
+  border-radius: 3px;
+  color: #b94a48;
+  margin: 20px;
+  padding: 20px; }
 
-.alert_warning {
-  background-color: #fcf8e3;
-  border-color: #fbf5d5;
-  color: #c09853; }
+.message_valid {
+  background: #b6dab7;
+  border: 1px solid #7aba7b;
+  border-radius: 3px;
+  color: #468847;
+  margin: 20px;
+  padding: 20px; }
 
-.alert_error {
-  background-color: #f2dede;
-  border-color: #eed3d3;
-  color: #b94a48; }
+.message_warning {
+  background: #f4ede1;
+  border: 1px solid #dbc59e;
+  border-radius: 3px;
+  color: #c09853;
+  margin: 20px;
+  padding: 20px; }
 
-.alert_success {
-  background-color: #dff0d8;
-  border-color: #d0e9c6;
-  color: #468847; }
+.message_info {
+  background: #bfdcea;
+  border: 1px solid #7ab5d3;
+  border-radius: 3px;
+  color: #3a87ad;
+  margin: 20px;
+  padding: 20px; }
 
 /* -------------------------------------------------------------- 
 	Component animations
 -------------------------------------------------------------- */
-.fade {
-  -webkit-transition: opacity 150ms linear;
-  -webkit-transition-delay: 0s;
-  -moz-transition: opacity 150ms linear 0s;
-  -o-transition: opacity 150ms linear 0s;
-  transition: opacity 150ms linear 0s;
-  opacity: 0; }
-  .fade.in {
-    opacity: 1; }
-
+/*** Collapse ***/
 .collapse {
   display: none; }
   .collapse.in {
@@ -615,14 +602,17 @@ input[type="checkbox"],
 
 .collapsing {
   -webkit-transition: height 0.35ms ease;
-  -webkit-transition-delay: 0s;
-  -moz-transition: height 0.35ms ease 0s;
-  -o-transition: height 0.35ms ease 0s;
-  transition: height 0.35ms ease 0s;
+  -moz-transition: height 0.35ms ease;
+  -o-transition: height 0.35ms ease;
+  transition: height 0.35ms ease;
   height: 0;
   overflow: hidden;
   position: relative; }
 
+/*
+ * Additional animation can be added from http://daneden.github.io/animate.css/
+ * Use WOW JS to reveal animations when you scroll http://mynameismatthieu.com/WOW/
+ */
 /* -------------------------------------------------------------- 
 	Fonts
 -------------------------------------------------------------- */
@@ -708,10 +698,10 @@ input::-moz-focus-inner {
 .text_warning {
   color: #c09853; }
 
-.text_danger {
+.text_error {
   color: #b94a48; }
 
-.text_success {
+.text_valid {
   color: #468847; }
 
 .text_info {
