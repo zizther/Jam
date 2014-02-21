@@ -5,8 +5,7 @@
     "description": "A clean boilerplate for front-end projects.",
     "keywords": [
 	    "front-end",
-	    "boilerplate",
-	    "web-components"
+	    "boilerplate"
 	],
 	"license": "MIT",
     "main": [
