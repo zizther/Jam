@@ -13,11 +13,11 @@
 @import 'core/reset';
 
 // Components
+@import 'components/grid';
+@import 'components/component_animation';
 @import 'components/tables';
 @import 'components/forms';
 @import 'components/alerts';
-@import 'components/component_animation';
-
 
 // Project styles
 @import 'project/fonts';
