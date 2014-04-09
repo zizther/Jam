@@ -184,7 +184,9 @@ input,
 button,
 select,
 textarea {
+	-webkit-appearance: none; // Remove iOS stylings
 	background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
+	border: none;
     font-family: inherit;
     font-size: inherit;
     line-height: 1.1;
