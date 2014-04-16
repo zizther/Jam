@@ -45,7 +45,7 @@ All imported files should contain an undercore '_' at the start so they do not c
 ```
 css/
 	styles.css  (This is the compiled CSS)
-	.sass/
+	sass/
 		core/
 			_alerts.scss  (Setup for alerts)
 			_component_animation.scss  (Setup for CSS animation)
