@@ -35,3 +35,7 @@ dwsync.xml
 intermediate
 publish
 .idea
+
+# Codekit config #
+##################
+*config.codekit
