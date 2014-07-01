@@ -16,10 +16,13 @@
     "./assets/css/styles.css"
   ],
   "ignore":[
+    "bower.json",
     "source",
     "spec",
+    ".gitignore",
     "bower.json",
-    "README.md"
+    "LICENSE.md",
+    "readme.md"
   ],
   "dependencies":{
     "requirejs":"*",
