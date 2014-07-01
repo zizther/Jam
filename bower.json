@@ -1,22 +1,32 @@
 {
-    "name": "Jam",
-    "version": "1.2.31",
-    "author": "Nathan Reed",
-    "description": "A clean boilerplate for front-end projects.",
+    "name": "jam",
+    "version": "2.0.0",
+    "author": "Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",
+    "description": "A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.",
     "keywords": [
 	    "front-end",
 	    "boilerplate"
 	],
-	"license": "MIT",
+	"license": "BSD",
+	"repository": {
+        "type": "git",
+        "url": "git://github.com/zizther/jam.git"
+    }
     "main": [
-    	"./raw_templates/index.html",
     	"./assets/css/styles.css"
+    ],
+    "ignore": [
+        "source",
+        "spec",
+        ".gitignore",
+        "bower.json",
+        "README.md"
     ],
     "dependencies": {
 	    "requirejs": "*",
 	    "backbone": "*",
 	    "underscore": "*",
-	    "animate.css": "*",
-	    "WOW": "*"
+	    "jquery": "1.*",
+	    "jquery": "2.*"
 	}
 }

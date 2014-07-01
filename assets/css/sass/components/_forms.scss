@@ -1,25 +1,25 @@
 // Restyle and baseline non-control form elements.
 fieldset {
-    padding: 0;
-    margin: 0;
     border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 legend {
+    border: 0;
+    color: #252525;
     display: block;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 16px;
     font-size: 22px;
     line-height: inherit;
-    color: #252525;
-    border: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    width: 100%;
 }
 
 label {
     display: inline-block;
+    font-weight: 700;
     margin-bottom: 5px;
-    font-weight: bold;
 }
 
 // Override content-box in Normalize (* isn't specific enough)
@@ -30,9 +30,9 @@ input[type="search"] {
 // Position radios and checkboxes better
 input[type="radio"],
 input[type="checkbox"] {
+    line-height: normal;
     margin: 4px 0 0;
     margin-top: 1px \9; /* IE8-9 */
-    line-height: normal;
 }
 
 // Set the height of select and file controls to match text inputs
@@ -48,9 +48,9 @@ select[size] {
 
 // Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
 select optgroup {
+    font-family: inherit;
     font-size: inherit;
     font-style: inherit;
-    font-family: inherit;
 }
 
 // Fix for Chrome number input
@@ -79,17 +79,17 @@ input[type="number"] {
 .radio,
 .checkbox {
     display: block;
-    min-height: 16px; // clear the floating input if there is no label text
-    margin-top: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 16px; // clear the floating input if there is no label text
     padding-left: 20px;
     vertical-align: middle;
     
     label {
-        display: inline;
-        margin-bottom: 0;
-        font-weight: normal;
         cursor: pointer;
+        display: inline;
+        font-weight: normal;
+        margin-bottom: 0;
     }
 }
 .radio input[type="radio"],
@@ -107,17 +107,17 @@ input[type="number"] {
 // Radios and checkboxes on same line
 .radio_inline,
 .checkbox_inline {
-    display: inline-block;
-    padding-left: 20px;
-    margin-bottom: 0;
-    vertical-align: middle;
-    font-weight: normal;
     cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-left: 20px;
+    vertical-align: middle;
 }
 .radio_inline + .radio_inline,
 .checkbox_inline + .checkbox_inline {
-    margin-top: 0;
     margin-left: 10px; // space out consecutive inline controls
+    margin-top: 0;
 }
 
 // Apply same disabled cursor tweak as for inputs
@@ -153,8 +153,8 @@ input[type="checkbox"],
 .help_block {
 	color: lighten(#252525, 25%); // lighten the text some for contrast
     display: block; // account for any element using help-block
-    margin-top: 5px;
     margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 

@@ -1,14 +1,6 @@
 /* -------------------------------------------------------------- 
-	Global
+	General Layout
 -------------------------------------------------------------- */
-* {
-	@include box-sizing(border-box); // Only suitable for IE8+
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	text-rendering: optimizeLegibility;
-}
-html {
-	font-size: 62.5%;
-} 
 body {
 	font-family: $font-helvetica;
 	line-height: $line-height-base;
@@ -61,172 +53,7 @@ a {
 	::-moz-selection {
 		background: #e3e3e1;
 	}
-
-/*** Emphasis & misc ***/
-small {
-	font-size: 85%;
-}
-
-cite {
-	font-style: normal;
-}
-
-// Outline
-a:hover,
-a:active,
-a:focus,
-object,
-embed,
-input::-moz-focus-inner {
-	outline: 0 !important;
-}
-:focus {
-	outline: -webkit-focus-ring-color auto 0; // Stop Chrome's horrid blue outline
-}
-
-// Contextual emphasis
-.text_warning {
-	color: $colour-warning;
-}
-.text_error {
-	color: $colour-error;
-}
-.text_valid {
-	color: $colour-valid;
-}
-.text_info {
-	color: $colour-info;
-}
-
-// Alignment
-.text_left {
-	text-align: left;
-}
-.text_right {
-	text-align: right;
-}
-.text_center {
-	text-align: center;
-}
-
-// Lists
-ul,
-ol {
-    margin-top: 0;
-    margin-bottom: 16px;
-    
-    ul,
-    ol {
-    	margin-bottom: 0;
-    }
-}
-
-// Blockquotes
-blockquote {
-    margin: 0 0 16px;
-    padding: 8px 16px;
-
-    p {
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 1.25;
-        
-        &:last-child {
-	        margin-bottom: 0;
-	    }
-    }
-    small {
-        display: block;
-        line-height: $line-height-base;
-        
-        &:before {
-            content: '\2014 \00A0'; // EM DASH, NBSP
-        }
-    }
-
-    // Float right with text-align: right
-    &.pull_right {
-        padding-left: 0;
-        padding-right: 15px;
-        
-        p,
-        small {
-            text-align: right;
-        }
-        small {
-            &:before {
-                content: '';
-            }
-            &:after {
-                content: '\00A0 \2014';// NBSP, EM DASH
-            }
-        }
-    }
-}// END blockquote
-
-/*** Images ***/
-img {
-    vertical-align: middle;
-}
-
-// Responsive images (ensure images don't scale beyond their parents)
-.img_responsive {
-    @include img-responsive();
-}
-
-// Perfect circle
-.img_circle {
-    @include border-radius(50%); // set radius in percents
-}
-
-// Form
-input,
-button,
-select,
-textarea {
-	-webkit-appearance: none; // Remove iOS stylings
-	background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
-	border: none;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: 1.1;
-}
-
-// Only display content to screen readers
-// See: http://a11yproject.com/posts/how-to-hide-content/
-.sr_only {
-	@include square(1px);
-	border: 0;
-	clip: rect(0 0 0 0);
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-}
-
-// Floats
-.pull_right {
-  float: right !important;
-}
-.pull_left {
-  float: left !important;
-}
-
-// Toggling content
-.hide {
-    display: none !important;
-}
-.show {
-    display: block !important;
-}
-.invisible {
-    visibility: hidden;
-}
-.text_hide {
-    @include hide-text(); // Hide text from an element
-}
-
-
+	
 // Clear
 .clear {
 	clear: both;
@@ -236,15 +63,10 @@ textarea {
  * Clearfix - use @extend .clearfix on classes or ID's which require it
  * e.g.
  *     .buttons {
- *         @extend .clearfix;
+ *         @extend %clearfix;
  *     }
 **/
 .clearfix,
 %clearfix {
 	@include pie-clearfix;
 }
-
-
-/* -------------------------------------------------------------- 
-	General Layout
--------------------------------------------------------------- */

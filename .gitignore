@@ -8,7 +8,9 @@
 *.swp
 *.vi
 *~
-*.sass-cache
+._*
+.~lock.*
+.buildpath
 
 # OS or Editor folders
 .DS_Store
@@ -36,6 +38,9 @@ intermediate
 publish
 .idea
 
-# Codekit config #
-##################
-*config.codekit
+# SASS Cache
+*.sass-cache
+
+# Project Files
+composer.lock
+vendor/*

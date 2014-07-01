@@ -2,7 +2,7 @@
 	Grid
 	* Set the width of the cells using the function grid-span, using the column span as parameter. You probably want this inside Media Queries if you use a mobile first approach.
 	* Optional mixins grid-push, grid-pull, grid-prepend and grid-append. Push and pull need position: relative on the element to work.
-	* Opera may still have an issue with the font-size being 0, a fix is to chnage it to 0.5px. You can use JS to detect Opera
+	* Opera may still have an issue with the font-size being 0, a fix is to change it to 0.5px. You can use JS to detect Opera
 	* This will not work in IE7 or lower
 	
 	-- Usage:

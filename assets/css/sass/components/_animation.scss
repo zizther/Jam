@@ -1,24 +1,7 @@
 /* -------------------------------------------------------------- 
-	Component animations
+	Animations
 -------------------------------------------------------------- */
-
-/*** Collapse ***/
-.collapse {
-    display: none;
-    
-    &.in {
-        display: block;
-    }
-}
-.collapsing {
-	@include transition(height .35ms ease);
-    height: 0;
-    overflow: hidden;
-    position: relative;
-}
-
-
-/*
+/**
  * Additional animation can be added from http://daneden.github.io/animate.css/
  * Use WOW JS to reveal animations when you scroll http://mynameismatthieu.com/WOW/
- */
+**/

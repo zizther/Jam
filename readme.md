@@ -1,77 +1,93 @@
-# Jam
- 
-#### A simple, lightweight boilerplate to help kick start your front-end projects.
- 
-* Scaleable directory structure with clear partitions between thirdparty libraries, plugins and project files.
-* Heavy focus on structural granularity with intuitive delegation of responsibility.
-* Set up requires [SASS](http://sass-lang.com/) and [Compass](http://compass-style.org/).
-* Integrates seamlessly with [CodeKit](http://incident57.com/codekit/) for all your concatenation and minification needs. It does not require Codekit to be used.
- 
-## Suggested Usage
- 
-* Add this to the public root of your project.
-* Work with the structure, not against it. Considerable time and thought has been invested in the structure of this boilerplate with the core focus on consistency, granularity and scalability.
-* A *graphics* folder? In a nutshell, if it's referenced as a background-image, it goes in the graphics folder. If it's referenced as the src of an img element, it goes in an uploads or images folder.
-* Keep it consistent and adopt the conventions laid out before you. If you are embedding plugins such as SWFs, put them in a embeds folder. If you are referencing videos, put them in a videos folder.
-* If you own a Mac and don't fancy using the Terminal, get [CodeKit](http://incident57.com/codekit/).
+Jam
+====
 
-## Install
-1. You can either pull the repo or use [Bower](http://bower.io/) to get a copy of the boilerplate ``bower install jam``.
-2. Once you have a copy, move the contents of the Jam directory into the website public directory.
+[![Jam](http://f.cl.ly/items/2y0M0E2Q3a2H0z1N1Y19/pure-banner.png)][Jam]
 
-## Guide
-1. a ``.editorconfig`` file has been included to define and maintain consistent coding styles between different editors and IDEs [editorconfig.org](http://editorconfig.org).
-2. A .htaccess file has been provided, with additions to include into your project if you need them. Remove the underscore in the file name to use this.
-3. Add the ``css`` (assets/css) folder to Codekit or perform your watch action in this directory from Terminal. A config.rb has been provided for the Compass setup (there is no need to change this file as it will be required for other developers setups, only modify if you need to add dependencies, etc).
-	* By default only SASS will be monitored by Codekit, if you want Codekit to manage your JS add the folder to Codekit manually.
-4. The JS directory has a basic structure, if you are using Backbone and/or require JS you may want to replace this setup.
-5. [Compass](http://compass-style.org/) is require for this project, make sure you have this installed if your not using Codekit. Compass provides a wide range of mixins, familiarise yourself with them.
-	
-	The boilerplate has additional mixins included, make sure to have a look at these and familiarise yourself with them. You can find the [documentation for these here](mixin.md)
-6. Jam offers a few components. These have been developed to help reduce browser inconsistency and enable you to develop faster.
-All components are being called into the style.scss file. If you do not require any of the components, simply comment that line out.
+A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.
+[getjam.co](Jam)
 
-	Components:
-	* Alerts
-	* Component animation
-	* Forms
-	* Tables
 
-	
-## SASS structure
-The SASS structure for this boilerplate should remain like this and all assosiated code should be put into its relveant file.
-All imported files should contain an undercore '_' at the start so they do not compile directly.
+**Install with Bower:**
 
-```
-css/
-	styles.css  (This is the compiled CSS)
-	sass/
-		core/
-			_alerts.scss  (Setup for alerts)
-			_component_animation.scss  (Setup for CSS animation)
-			_forms.scss  (Setup for forms)
-			_print.scss  (Print styles)
-			_reset.scss  (Reset CSS, using normalise)
-			_tables.scss  (Setup for tables)
-		mixins/
-			_mixins.scss  (Contains additions mixins)
-			_screen_mixins.scss   (Device screen size mixins)
-		project/
-			_display.scss  (Setup for media queries)
-			_global.scss  (The general styles - Where the bulk if the styles go)
-			_sprites.scss  (Add in your sprite image calls here so they are global)
-			_xbrowser.scss  (Add any x-browser hacks here)
-		variables/
-			_variables.scss  (Variables for the project)
-			_easing.scss  (Easing variables)
-		styles.scss  (This pulls in all the different elements for the project to output as CSS)
+```shell
+$ bower install jam
 ```
 
-## Bower components
-If you used Bower to install Jam, it will also pull in some other packages for your con
 
-* Backbone
-* Underscore
-* Require JS
-* Animate.css
-* WOW JS
+[Jam]: http://getjam.co/
+
+
+Features
+--------
+
+Pure is meant to be a starting point for every website or web app. We take care
+of all the CSS work that every site needs, without making it look cookie-cutter:
+
+* A responsive grid that can be customized to your needs.
+
+* A solid base built on [Normalize.css][] to fix cross-browser compatibility
+  issues.
+
+* Consistently styled buttons that work with `<a>` and `<button>` elements.
+
+* Styles for vertical and horizontal menus, including support for dropdown
+  menus.
+
+* Useful form alignments that look great on all screen sizes.
+
+* Various common table styles.
+
+* An extremely minimalist look that is super-easy to customize.
+
+* Responsive by default, with a non-responsive option.
+
+* Easy customisation.
+
+* Extremely small file size: **4.KB minified + gzip**.
+
+
+[Normalize.css]: http://necolas.github.io/normalize.css/
+
+
+Get Started
+-----------
+
+To get started using Pure, go to the [Pure CSS website][Pure]. The website has
+extensive documentation and examples necessary to get you started using Pure.
+
+You can also install Pure using [Bower][], using the following command:
+
+```shell
+$ bower install jam
+```
+
+[Bower]: http://bower.io/
+
+
+Browser Support and Testing
+---------------------------
+
+Jam is tested and works in:
+
+* IE 8+
+* Latest Stable: Firefox, Chrome, Safari
+* iOS 6.x, 7.x
+* Android 4.x
+
+
+Docs and guidelines
+----------------
+
+Docs and guidelines can be found at [getjam.co][jam-site]
+
+[jam-site]: http://getjam.co
+
+
+License
+-------
+
+This software is free to use under the Yahoo! Inc. BSD license.
+See the [LICENSE file][] for license text and copyright information.
+
+
+[LICENSE file]: https://github.com/zizther/jam/blob/master/LICENSE.md
