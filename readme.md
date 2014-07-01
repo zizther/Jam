@@ -1,7 +1,6 @@
 Jam
 ====
 
-[![Jam](http://f.cl.ly/items/2y0M0E2Q3a2H0z1N1Y19/pure-banner.png)][Jam]
 
 A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.
 [getjam.co](Jam)
