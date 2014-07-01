@@ -27,8 +27,8 @@
     "underscore":"*",
     "jquery":"2.*",
     "modernizr":"~2.8.2",
-    "json3":"~3.3.2"
-    "jquery.cookie":"~1.4.1"
+    "json3":"~3.3.2",
+    "jquery.cookie":"~1.4.1",
     "fastclick":"~1.0.2"
   }
 }
