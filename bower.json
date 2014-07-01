@@ -3,30 +3,31 @@
     "version": "2.0.0",
     "author": "Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",
     "description": "A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.",
-    "keywords": [
+    "keywords": {
 	    "front-end",
 	    "boilerplate"
-	],
+	},
 	"license": "BSD",
 	"repository": {
         "type": "git",
         "url": "git://github.com/zizther/jam.git"
-    }
-    "main": [
+    },
+    "main": {
     	"./assets/css/styles.css"
-    ],
-    "ignore": [
+    },
+    "ignore": {
         "source",
         "spec",
         ".gitignore",
         "bower.json",
         "README.md"
-    ],
+    },
     "dependencies": {
 	    "requirejs": "*",
 	    "backbone": "*",
 	    "underscore": "*",
 	    "jquery": "1.*",
-	    "jquery": "2.*"
+	    "jquery": "2.*",
+	    "modernizr": "~2.8.2"
 	}
 }
