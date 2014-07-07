@@ -1,10 +1,15 @@
 @media print {
 	* {
+	    -ms-filter: none !important;
 		background: transparent !important;
-		color: black !important;
-		text-shadow: none !important;
+		box-shadow: none !important;
+		color: #000 !important;
 		filter: none !important;
-		-ms-filter: none !important;
+		text-shadow: none !important;
+	}
+
+    @page  {
+		margin: 0.5cm;
 	}
 
 	a,
@@ -45,10 +50,6 @@
 		max-width: 100% !important;
 	}
 
-	@page  {
-		margin: 0.5cm;
-	}
-
 	p,
 	h2,
 	h3 {
@@ -60,4 +61,26 @@
 	h3 {
 		page-break-after: avoid;
 	}
+	
+	select {
+        background: #fff !important;
+    }
+    
+    .table td,
+    .table th {
+        background-color: #fff !important;
+    }
+    
+    .label {
+        border: 1px solid #000;
+    }
+    
+    .table {
+        border-collapse: collapse !important;
+    }
+    
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #ddd !important;
+    }
 }

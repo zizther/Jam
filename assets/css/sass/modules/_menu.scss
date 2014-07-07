@@ -1,0 +1,201 @@
+/* -------------------------------------------------------------- 
+	Menu
+-------------------------------------------------------------- */
+.menu {
+    @include font-rem(1.6);
+    background: #dedede;
+    
+    > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        
+        &:focus {
+            outline: 0;
+        }
+    }
+    li {
+        position: relative;
+        
+        a {
+            padding: 5px 20px;
+            
+            &:hover,
+            &:focus {
+                background: #eee;
+            }
+        }
+        
+        // Selected state
+        &.selected {
+            a {
+                color: #000;
+            }
+        }
+        
+        // Disabled state
+        &.menu_disabled {
+            > a {
+                background-image: none;
+                border-color: transparent;
+                color: #bfbfbf;
+                cursor: default;
+            }
+            a {
+                &:hover,
+                &:focus {
+                    background: #fff;
+                    color: #bfbfbf;
+                }
+            }
+        }
+    }
+    a,
+    .menu_heading {
+        @include transition(all 150ms ease-out);
+        display: block;
+        color: inherit;
+        line-height: 1.5em;
+        padding: 5px 20px;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    
+    a {
+        border: 1px solid transparent;
+        border-left: none;
+        border-right: none;
+        color: #777;
+    }
+    .menu_heading {
+        @include font-rem(2);
+        border-bottom-color: #dfdfdf;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        color: #565d64;
+        margin-top: 0.5em;
+        text-transform: uppercase;   
+    }
+    
+    /*** Horizontal menu ***/
+    &.menu_horizontal {
+        border: none;
+        
+        > ul {
+            display: inline-block;
+            vertical-align: middle;
+            zoom: 1;
+        }
+        
+        // Initial menus should be inline-block so that they are horizontal
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            zoom: 1;
+            
+            // Submenus should still be display: block;
+            li {
+                display: block;
+                
+                &.pure-menu-separator {
+                	height: 1px;
+                	margin: 7px 2px;
+                	width: auto;
+                }
+            }
+            
+            &.pure-menu-separator {
+            	height: 50%;
+            	margin: 0 7px;
+            	width: 1px;
+            }
+        }
+        > .menu_heading {
+            border: none;
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+            zoom: 1;
+        }
+    }// END .menu_horizontal
+    
+    &.menu_fixed {
+        border: none;
+        border-bottom: 1px solid #b7b7b7;
+    }
+}// END .menu
+
+
+// Hidden menu
+.menu_hidden {
+    display: none;
+}
+
+// Fixed menu
+.menu_fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+// Menu separator
+.menu_separator {
+    @include font-rem(0);
+    background-color: #dfdfdf;
+    display: block;
+    height: 1px;
+    margin: 7px 2px;
+    overflow: hidden;
+}
+
+// Paginator
+.paginator {
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */  
+    
+    li {
+        display: inline-block;
+        letter-spacing: normal;
+        text-rendering: auto;
+        vertical-align: top;
+        word-spacing: normal;
+        zoom: 1;
+    }
+    .button {
+        border-radius: 0;
+        height: 1.1em;
+        padding: 0.8em 1.4em;
+        vertical-align: top;
+    }
+    .prev,
+    .next {
+        color: #c0c1c3;
+        text-shadow: 0 -1px 0 rgba(0,0,0, 0.45);
+    }
+    .prev {
+        border-radius: 2px 0 0 2px;
+    }
+    .next {
+        border-radius: 0 2px 2px 0;
+    }
+}
+.paginator {
+    word-spacing: -0.43em;
+}
+
+
+@media (max-width: 480px) {
+
+    .menu {
+        .menu_horizontal {
+            width: 100%;
+        }
+    }
+    
+}// END @media (max-width: 480px)

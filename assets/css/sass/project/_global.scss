@@ -1,10 +1,8 @@
 /* -------------------------------------------------------------- 
-	General Layout
+	Extend Base
 -------------------------------------------------------------- */
 body {
-	font-family: $font-helvetica;
-	line-height: $line-height-base;
-	//-webkit-font-smoothing: antialiased; // Use here if needed otherwise use of specific elements
+    //-webkit-font-smoothing: antialiased; // Use here if needed otherwise use of specific elements
 }
 
 // Headings
@@ -15,35 +13,23 @@ h4,
 h5,
 h6 {
     -webkit-font-smoothing: auto;
-	color: #252525;
-	line-height: 1.1;
-}
-
-h1 {
-}
-h2{
-}
-h3 {
-}
-h4 {
-}
-h5 {
-}
-h6 {
+    line-height: 1.1;
 }
 
 // Paragraphs
 p {
-	color: #252525;
+    @include font-rem(1.4);
 	margin: 0 0 16px;
+}
+ul,
+ol {
+    @include font-rem(1.8);
+	margin: 0 0 16px;  
 }
 
 // Links
 a {
-
-	&:hover {
-		
-	}
+    
 }
 
 // Text highlight - Keep indented so SASS compilers don't mess this up.
@@ -70,3 +56,14 @@ a {
 %clearfix {
 	@include pie-clearfix;
 }
+
+
+/* -------------------------------------------------------------- 
+	Global Layout
+-------------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------------- 
+	Global Elements
+-------------------------------------------------------------- */

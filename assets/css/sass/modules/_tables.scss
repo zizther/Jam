@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------- 
-	Tables
+	Table
 -------------------------------------------------------------- */
 table {
     max-width: 100%;
@@ -12,7 +12,7 @@ th {
 
 // Baseline styles
 .table {
-	margin-bottom: 16px;
+	margin-bottom: 20px;
     width: 100%;
     
     // Cells
@@ -161,3 +161,59 @@ table {
         background-color: $table-bg-active;
     }
 }
+
+
+// Responsive tables
+@media (max-width: 767px) {
+
+    .table-responsive {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid $table-border-color;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        width: 100%;
+        
+        > .table {
+            margin-bottom: 0;
+            
+            > thead,
+            > tbody,
+            > tfoot {
+                > tr {
+                    > th,
+                    > td {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+        > .table-bordered {
+            border: 0;
+            
+            > thead,
+            > tbody,
+            > tfoot {
+                > tr {
+                    > th:first-child,
+                    > td:first-child {
+                        border-left: 0;
+                    }
+                    > th:last-child,
+                    > td:last-child {
+                        border-right: 0;
+                    }
+                }
+                &:last-child {
+                    > th,
+                    > td {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+    }
+    
+}// END @media (max-width: 767px)

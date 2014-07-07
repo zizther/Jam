@@ -7,54 +7,42 @@
 	text-rendering: optimizeLegibility;
 }
 html {
-	font-size: 62.5%;
+	font-size: 62.5%; // Used to make the math easier for rem font sizes. Now 16px = 1.6rem
 }
 
-/*** Emphasis & misc ***/
-small {
-	font-size: 85%;
-}
-
-cite {
-	font-style: normal;
-}
 
 // Outline
 a:hover,
 a:active,
 a:focus,
+button:hover,
+button:active,
+button:focus,
+input::-moz-focus-inner,
 object,
-embed,
-input::-moz-focus-inner {
+embed {
 	outline: 0 !important;
 }
 :focus {
 	outline: -webkit-focus-ring-color auto 0; // Stop Chrome's horrid blue outline
 }
 
-// Contextual emphasis
-.text_warning {
-	color: $colour-warning;
-}
-.text_error {
-	color: $colour-error;
-}
-.text_valid {
-	color: $colour-valid;
-}
-.text_info {
-	color: $colour-info;
+/*** Opera fix ***/
+.opera-only :-o-prefocus {
+    word-spacing: -0.43em;
 }
 
-// Alignment
-.text_left {
-	text-align: left;
+// Emphasis
+small {
+	@include font-rem(1.3);
 }
-.text_right {
-	text-align: right;
-}
-.text_center {
-	text-align: center;
+
+// HR
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 // Lists
@@ -67,6 +55,23 @@ ol {
     ol {
     	margin-bottom: 0;
     }
+}
+
+// Form
+button,
+input,
+textarea {
+	-webkit-appearance: none; // Remove iOS stylings
+}
+button,
+select,
+input,
+textarea {
+    background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
+	border: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.1;
 }
 
 // Blockquotes
@@ -112,9 +117,51 @@ blockquote {
     }
 }// END blockquote
 
-/*** Images ***/
+cite {
+	font-style: normal;
+}
+
+// Images
 img {
     vertical-align: middle;
+}
+
+// Floats
+.pull_left {
+    float: left;
+}
+.pull_right {
+    float: right;
+}
+
+// Contextual emphasis
+.text_warning {
+	color: $colour-warning;
+}
+.text_error {
+	color: $colour-error;
+}
+.text_valid {
+	color: $colour-valid;
+}
+.text_info {
+	color: $colour-info;
+}
+
+// Alignment
+.text_left {
+	text-align: left;
+}
+.text_right {
+	text-align: right;
+}
+.text_center {
+	text-align: center;
+}
+
+// Hide text
+.text_hide {
+    @include hide-text(); // Hide text from an element
 }
 
 // Responsive images (ensure images don't scale beyond their parents)
@@ -125,19 +172,6 @@ img {
 // Perfect circle
 .img_circle {
     @include border-radius(50%); // set radius in percents
-}
-
-// Form
-input,
-button,
-select,
-textarea {
-	-webkit-appearance: none; // Remove iOS stylings
-	background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
-	border: none;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: 1.1;
 }
 
 // Only display content to screen readers
@@ -152,18 +186,33 @@ textarea {
     position: absolute;
 }
 
-// Floats
-.pull_right {
-  float: right !important;
-}
-.pull_left {
-  float: left !important;
-}
-
 // Toggling content
 .invisible {
     visibility: hidden;
 }
-.text_hide {
-    @include hide-text(); // Hide text from an element
+
+// Media block
+// See: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+/*
+    Example use:
+    
+    <div class="mb">
+        <div class="mb_left">
+        </div>
+
+        <div class="mb_right">
+        </div>
+    </div>
+*/
+.mb,
+.mb_right {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+.mb {
+    .mb_left {
+        float: left;
+        margin-right: 10px;
+    }
 }

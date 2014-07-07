@@ -13,17 +13,18 @@
 @import 'core/reset';
 
 // Components
-@import 'components/base';
-@import 'components/grid';
-@import 'components/animation';
-@import 'components/tables';
-@import 'components/forms';
-@import 'components/alerts';
+@import 'modules/base';
+@import 'modules/buttons';
+@import 'modules/forms';
+@import 'modules/grid';
+@import 'modules/menu';
+@import 'modules/tables';
 
 // Project styles
 @import 'project/fonts';
-@import 'project/icons';
 @import 'project/sprites';
+@import 'project/icons';
+@import 'project/animation';
 @import 'project/global';
 @import 'project/xbrowser';
 @import 'project/display';

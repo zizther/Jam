@@ -1,0 +1,52 @@
+/* -------------------------------------------------------------- 
+	Buttons
+-------------------------------------------------------------- */
+.button {
+    @include transition(background 150ms ease-out);
+    @include user-select(none);
+    -webkit-user-drag: none;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 2px;
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    white-space: nowrap;
+    zoom: 1;
+    
+    // Firefox: Get rid of the inner focus border
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}// END .button
+
+// Disabled state
+.button[disabled],
+.button_disabled,
+.button_disabled:hover,
+.button_disabled:focus,
+.button_disabled:active {
+    -khtml-opacity: .4;
+    -moz-opacity: .4;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    opacity: .4;
+    
+}
+
+// Hidden
+.button_hidden {
+    display: none;
+}

@@ -1,0 +1,48 @@
+/* -------------------------------------------------------------- 
+	Grid
+	
+	Example usage:
+    
+    <section class="grid">
+        <div class="row">
+            <div class="col_3"></div>
+            <div class="col_3"></div>
+            <div class="col_6"></div>
+        </div>
+    </section>
+-------------------------------------------------------------- */
+.grid {
+    margin: 0 auto;
+    width: 100%;
+    
+    @for $i from 1 through 12 {
+        .col_#{$i} { 
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+.grid,
+.row {
+    @include pie-clearfix;
+}
+  
+[class*='col_'] {
+    float: left;
+    min-height: 1px;
+    padding: 1em;
+    width: 100%; 
+}   
+
+@media #{$breakpoint-medium} {
+    .grid {      
+        width: 95%;
+        max-width: $grid-max-width;
+        
+        @for $i from 1 through $grid-columns {      
+            .col_#{$i} {         
+                width: 100% / $grid-columns * $i;   
+            }           
+        }      
+    } 
+}

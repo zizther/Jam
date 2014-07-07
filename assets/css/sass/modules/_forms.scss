@@ -1,17 +1,21 @@
-// Restyle and baseline non-control form elements.
+/* -------------------------------------------------------------- 
+	Forms
+-------------------------------------------------------------- */
 fieldset {
     border: 0;
     margin: 0;
+    min-width: 0; // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets, so we reset that to ensure it behaves more like a standard block element. See https://github.com/twbs/bootstrap/issues/12359.
     padding: 0;
 }
 
 legend {
+    @include font-rem(2.1);
     border: 0;
-    color: #252525;
+    border-bottom: 1px solid #e5e5e5;
+    color: #333;
     display: block;
-    font-size: 22px;
     line-height: inherit;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     padding: 0;
     width: 100%;
 }
@@ -20,11 +24,13 @@ label {
     display: inline-block;
     font-weight: 700;
     margin-bottom: 5px;
+    max-width: 100%;  // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 }
 
 // Override content-box in Normalize (* isn't specific enough)
 input[type="search"] {
     @include box-sizing(border-box);
+    -webkit-appearance: none;
 }
 
 // Position radios and checkboxes better
@@ -38,6 +44,15 @@ input[type="checkbox"] {
 // Set the height of select and file controls to match text inputs
 input[type="file"] {
     display: block;
+}
+
+// Adjust output element
+output {
+    @include font-rem(1.4);
+    display: block;
+    padding-top: 7px;
+    line-height: $line-height-base;
+    color: #333;
 }
 
 // Make multiple select elements height not fixed
@@ -63,9 +78,110 @@ input[type="number"] {
     }
 }
 
+input,
+select,
+textarea {
+    @include font-rem(1.4);
+    @include transition(border 150ms ease-out);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #555;
+    display: block;
+    height: 34px;
+    line-height: $line-height-base;
+    padding: 6px 12px;
+    width: 100%;
+    
+    &:focus {
+        border-color: #66afe9;
+        outline: 0;
+    }
+    &::-moz-placeholder {
+        color: #999;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder,
+    &::-webkit-input-placeholder {
+        color: #999;
+    }
+    
+    &[disabled],
+    &[readonly] {
+        background-color: #eee;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+}
 
-// Form groups
-//
+
+/*
+    Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+    since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+input:not([type]):focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+fieldset[disabled]  {
+    input,
+    select,
+    textarea {
+        background-color: #eee;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+}
+
+/*** Native invalid styles ***/
+input,
+textarea,
+select {
+    &:focus {
+        &:invalid {
+            border-color: #ee5f5b;
+            color: #b94a48;
+            
+            &:focus {
+                border-color: #e9322d;
+            }
+        }
+    }
+}
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+    &:focus {
+        &:invalid {           
+            &:focus {
+                outline-color: #e9322d;
+            }
+        }
+    }
+}
+
+
+/*** Special styles for iOS temporal inputs ***/
+
+// In Mobile Safari, setting `display: block` on temporal inputs causes the
+// text within the input to become vertically misaligned.
+// As a workaround, we set a pixel line-height that matches the
+// given height of the input. Since this fucks up everything else, we have to
+// appropriately reset it for Internet Explorer and the size variations.
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    line-height: 34px;
+}
+
+
+
+/*** Form groups ***/
+
 // Designed to help with the organization and spacing of vertical forms. For
 // horizontal forms, use the predefined grid classes.
 .form_group {
@@ -73,8 +189,8 @@ input[type="number"] {
 }
 
 
-// Checkboxes and radios
-//
+/*** Checkboxes and radios ***/
+
 // Indent the labels to position radios/checkboxes as hanging controls.
 .radio,
 .checkbox {
@@ -104,7 +220,8 @@ input[type="number"] {
     margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
 }
 
-// Radios and checkboxes on same line
+
+/*** Radios and checkboxes on same line ***/
 .radio_inline,
 .checkbox_inline {
     cursor: pointer;
@@ -120,8 +237,9 @@ input[type="number"] {
     margin-top: 0;
 }
 
-// Apply same disabled cursor tweak as for inputs
-//
+
+/*** Apply same disabled cursor tweak as for inputs ***/
+
 // Note: Neither radios nor checkboxes can be readonly.
 input[type="radio"],
 input[type="checkbox"],
@@ -136,8 +254,8 @@ input[type="checkbox"],
 }
 
 
-// Static form control text
-//
+/*** Static form control text ***/
+
 // Apply class to a `p` element to make any string of text align with labels in
 // a horizontal form layout.
 .form_control_static {
@@ -146,8 +264,8 @@ input[type="checkbox"],
 }
 
 
-// Help text
-//
+/*** Help text ***/
+
 // Apply to any element you wish to create light text for placement immediately
 // below a form control. Use for general help, formatting, or instructional text.
 .help_block {
@@ -158,8 +276,8 @@ input[type="checkbox"],
 }
 
 
-// Horizontal forms
-//
+/*** Horizontal forms ***/
+
 // Horizontal forms are built on grid classes and allow you to create forms with
 // labels on the left and inputs on the right.
 .form_horizontal {
