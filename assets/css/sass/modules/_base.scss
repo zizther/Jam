@@ -58,8 +58,21 @@ ol {
 }
 
 // Form
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
 button,
-input,
 textarea {
 	-webkit-appearance: none; // Remove iOS stylings
 }

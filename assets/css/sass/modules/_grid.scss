@@ -11,28 +11,29 @@
         </div>
     </section>
 -------------------------------------------------------------- */
+.grid,
+.row {
+    @include pie-clearfix;
+}
+
 .grid {
     margin: 0 auto;
     width: 100%;
+    
+    [class^="cols_"], 
+    [class*=" cols_"] {
+        float: left;
+        min-height: 1px;
+        padding: 1em;
+        width: 100%; 
+    } 
     
     @for $i from 1 through 12 {
         .col_#{$i} { 
             width: 100% / 12 * $i;
         }
     }
-}
-
-.grid,
-.row {
-    @include pie-clearfix;
-}
-  
-[class*='col_'] {
-    float: left;
-    min-height: 1px;
-    padding: 1em;
-    width: 100%; 
-}   
+}  
 
 @media #{$breakpoint-medium} {
     .grid {      

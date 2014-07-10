@@ -78,16 +78,27 @@ input[type="number"] {
     }
 }
 
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
 select,
 textarea {
     @include font-rem(1.4);
     @include transition(border 150ms ease-out);
     background-color: #fff;
     background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    color: #555;
+    color: #404040;
     display: block;
     height: 34px;
     line-height: $line-height-base;
@@ -95,7 +106,6 @@ textarea {
     width: 100%;
     
     &:focus {
-        border-color: #66afe9;
         outline: 0;
     }
     &::-moz-placeholder {
@@ -136,7 +146,20 @@ fieldset[disabled]  {
 }
 
 /*** Native invalid styles ***/
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
 textarea,
 select {
     &:focus {
@@ -256,8 +279,7 @@ input[type="checkbox"],
 
 /*** Static form control text ***/
 
-// Apply class to a `p` element to make any string of text align with labels in
-// a horizontal form layout.
+// Apply class to a `p` element to make any string of text align with labels in a horizontal form layout.
 .form_control_static {
     margin-bottom: 0; // Remove default margin from `p`
     padding-top: 17px;
@@ -266,8 +288,7 @@ input[type="checkbox"],
 
 /*** Help text ***/
 
-// Apply to any element you wish to create light text for placement immediately
-// below a form control. Use for general help, formatting, or instructional text.
+// Apply to any element you wish to create light text for placement immediately below a form control. Use for general help, formatting, or instructional text.
 .help_block {
 	color: lighten(#252525, 25%); // lighten the text some for contrast
     display: block; // account for any element using help-block
@@ -278,8 +299,7 @@ input[type="checkbox"],
 
 /*** Horizontal forms ***/
 
-// Horizontal forms are built on grid classes and allow you to create forms with
-// labels on the left and inputs on the right.
+// Horizontal forms are built on grid classes and allow you to create forms with labels on the left and inputs on the right.
 .form_horizontal {
     // Consistent vertical alignment of labels, radios, and checkboxes
     .control_label,
