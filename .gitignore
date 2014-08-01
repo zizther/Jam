@@ -1,4 +1,3 @@
-# Numerous always-ignore extensions
 *.diff
 *.err
 *.orig
@@ -11,8 +10,6 @@
 ._*
 .~lock.*
 .buildpath
-
-# OS or Editor folders
 .DS_Store
 Thumbs.db
 .cache
@@ -21,26 +18,17 @@ Thumbs.db
 .tmproj
 *.esproj
 nbproject
-
-# Dreamweaver added files
 _notes
 dwsync.xml
-
-# Komodo
 *.komodoproject
 .komodotools
-
-# Folders to ignore
 .hg
 .svn
 .CVS
 intermediate
 publish
 .idea
-
-# SASS Cache
 *.sass-cache
-
-# Project Files
 composer.lock
 vendor/*
+assets/css/compass_app_log.txt
