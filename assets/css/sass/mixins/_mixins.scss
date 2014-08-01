@@ -134,22 +134,17 @@
 // - Height: The height of the element
 //
 //============================================================
-@mixin size($width, $height) {
-	height: $height;
-    width: $width;
-}
-
-
-//============================================================
-//
-// Square shortcut
-//
-// Parameters:
-// - Size: The height and width of the element. Only input a single value
-//
-//============================================================
-@mixin square($size) {
-    @include size($size, $size);
+@mixin size($width, $height: '') {
+    
+    @if( $height == '' ){
+        height: $width;
+        width: $width;
+    }
+    @else {
+        height: $height;
+        width: $width;
+    }
+	
 }
 
 
@@ -179,6 +174,7 @@
     border: 0;
     color: transparent;
     font: $font;
+    text-indent: -9999em;
     text-shadow: none;
 }
 
