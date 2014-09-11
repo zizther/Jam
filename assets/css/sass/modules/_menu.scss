@@ -54,12 +54,12 @@
     }
     a,
     .menu_heading {
-        @include transition(all 150ms ease-out);
         display: block;
         color: inherit;
         line-height: 1.5em;
         padding: 5px 20px;
         text-decoration: none;
+        transition: all 150ms ease-out;
         white-space: nowrap;
     }
     

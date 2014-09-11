@@ -13,7 +13,7 @@
 -------------------------------------------------------------- */
 .grid,
 .row {
-    @include pie-clearfix;
+    @include clearfix;
 }
 
 .grid {
@@ -34,16 +34,3 @@
         }
     }
 }  
-
-@media #{$breakpoint-medium} {
-    .grid {      
-        width: 95%;
-        max-width: $grid-max-width;
-        
-        @for $i from 1 through $grid-columns {      
-            .col_#{$i} {         
-                width: 100% / $grid-columns * $i;   
-            }           
-        }      
-    } 
-}

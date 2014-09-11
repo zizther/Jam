@@ -2,8 +2,8 @@
 	Global
 -------------------------------------------------------------- */
 * {
-	@include box-sizing(border-box); // Only suitable for IE8+
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	box-sizing: border-box; // Only suitable for IE8+
 	text-rendering: optimizeLegibility;
 }
 html {
@@ -184,7 +184,7 @@ img {
 
 // Perfect circle
 .img_circle {
-    @include border-radius(50%); // set radius in percents
+    border-radius: 50%; // set radius in percents
 }
 
 // Only display content to screen readers

@@ -1,7 +1,6 @@
 Jam
 ====
 
-
 A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.
 [getjam.co](Jam)
 
@@ -42,7 +41,7 @@ of all the CSS work that every site needs, without making it look cookie-cutter:
 
 * Easy customisation.
 
-* Extremely small file size: **4.KB minified + gzip**.
+* Extremely small file size: **4.5KB minified + gzip**.
 
 
 [Normalize.css]: http://necolas.github.io/normalize.css/

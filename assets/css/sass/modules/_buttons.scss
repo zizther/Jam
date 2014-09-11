@@ -2,7 +2,6 @@
 	Buttons
 -------------------------------------------------------------- */
 .button {
-    @include transition(background 150ms ease-out);
     @include user-select(none);
     -webkit-user-drag: none;
     background-color: #e6e6e6;
@@ -17,6 +16,7 @@
     padding: 0.5em 1em;
     text-align: center;
     text-decoration: none;
+    transition: background 150ms ease-out;
     vertical-align: baseline;
     white-space: nowrap;
     zoom: 1;
@@ -34,12 +34,12 @@
 .button_disabled:hover,
 .button_disabled:focus,
 .button_disabled:active {
-    @include opacity(.4);
     background-image: none;
     border: none;
     box-shadow: none;
     cursor: not-allowed;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    opacity: .4;
 }
 
 // Hidden

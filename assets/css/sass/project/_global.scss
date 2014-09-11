@@ -3,6 +3,7 @@
 -------------------------------------------------------------- */
 body {
     //-webkit-font-smoothing: antialiased; // Use here if needed otherwise use of specific elements
+    font-family: $font-helvetica;
 }
 
 // Headings
@@ -13,12 +14,17 @@ h4,
 h5,
 h6 {
     -webkit-font-smoothing: auto;
-    line-height: 1.1;
+    line-height: $line-height-base;
+}
+
+h2 {
+    @include font-rem(2.8);
+    margin: 0 0 14px;
 }
 
 // Paragraphs
 p {
-    @include font-rem(1.4);
+    @include font-rem(1.8);
 	margin: 0 0 16px;
 }
 ul,
@@ -54,7 +60,7 @@ a {
 **/
 .clearfix,
 %clearfix {
-	@include pie-clearfix;
+	@include clearfix;
 }
 
 
