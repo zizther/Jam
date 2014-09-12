@@ -383,13 +383,40 @@
 //
 // Placeholder
 //
+// Usage
+//
+// input {
+//     @include placeholder {
+//         color: #f00
+//     }
+//     color: #000
+// }
+//
 //============================================================
-@mixin placeholder(){
-    ::-webkit-input-placeholder,
-    ::-moz-placeholder,
-    :-ms-input-placeholder {  
-       @content  
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}  
+}
+
+
+//============================================================
+//
+// Opacity - With IE8 fallback
+//
+// Paramters:
+// - value: 0 - 1
+//
+//============================================================
+@mixin opacity($opacity){
+    @if $opacity == 1 {
+        filter: unquote("progid:DXImageTransform.Microsoft.Alpha(enabled=false)");
     }
+    @else {
+        filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+    }
+    opacity: $opacity;
 }
 
 
