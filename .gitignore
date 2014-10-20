@@ -32,3 +32,4 @@ publish
 composer.lock
 vendor/*
 assets/css/compass_app_log.txt
+node_modules
