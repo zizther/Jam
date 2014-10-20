@@ -78,7 +78,57 @@
 
 //============================================================
 //
-// SVG Background
+// Image Sprite
+//
+// Usage:
+// 1. Create two folders in the graphics directory (for example 'icons' and 'icons-2x').
+// 2. Create sprite images for pixel ratio 1 screens and put them in the first folder.
+// 3. Create sprite images for pixel ratio 2 screens and put them in the second folder named with '-2x', use the same filenames (without '@2x' or '-2x').
+//
+// Parameters:
+// - File name of the image
+// - Variable for the pixel ratio 1 sprite
+// - Variable for the pixel ratio 2 sprite (optional)
+//
+// Example:
+// $icons: sprite-map("icons/*.png", $layout: smart);
+// $icons-2x: sprite-map("icons-2x/*.png", $layout: smart);
+//
+// .icon_1 {
+//     @include image-sprite('icon_1', $icons, $icons-2x);
+// }
+//
+//
+//============================================================
+@mixin image-sprite($image, $sprite-map, $sprite-map-2x: '') {
+    background-image: sprite-url($sprite-map);
+    background-position: sprite-position($sprite-map, $image);
+    background-repeat: no-repeat;
+    display: block;
+    height: image-height(sprite-file($sprite-map, $image));
+    overflow: hidden;
+    width: image-width(sprite-file($sprite-map, $image));
+
+    @if( $sprite-map-2x != '' ){
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        	only screen and (-moz-min-device-pixel-ratio: 2),
+        	only screen and (-o-min-device-pixel-ratio: 2/1),
+        	only screen and (min-device-pixel-ratio: 2),
+        	only screen and (min-resolution: 192dpi),
+        	only screen and (min-resolution: 2dppx) {
+                background-image: sprite-url($sprite-map-2x);
+                background-position: round(nth(sprite-position($sprite-map-2x, $image), 1) / 2) round(nth(sprite-position($sprite-map-2x, $image), 2) / 2);
+                background-size: (image-width(sprite-path($sprite-map-2x)) / 2) (image-height(sprite-path($sprite-map-2x)) / 2);
+                height: image-height(sprite-file($sprite-map-2x, $image)) / 2;
+                width: image-width(sprite-file($sprite-map-2x, $image)) / 2;
+        }
+    }
+}
+
+
+//============================================================
+//
+// SVG Image
 //
 // The mixin uses a @2x.png retina filename.
 // This mixin depends on Modernizr to test for svg.
@@ -91,7 +141,7 @@
 // - Extension: The default is .png, only add this parameter is if is different
 //
 //============================================================
-@mixin svg-background($filepath, $width, $height, $extension: png){
+@mixin svg-image($filepath, $width, $height, $extension: png){
     background-image: url($filepath + '.svg');
     background-size: $width $height;
     
@@ -109,6 +159,23 @@
     		}
     	}
     }
+}
+
+
+//============================================================
+//
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+//
+// Parameters:
+// - Display: the display type. Defaults to block
+//
+//============================================================
+@mixin img-responsive($display: block) {
+    display: $display;
+    height: auto; // Scale the height according to the width, otherwise you get stretching
+    max-width: 100%; // Set a maximum relative to the parent
 }
 
 
@@ -225,23 +292,6 @@
 	
 	hyphens: $mode;
 	word-wrap: break-word;
-}
-
-
-//============================================================
-//
-// Responsive image
-//
-// Keep images from scaling beyond the width of their parents.
-//
-// Parameters:
-// - Display: the display type. Defaults to block
-//
-//============================================================
-@mixin img-responsive($display: block) {
-    display: $display;
-    height: auto; // Scale the height according to the width, otherwise you get stretching
-    max-width: 100%; // Set a maximum relative to the parent
 }
 
 
