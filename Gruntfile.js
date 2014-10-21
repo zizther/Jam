@@ -1,40 +1,10 @@
 var _ = require('lodash');
 
-var modernizrConfig = {
-    // @see https://github.com/Modernizr/grunt-modernizr#config-options
-    dist: {
-        devFile : 'public/assets/js/src/modernizr.js',
-        outputFile : 'public/assets/js/dist/modernizr.js',
-        extra : {
-            shiv : true,
-            printshiv : false,
-            load : true,
-            mq : false,
-            cssclasses : true
-        },
-        extensibility : {
-            addtest : false,
-            prefixed : false,
-            teststyles : false,
-            testprops : false,
-            testallprops : false,
-            hasevents : false,
-            prefixes : false,
-            domprefixes : false
-        },
-        uglify : true,
-        tests : [],
-        parseFiles : true,
-        matchCommunityTests : false,
-        customTests : []
-    }
-};
-
 var jamConfig = {
     compass: {
         dist: {
             options: {
-                basePath: 'public/assets/',
+                basePath: 'assets/',
                 httpPath: '../',
                 environment: 'production',
                 sassDir: 'css/sass',
@@ -47,7 +17,7 @@ var jamConfig = {
         },
         dev: {
             options: {
-                basePath: 'public/assets/',
+                basePath: 'assets/',
                 httpPath: '../',
                 sassDir: 'css/sass',
                 imagesDir: 'graphics',
@@ -62,8 +32,8 @@ var jamConfig = {
         multiple_files: {
             expand: true,
             flatten: true,
-            src: 'public/assets/css/*.css',
-            dest: 'public/assets/css/'
+            src: 'assets/css/*.css',
+            dest: 'assets/css/'
         }
     },
     watch: {
@@ -72,11 +42,11 @@ var jamConfig = {
                 browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 8', 'ie 9'],
                 livereload: true
             },
-            files: ['public/assets/css/*.css'],
+            files: ['assets/css/*.css'],
             tasks: ['autoprefixer']
         },
         js: {
-            files: ['public/assets/js/*.js'],
+            files: ['assets/js/*.js'],
             options: {
                 livereload: true,
             }
@@ -86,9 +56,9 @@ var jamConfig = {
         dynamic: {
             files: [{
                 expand: true,
-                cwd: 'public/assets/graphics/',
+                cwd: 'assets/graphics/',
                 src: ['**/*.{png,jpg,gif}'],
-                dest: 'public/assets/graphics/dist' 
+                dest: 'assets/graphics/dist' 
             }]
         }
     },
@@ -106,15 +76,12 @@ var jamConfig = {
 };
 
 var ProjectTasks = function (grunt) {
-    var npmTasks = ['grunt-modernizr'],
+    var npmTasks = [],
         devTasks = [],
-        buildTasks = ['modernizr'],
+        buildTasks = [],
         config = {
             pkg: grunt.file.readJSON('package.json'),
-            globalConfig: {
-                public_folder: 'public'
-            },
-            modernizr: modernizrConfig
+            globalConfig: {}
         };
     
     require('time-grunt')(grunt);
@@ -140,18 +107,6 @@ var ProjectTasks = function (grunt) {
     // Concurrent: multiple tasks at the same time
     devTasks.push('concurrent:dev');
     buildTasks.push('concurrent:build');
-
-
-
-
-    var requireJsPkgs = [
-        'grunt-contrib-concat',
-        'grunt-contrib-uglify',
-        'grunt-bower-requirejs',
-        'grunt-contrib-requirejs'
-    ];
-
-    npmTasks = npmTasks.concat(requireJsPkgs);
 
     
     // Load packages
