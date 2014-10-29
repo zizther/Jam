@@ -222,12 +222,6 @@ var ProjectTasks = function (grunt) {
     buildTasks.push('concurrent:build');
 
 
-    // Concatenate, uglify
-    buildTasks.push('requirejs:build'); 
-    // To be used with post-install script from Bower to update require.js config 
-    grunt.registerTask('bower-requirejs', ['bower']);
-
-
     defaultTasks.push('shell:start');
 
     // Do the modernizr task
