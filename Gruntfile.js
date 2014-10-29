@@ -212,8 +212,7 @@ var ProjectTasks = function (grunt) {
         'grunt-contrib-imagemin',
         'grunt-svgmin',
         'grunt-contrib-compass',
-        'grunt-autoprefixer',
-        'grunt-browser-sync'
+        'grunt-autoprefixer'
     ];
 
     npmTasks = npmTasks.concat(jamPkgs);
