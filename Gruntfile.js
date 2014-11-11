@@ -69,7 +69,7 @@ var shellConfig = {
                 'echo Here is a list of the tasks avaliable to you:',
                 'echo',
                 'echo 1. grunt - This will perform the watch task and deal with the files as you develop.',
-                'echo 2. grunt build - This is for production. It will concatinate, optimise and do other cool shit for you.',
+                'echo 2. grunt build - This is for production. It will concatinate, optimise and do other cool stuff for you.',
                 'echo 3. grunt info - This will list all the avaliable options to you',
                 'echo',
                 'echo --------------------------------------------------',
