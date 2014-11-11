@@ -28,10 +28,10 @@
 // Find my device pixel ratio. Check out http://bjango.com/articles/min-device-pixel-ratio/
 //
 // Parameters:
-// - Ratio: The device screen ratio. Default value set to 1.3 to target Google Nexus 7.
+// @param [float] $ratio: The device screen ratio (Default value set to 2. Be aware some devices are 1.3)
 //
 //============================================================
-@mixin hidpi($ratio: 1.3) {
+@mixin hidpi($ratio: 2) {
 	@media only screen and (-webkit-min-device-pixel-ratio: $ratio),
     only screen and (min--moz-device-pixel-ratio: $ratio),
     only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
@@ -50,10 +50,10 @@
 // E.g. logo.png and logo@2x.png
 //
 // Parameters:
-// - File path: The path to the file without the file extension. Place this in quotes ""
-// - Width: The width of the image
-// - Height: The height of the image
-// - Extension: The default is .png, only add this parameter is if is different
+// @param [string] $filepath: The path to the file without the file extension. (Place this in quotes "")
+// @param [string] $width: The width of the image (include px)
+// @param [string] $height: The height of the image (include px)
+// @param [string] $extension: The extension type of the image. (The default is png. Don't include the '.')
 //
 //============================================================
 @mixin retina-image($filepath, $width, $height, $extension: png) {
@@ -86,9 +86,9 @@
 // 3. Create sprite images for pixel ratio 2 screens and put them in the second folder named with '-2x', use the same filenames (without '@2x' or '-2x').
 //
 // Parameters:
-// - File name of the image
-// - Variable for the pixel ratio 1 sprite
-// - Variable for the pixel ratio 2 sprite (optional)
+// @param [string] $image: File name of the image. (Place this in quotes "")
+// @param [string] Variable for the pixel ratio 1 sprite
+// @param [string] $sprite-map-2x: Variable for the pixel ratio 2 sprite (optional)
 //
 // Example:
 // $icons: sprite-map("icons/*.png", $layout: smart);
@@ -100,7 +100,7 @@
 //
 //
 //============================================================
-@mixin image-sprite($image, $sprite-map, $sprite-map-2x: '') {
+@mixin image-sprite($image, $sprite-map, $sprite-map-2x: false) {
     background-image: sprite-url($sprite-map);
     background-position: sprite-position($sprite-map, $image);
     background-repeat: no-repeat;
@@ -109,7 +109,7 @@
     overflow: hidden;
     width: image-width(sprite-file($sprite-map, $image));
 
-    @if( $sprite-map-2x != '' ){
+    @if $sprite-map-2x {
         @media only screen and (-webkit-min-device-pixel-ratio: 2),
         	only screen and (-moz-min-device-pixel-ratio: 2),
         	only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -131,22 +131,22 @@
 // SVG Image
 //
 // The mixin uses a @2x.png retina filename.
-// This mixin depends on Modernizr to test for svg.
+// This mixin depends on Modernizr to test for svg to fallback to images if SVG is not supported
 // E.g. logo.svg, logo.png and logo@2x.png
 //
 // Parameters:
-// - File path: The path to the file without the file extension. Place this in quotes ""
-// - Width: The width of the image
-// - Height: The height of the image
-// - Extension: The default is .png, only add this parameter is if is different
+// @param [string] $filepath: The path to the file without the file extension. (Place this in quotes "")
+// @param [string] $width: The width of the image (include px)
+// @param [string] $height: The height of the image (include px)
+// @param [string] $fallback-extension: The extension type of the image. (The default is png. Don't include the '.')
 //
 //============================================================
-@mixin svg-image($filepath, $width, $height, $extension: png){
+@mixin svg-image($filepath, $width, $height, $fallback-extension: png){
     background-image: url($filepath + '.svg');
     background-size: $width $height;
     
     .no-svg & {
-        background-image: url($filepath + '.' + $extension);
+        background-image: url($filepath + '.' + $fallback-extension);
 
         @media only screen and (-webkit-min-device-pixel-ratio: 2),
     	only screen and (-moz-min-device-pixel-ratio: 2),
@@ -155,7 +155,7 @@
     	only screen and (min-resolution: 192dpi),
     	only screen and (min-resolution: 2dppx) {
     		& {
-    			background-image: url($filepath + '@2x.' + $extension);	
+    			background-image: url($filepath + '@2x.' + $fallback-extension);	
     		}
     	}
     }
@@ -169,7 +169,7 @@
 // Keep images from scaling beyond the width of their parents.
 //
 // Parameters:
-// - Display: the display type. Defaults to block
+// @param [string] $display: Display type (Default is block)
 //
 //============================================================
 @mixin img-responsive($display: block) {
@@ -187,7 +187,7 @@
 // Note: Keep rem after px on output
 //
 // Parameters:
-// - Size: the rem font size - This is usually the px font size divided by 10 (e.g. 16px will be 1.6)
+// @param [string] $size: The rem font size (This is usually the px font size divided by 10 - e.g. 16px will be 1.6)
 //
 //============================================================
 @mixin font-rem($size: 1.6) {
@@ -211,23 +211,104 @@
 //============================================================
 //
 // Size shortcut
+// A helper mixin to output the width and height
 //
 // Parameters:
-// - Width: The width of the element
-// - Height: The height of the element
+// @param [string] $width: Width (Include unit - px, em, rem)
+// @param [string] $height: Height (Include unit - px, em, rem) (Optional)
 //
 //============================================================
-@mixin size($width, $height: '') {
-    
-    @if( $height == '' ){
-        height: $width;
-        width: $width;
-    }
-    @else {
+@mixin size($width, $height: false) {
+    @if $height {
         height: $height;
         width: $width;
     }
-	
+    @else {
+        height: $width;
+        width: $width;
+    }
+}
+
+
+//============================================================
+//
+// Position
+// A helper mixin for offset positioning
+//
+// Parameters:
+// @param [string] $position: position
+// @param [list] $args (()): offsets list
+// ---
+// Explanations
+// 1. Output position
+// 2. If `$args` is not empty
+// 3. Loop other the 4 popular offsets (`$offsets`)
+// 4. Check if the current one exists in `$args`
+// 5. If it is found in `$args`
+// 6. And if it is at last position
+// 7. Set it to 0
+// 8. Else if it is found at any other index
+// 9. Store the next value from `$args`
+// 10. If it is a valid length
+// 11. Set the offset to this value
+// 12. Else if it is another offset
+// 13. Set the offset to 0
+// 14. Else
+// 15. Warn the user
+//
+//============================================================
+@mixin position($position, $args: ()) {
+    $offsets: top right bottom left;
+    position: $position;
+  
+    @each $offset in $offsets {
+        $index: index($args, $offset);
+    
+        @if $index {
+            @if $index == length($args) {
+                #{$offset}: 0;
+            }
+            @else {
+                $next: nth($args, $index + 1);
+                @if is-valid-length($next) {
+                    #{$offset}: $next;
+                }
+                @else if index($offsets, $next) {
+                    #{$offset}: 0;
+                }
+                @else {
+                    @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
+                }
+            }
+        }
+    }
+}
+
+
+// Function checking if $value is a valid length
+//
+// @param [literal] $value: value to test
+//
+// @return [bool]
+//
+@function is-valid-length($value) {
+    @return (type-of($value) == "number" and not unitless($value)) or (index(auto initial inherit 0, $value) != false);
+}
+ 
+ 
+// Shorthands
+// @param [list] $args (()): offsets list
+//
+@mixin absolute($args: ()) {
+    @include position(absolute, $args);
+}
+ 
+@mixin fixed($args: ()) {
+    @include position(fixed, $args);
+}
+ 
+@mixin relative($args: ()) {
+    @include position(relative, $args);
 }
 
 
@@ -238,7 +319,7 @@
 // Requires inline-block or block for proper styling
 //
 //============================================================
-@mixin text-overflow() {
+@mixin text-overflow {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -267,7 +348,7 @@
 // Resize anything
 //
 // Parameters:
-//  - Direction: none|both|horizontal|vertical|initial|inherit
+// @param [string] $direction: none|both|horizontal|vertical|initial|inherit
 //
 //============================================================
 @mixin resizable($direction) {
@@ -281,15 +362,10 @@
 // Optional hyphenation
 //
 // Parameters:
-// - Mode: the CSS hyphens mode
+// @param [string] $mode: the CSS hyphens mode
 //
 //============================================================
 @mixin hyphens($mode: auto) {
-	-moz-hyphens: $mode;
-	-ms-hyphens: $mode; // IE10+
-	-o-hyphens: $mode;
-	-webkit-hyphens: $mode;
-	
 	hyphens: $mode;
 	word-wrap: break-word;
 }
@@ -300,9 +376,9 @@
 // Triangle
 //
 // Parameters:
-// - Size: use px
-// - Color: Any colour option
-// - Direction: up|down|left|right
+// @param [string] $size: the size of the triangle
+// @param [string] $color: Any colour option
+// @param [string] $direction: up|down|left|right
 //
 //============================================================
 @mixin triangle ($size, $color, $direction) {
@@ -362,7 +438,7 @@
 // User select
 //
 // Paramters:
-// - Option: none | text | all | element
+// @param [string] $value: none|text|all|element
 //
 //============================================================
 @mixin user-select($value){
@@ -375,32 +451,10 @@
 
 //============================================================
 //
-// Placeholder
-//
-// Usage
-//
-// input {
-//     @include placeholder {
-//         color: #f00
-//     }
-//     color: #000
-// }
-//
-//============================================================
-@mixin placeholder {
-    &::-webkit-input-placeholder {@content}
-    &:-moz-placeholder           {@content}
-    &::-moz-placeholder          {@content}
-    &:-ms-input-placeholder      {@content}  
-}
-
-
-//============================================================
-//
 // Opacity - With IE8 fallback
 //
 // Paramters:
-// - value: 0 - 1
+// @param [float] $opacity: 0 - 1
 //
 //============================================================
 @mixin opacity($opacity){
@@ -421,8 +475,8 @@
 // Converts pixel size to em
 //
 // Parameters:
-// - pxval: The px value
-// - base: Default is 16 (This can be left)
+// @param [float] $pxval: The px value
+// @param [float] $base: Base font size. (Default is 16 - this can be left)
 //
 //============================================================
 @function em($pxval, $base: 16) {
