@@ -4,10 +4,10 @@ var modernizrConfig = {
     // @see https://github.com/Modernizr/grunt-modernizr#config-options
     dist: {
         // [REQUIRED] Path to the build you're using for development.
-        "devFile" : 'public/assets/js/src/modernizr.js',
+        "devFile" : 'assets/js/src/modernizr.js',
         
         // Path to save out the built file.
-        "outputFile" : 'public/assets/js/dist/modernizr.js',
+        "outputFile" : 'assets/js/dist/modernizr.js',
         
         // Based on default settings on http://modernizr.com/download/
         "extra" : {
@@ -43,7 +43,7 @@ var modernizrConfig = {
         // except files that are in node_modules/.
         // You can override this by defining a "files" array below.
         "files" : {
-            "src": ['public/assets/css/**', 'public/assets/js/src/**']
+            "src": ['assets/css/**', 'assets/js/src/**']
         },
         
         // This handler will be passed an array of all the test names passed to the Modernizr API, and will run after the API call has returned
@@ -82,15 +82,53 @@ var shellConfig = {
     }
 };
 
+var notificationConfig = {
+    watch: {
+        options: {
+            message: 'Watch build complete'
+        }
+    },
+    jamBuild: {
+        options: {
+            message: 'Front-end build process complete'
+        }
+    },
+    modernizr: {
+        options: {
+            message: 'Modernizr compliled and process complete'
+        }
+    }
+};
+
 var jamConfig = {
+
+    // Add vendor prefixed styles
+    autoprefixer: {
+        options: {
+            browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9']
+        },
+        multiple_files: {
+            expand: true,
+            flatten: true,
+            src: 'assets/css/*.css',
+            dest: 'assets/css/'
+        }
+    },
+ 
+    // Compass - required for autoprefixer
     compass: {
+        options: {
+            sourcemap: true
+        },
         dist: {
             options: {
-                basePath: 'public/assets/',
-                httpPath: '../',
                 environment: 'production',
+                basePath: 'assets/',
+                httpPath: '../',
+                fontsPath: '../assets/fonts/',
                 sassDir: 'css/sass',
                 imagesDir: 'graphics',
+                fontsDir: 'fonts',
                 cssDir: 'css',
                 boring: true,
                 noLineComments: true,
@@ -99,134 +137,114 @@ var jamConfig = {
         },
         dev: {
             options: {
-                basePath: 'public/assets/',
+                basePath: 'assets/',
                 httpPath: '../',
+                fontsPath: '../assets/fonts/',
                 sassDir: 'css/sass',
                 imagesDir: 'graphics',
+                fontsDir: 'fonts',
                 cssDir: 'css',
                 noLineComments: true,
-                outputStyle: 'nested',
-                watch: true
+                outputStyle: 'nested'
             }
         },
     },
-    autoprefixer: {
-        multiple_files: {
-            expand: true,
-            flatten: true,
-            src: 'public/assets/css/*.css',
-            dest: 'public/assets/css/'
-        }
-    },
+
+    // Watches files and folders for us
     watch: {
-        styles: {
-            options: {
-                browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9'],
-                livereload: true
-            },
-            files: ['public/assets/css/*.css'],
-            tasks: ['autoprefixer'],
+        // Watch to see if we change this gruntfile
+        gruntfile: {
+            files: ['Gruntfile.js']
         },
-        images: {
-            options: {
-                livereload: true
-            },
-            files: ['public/assets/graphics/**/*.{png,jpg,gif,svg}']
+ 
+        // Compass
+        compass: {
+            files: ['assets/css/sass/**/*.scss'],
+            tasks: ['compass:dev', 'autoprefixer']
         },
-        js: {
+ 
+        // Livereload
+        livereload: {
             options: {
-                livereload: true
+                livereload: 35729
             },
-            files: ['public/assets/js/*.js']
+            files: [
+                '{,*/}*.html',
+                '{,*/}*.php',
+                'assets/js/{,*/}*.js',
+                'assets/css/{,*/}*.css',
+                'assets/css/{,*/}*.scss',
+                'assets/graphics/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+            ]
         },
     },
+    
+    // Image minification
     imagemin: {
         dynamic: {
             files: [{
                 expand: true,
-                cwd: 'public/assets/graphics/',
-                src: ['**/*.{png,jpg,gif}'],
-                dest: 'public/assets/graphics/'
+                cwd: 'assets/graphics/',
+                src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+                dest: 'assets/graphics/'
             }]
         }
     },
-    svgmin: {
-        multiple: {
-            options: {
-                plugins: [
-                    {
-                        removeViewBox: false
-                    },
-                    {
-                        removeUselessStrokeAndFill: false
-                    }
-                ]
-            },
-            files: [{
-                //'public/assets/graphics/**/*.svg': 'public/assets/graphics/'
-                expand: true,
-                cwd: 'public/assets/graphics/',
-                src: ['**/*.svg'],
-                dest: 'public/assets/graphics/'
-            }]
-        }
-    },
-    concurrent: {
-        dev: {
-            tasks: ['shell:updateCanIUse', 'compass:dev', 'watch'] // 'browserSync'
-        },
-        build: {
-            tasks: ['compass:dist', 'autoprefixer', 'imagemin', 'svgmin']
-        },
-        options: {
-            logConcurrentOutput: true
-        }
-    }
 };
 
 var ProjectTasks = function (grunt) {
-    var npmTasks = ['grunt-shell', 'grunt-modernizr'],
-        defaultTasks = [],
+    var npmTasks = ['grunt-modernizr', 'grunt-shell', 'grunt-notify'],
+        infoTasks = [],
         devTasks = [],
         buildTasks = [],
         config = {
             pkg: grunt.file.readJSON('package.json'),
             globalConfig: {
-                public_folder: 'public'
+                public_folder: 'public',
             },
-            modernizr: modernizrConfig
+            modernizr: modernizrConfig,
+            notify_hooks: {
+                options: {
+                    enabled: true
+                }
+            },
+            notify: notificationConfig
         };
-    
-    require('time-grunt')(grunt);
 
     // Project configuration
     grunt.initConfig(_.extend(config, shellConfig, jamConfig));
     
-
+    
+    /*** Jam Packages and Tasks ***/
     var jamPkgs = [
-        'grunt-notify',
-        'grunt-concurrent',
-        'grunt-contrib-concat',
-        'grunt-contrib-nodeunit',
         'grunt-contrib-watch',
-        'grunt-contrib-imagemin',
-        'grunt-svgmin',
+        'grunt-autoprefixer',
         'grunt-contrib-compass',
-        'grunt-autoprefixer'
+        'grunt-contrib-imagemin',
+        'grunt-newer'
     ];
 
     npmTasks = npmTasks.concat(jamPkgs);
 
-    // Concurrent: multiple tasks at the same time
-    devTasks.push('concurrent:dev');
-    buildTasks.push('concurrent:build');
-
-
-    defaultTasks.push('shell:start');
-
+    infoTasks.push('shell:start');
+    
+    devTasks.push(
+        'watch',
+        'compass:dev',
+        'notify:watch'
+    );
+    
+    buildTasks.push(
+        'compass:dist',
+        'autoprefixer',
+        'newer:imagemin',
+        'notify:jamBuild'
+    );
+    
+    /*** Modernizr task ***/
     // Do the modernizr task
-    // Leave modernizr to build after the requirejs stuff and other parts are done otherwise it gets overwritten.
-    buildTasks.push('modernizr');
+    buildTasks.push('modernizr', 'notify:modernizr');
+
     
     // Load packages
     _.each(npmTasks, grunt.loadNpmTasks, grunt);
@@ -238,7 +256,7 @@ var ProjectTasks = function (grunt) {
     grunt.registerTask('build', _.uniq(buildTasks));
 
     // grunt info
-    grunt.registerTask('info', _.uniq(defaultTasks));
+    grunt.registerTask('info', _.uniq(infoTasks));
 
 };
 

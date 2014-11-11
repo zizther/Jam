@@ -1,23 +1,18 @@
 {
-  "name": "site",
-  "version": "0.1.0",
-  "dependencies": {},
-  "devDependencies": {
-  	"grunt": "0.4.5",
-    "lodash": "*",
-    "time-grunt": "~1.0.0",
-    "grunt-concurrent": "~1.0.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-modernizr": "0.6.0",
-    "grunt-shell": "~1.1.1",
-    "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-uglify": "~0.6.0",
-    "grunt-autoprefixer": "~1.0.1",
-    "grunt-contrib-compass": "~1.0.1",
-    "grunt-contrib-imagemin": "~0.8.1",
-    "grunt-svgmin": "~1.0.0",
-    "grunt-notify": "~0.3.1",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "load-grunt-tasks": "~0.6.0"
-  }
+    "name": "jam",
+    "version": "0.1.0",
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "lodash": "*",
+        "grunt-modernizr": "0.6.0",
+        "grunt-shell": "~1.1.1",
+        "grunt-notify": "~0.3.1",
+        "grunt-contrib-watch": "~0.6.1",
+        "grunt-autoprefixer": "~1.0.1",
+        "grunt-contrib-compass": "~1.0.1",
+        "grunt-contrib-connect": "~0.8.0",
+        "grunt-contrib-imagemin": "~0.8.1",
+        "grunt-newer": "~0.8.0",
+        "load-grunt-tasks": "~0.6.0"
+    }
 }
