@@ -435,17 +435,19 @@
 
 //============================================================
 //
-// User select
+// Context
+//
+// Helps style an element depending on the parent
+// Useful for ferature detection
 //
 // Paramters:
-// @param [string] $value: none|text|all|element
+// @param [string | list] $context
 //
 //============================================================
-@mixin user-select($value){
-    -moz-user-select: $value;
-    -ms-user-select: $value;
-    -webkit-user-select: $value;
-    user-select: $value;
+@mixin when-inside($context){
+    #{$context} & {
+        @content;
+    }
 }
 
 
