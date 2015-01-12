@@ -23,6 +23,7 @@
         "./assets/css/sass/core/_reset.scss",
         "./assets/css/sass/mixins/_mixins.scss",
         "./assets/css/sass/mixins/_screen_mixins.scss",
+        "./assets/css/sass/functions/_functions.scss",
         "./assets/css/sass/modules/_base.scss",
         "./assets/css/sass/modules/_buttons.scss",
         "./assets/css/sass/modules/_forms.scss",
