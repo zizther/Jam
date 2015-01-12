@@ -181,16 +181,16 @@
 
 //============================================================
 //
-// Font rem
+// Font size
 //
 // Adds in px and rem sizes
-// Note: Keep rem after px on output
+// Note: Keep rem after px on output so that the px unit size acts as a fallback
 //
 // Parameters:
 // @param [string] $size: The rem font size (This is usually the px font size divided by 10 - e.g. 16px will be 1.6)
 //
 //============================================================
-@mixin font-rem($size: 1.6) {
+@mixin font-size($size: 1.6) {
     font-size: ($size * 10) + px;
     font-size: $size + rem;
 }
@@ -309,6 +309,26 @@
  
 @mixin relative($args: ()) {
     @include position(relative, $args);
+}
+
+
+//============================================================
+//
+// Keyframes
+//
+// Outputs keyframes with suitable vendor prefixes
+//
+// Parameters:
+// @param [string] $animation-name: The name of the animation
+//
+//============================================================
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes $animation-name {
+        @content;
+    }
+    @keyframes $animation-name {
+        @content;
+    }
 }
 
 
@@ -467,20 +487,4 @@
         filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
     }
     opacity: $opacity;
-}
-
-
-//============================================================
-//
-// px to em
-//
-// Converts pixel size to em
-//
-// Parameters:
-// @param [float] $pxval: The px value
-// @param [float] $base: Base font size. (Default is 16 - this can be left)
-//
-//============================================================
-@function em($pxval, $base: 16) {
-    @return ($pxval / $base) * 1em;
 }

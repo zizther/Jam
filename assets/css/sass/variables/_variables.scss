@@ -1,20 +1,30 @@
 /* -------------------------------------------------------------- 
 	Project Variables
 -------------------------------------------------------------- */
-// Colours
+/*** Base pixel size ***/
+$base-pixel-size: 16px !default;
+
+/*** Line height ***/
+$line-height-base: 1.55;
+
+/*** Colours ***/
 $colour-valid: #468847;
 $colour-warning: #c09853;
 $colour-error: #b94a48;
 $colour-info: #3a87ad;
 
-// Typography
+/*** Typography ***/
 $font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif; // sans-serif fonts
 $font-georgia: Georgia, "Times New Roman", Times, serif; // serif fonts
 $font-monaco: Monaco, Menlo, Consolas, "Courier New", monospace; // monospace fonts
 
-// Line height
-$line-height-base: 1.55;
-
+/*** Sizes ***/
+$x-small: 20em; // 320px
+$small: 40em; // 640px
+$medium: 48em; // 768px
+$large: 64em; // 1024px
+$x-large: 90em; // 1440px
+$xx-large: 120em; // 1920px
 
 /*** Tables ***/
 $table-cell-padding: 8px;
@@ -27,11 +37,19 @@ $table-bg-active: #f5f5f5;
 
 $table-border-color: #ddd; // Table and cell border
 
-
 /*** Grid ***/
 $grid-columns: 12;
-$grid-max-width: 65em;
- 
-// Grid Breakpoints
-$breakpoint-small: "only screen and (min-width: 20em)";
-$breakpoint-medium: "only screen and (min-width: 30em)";
+$grid-max-width: $large;
+
+/*** Breakpoints ***/
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$bp-x-small: "#{$screen} and (max-width: #{x-small})" !default;
+$bp-small: "#{$screen} and (max-width: #{small})" !default;
+$bp-medium: "#{$screen} and (max-width: #{medium})" !default;
+$bp-large: "#{$screen} and (max-width: #{large})" !default;
+$bp-x-large: "#{$screen} and (max-width: #{x-large})" !default;
+$bp-xx-large: "#{$screen} and (max-width: #{xx-large})" !default;

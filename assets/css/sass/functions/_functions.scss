@@ -1,0 +1,14 @@
+//============================================================
+//
+// px to em
+//
+// Converts pixel size to em
+//
+// Parameters:
+// @param [float] $pxval: The px value
+// @param [float] $base: Base font size. (Default is 16 - this can be left)
+//
+//============================================================
+@function em($pxval, $base: $base-pixel-size) {
+    @return ($pxval / $base) * 1em;
+}

@@ -1,6 +1,9 @@
-// Custom mixins - outside of Compass
+// Mixins
 @import 'mixins/mixins';
 @import 'mixins/screen_mixins';
+
+// Functions
+@import 'functions/functions';
 
 // Variables
 @import "variables/variables";

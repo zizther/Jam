@@ -41,13 +41,19 @@ a {
 		background: #e3e3e1;
 	}
 	
-// Clear
+
+/* -------------------------------------------------------------- 
+	Helpers
+-------------------------------------------------------------- */
+/*** Clear ***/
 .clear {
 	clear: both;
 }
 
 /**
- * Clearfix - use @extend .clearfix on classes or ID's which require it
+ * Clearfix - use @extend %clearfix on classes or ID's which require it
+ * The .clearfix class is useful to add to the markup 
+ *
  * e.g.
  *     .buttons {
  *         @extend %clearfix;
@@ -57,6 +63,27 @@ a {
 %clearfix {
 	@include clearfix;
 }
+
+/**
+ * Visually hidden
+ *
+ * Hides an element but keeps it accessible to screen readers, etc
+ *
+ * e.g.
+ *     .visually-hidden {
+ *         @extend %visually-hidden;
+ *     }
+**/
+%visually-hidden {
+    @include size(1px);
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
 
 
 /* -------------------------------------------------------------- 
