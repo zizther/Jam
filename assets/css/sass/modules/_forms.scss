@@ -9,7 +9,7 @@ fieldset {
 }
 
 legend {
-    @include font-rem(2.1);
+    @include font-size(2.1);
     border: 0;
     border-bottom: 1px solid #e5e5e5;
     color: #333;
@@ -48,7 +48,7 @@ input[type="file"] {
 
 // Adjust output element
 output {
-    @include font-rem(1.4);
+    @include font-size(1.4);
     display: block;
     padding-top: 7px;
     line-height: $line-height-base;
@@ -94,7 +94,7 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-    @include font-rem(1.4);
+    @include font-size(1.4);
     background-color: #fff;
     background-image: none;
     color: #404040;

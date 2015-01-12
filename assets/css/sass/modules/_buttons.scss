@@ -2,7 +2,6 @@
 	Buttons
 -------------------------------------------------------------- */
 .button {
-    @include user-select(none);
     -webkit-user-drag: none;
     background-color: #e6e6e6;
     border: none;
@@ -17,6 +16,7 @@
     text-align: center;
     text-decoration: none;
     transition: background 150ms ease-out;
+    user-select: none;
     vertical-align: baseline;
     white-space: nowrap;
     zoom: 1;

@@ -19,12 +19,12 @@ h6 {
 
 // Paragraphs
 p {
-    @include font-rem(1.6);
+    @include font-size(1.6);
 	margin: 0 0 16px;
 }
 ul,
 ol {
-    @include font-rem(1.6);
+    @include font-size(1.6);
 	margin: 0 0 16px;  
 }
 

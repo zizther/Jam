@@ -4,8 +4,14 @@
 /* -------------------------------------------------------------- 
 	Project Variables
 -------------------------------------------------------------- */
+/*** Base pixel size ***/
+/*** Line height ***/
+/*** Colours ***/
+/*** Typography ***/
+/*** Sizes ***/
 /*** Tables ***/
 /*** Grid ***/
+/*** Breakpoints ***/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -550,10 +556,6 @@ img {
 	Buttons
 -------------------------------------------------------------- */
 .button {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
   -webkit-user-drag: none;
   background-color: #e6e6e6;
   border: none;
@@ -569,6 +571,10 @@ img {
   text-decoration: none;
   -webkit-transition: background 150ms ease-out;
           transition: background 150ms ease-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: baseline;
   white-space: nowrap;
   zoom: 1; }
@@ -938,9 +944,9 @@ input[type="checkbox"],
     
     <section class="grid">
         <div class="row">
-            <div class="col_3"></div>
-            <div class="col_3"></div>
-            <div class="col_6"></div>
+            <div class="column_3"></div>
+            <div class="column_3"></div>
+            <div class="column_6"></div>
         </div>
     </section>
 -------------------------------------------------------------- */
@@ -956,35 +962,34 @@ input[type="checkbox"],
 .grid {
   margin: 0 auto;
   width: 100%; }
-  .grid [class^="col_"],
-  .grid [class*=" col_"] {
+  .grid .column {
     float: left;
     min-height: 1px;
     padding: 1em;
     width: 100%; }
-  .grid .col_1 {
+  .grid .column_1 {
     width: 8.33333%; }
-  .grid .col_2 {
+  .grid .column_2 {
     width: 16.66667%; }
-  .grid .col_3 {
+  .grid .column_3 {
     width: 25%; }
-  .grid .col_4 {
+  .grid .column_4 {
     width: 33.33333%; }
-  .grid .col_5 {
+  .grid .column_5 {
     width: 41.66667%; }
-  .grid .col_6 {
+  .grid .column_6 {
     width: 50%; }
-  .grid .col_7 {
+  .grid .column_7 {
     width: 58.33333%; }
-  .grid .col_8 {
+  .grid .column_8 {
     width: 66.66667%; }
-  .grid .col_9 {
+  .grid .column_9 {
     width: 75%; }
-  .grid .col_10 {
+  .grid .column_10 {
     width: 83.33333%; }
-  .grid .col_11 {
+  .grid .column_11 {
     width: 91.66667%; }
-  .grid .col_12 {
+  .grid .column_12 {
     width: 100%; }
 
 /* -------------------------------------------------------------- 
@@ -1333,11 +1338,17 @@ ol {
 ::-moz-selection {
   background: #e3e3e1; }
 
+/* -------------------------------------------------------------- 
+	Helpers
+-------------------------------------------------------------- */
+/*** Clear ***/
 .clear {
   clear: both; }
 
 /**
- * Clearfix - use @extend .clearfix on classes or ID's which require it
+ * Clearfix - use @extend %clearfix on classes or ID's which require it
+ * The .clearfix class is useful to add to the markup 
+ *
  * e.g.
  *     .buttons {
  *         @extend %clearfix;
@@ -1350,6 +1361,16 @@ ol {
     content: "";
     display: table; }
 
+/**
+ * Visually hidden
+ *
+ * Hides an element but keeps it accessible to screen readers, etc
+ *
+ * e.g.
+ *     .visually-hidden {
+ *         @extend %visually-hidden;
+ *     }
+**/
 /* -------------------------------------------------------------- 
 	Global Layout
 -------------------------------------------------------------- */
