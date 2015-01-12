@@ -47,9 +47,9 @@ $screen: "only screen" !default;
 $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "#{$screen} and (orientation: portrait)" !default;
 
-$bp-x-small: "#{$screen} and (max-width: #{x-small})" !default;
-$bp-small: "#{$screen} and (max-width: #{small})" !default;
-$bp-medium: "#{$screen} and (max-width: #{medium})" !default;
-$bp-large: "#{$screen} and (max-width: #{large})" !default;
-$bp-x-large: "#{$screen} and (max-width: #{x-large})" !default;
-$bp-xx-large: "#{$screen} and (max-width: #{xx-large})" !default;
+$bp-x-small: "#{$screen} and (min-width: #{x-small})" !default;
+$bp-small: "#{$screen} and (min-width: #{small})" !default;
+$bp-medium: "#{$screen} and (min-width: #{medium})" !default;
+$bp-large: "#{$screen} and (min-width: #{large})" !default;
+$bp-x-large: "#{$screen} and (min-width: #{x-large})" !default;
+$bp-xx-large: "#{$screen} and (min-width: #{xx-large})" !default;
