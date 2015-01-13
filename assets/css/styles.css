@@ -475,88 +475,12 @@ cite {
 img {
   vertical-align: middle; }
 
-.pull_left {
-  float: left; }
-
-.pull_right {
-  float: right; }
-
-.text_warning {
-  color: #c09853; }
-
-.text_error {
-  color: #b94a48; }
-
-.text_valid {
-  color: #468847; }
-
-.text_info {
-  color: #3a87ad; }
-
-.text_left {
-  text-align: left; }
-
-.text_right {
-  text-align: right; }
-
-.text_center {
-  text-align: center; }
-
-.text_hide {
-  background-color: transparent;
-  border: 0;
-  color: transparent;
-  font: '~"0/0" a';
-  text-indent: -9999em;
-  text-shadow: none; }
-
-.img_responsive {
-  display: block;
-  height: auto;
-  max-width: 100%; }
-
-.img_circle {
-  border-radius: 50%; }
-
-.sr_only {
-  height: 1px;
-  width: 1px;
-  border: 0;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute; }
-
-.invisible {
-  visibility: hidden; }
-
-/*
-    Example use:
-    
-    <div class="mb">
-        <div class="mb_left">
-        </div>
-
-        <div class="mb_right">
-        </div>
-    </div>
-*/
-.mb,
-.mb_right {
-  overflow: hidden;
-  _overflow: visible;
-  zoom: 1; }
-
-.mb .mb_left {
-  float: left;
-  margin-right: 10px; }
-
 /* -------------------------------------------------------------- 
 	Buttons
 -------------------------------------------------------------- */
 .button {
   -webkit-user-drag: none;
+  background-image: none;
   background-color: #e6e6e6;
   border: none;
   border-radius: 2px;
@@ -1303,6 +1227,127 @@ table th[class*="col_"] {
 	Additional animation can be added from http://daneden.github.io/animate.css/
     Use WOW JS to reveal animations when you scroll http://mynameismatthieu.com/WOW/
 -------------------------------------------------------------- */
+/*
+    IE10 in Windows (Phone) 8
+
+    Support for responsive views via media queries is kind of borked in IE10, for
+    Surface/desktop in split view and for Windows Phone 8. This particular fix
+    must be accompanied by a snippet of JavaScript to sniff the user agent and
+    apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+    our Getting Started page for more information on this bug.
+
+    For more information, see the following:
+    Docs: http://getbootstrap.com/getting-started/#support-ie10-width
+    
+    Internet Explorer 10 doesn't differentiate device width from viewport width,
+    and thus doesn't properly apply the media queries in Bootstrap's CSS.
+    Normally you'd just add a quick snippet of CSS to fix this:
+    
+    @-ms-viewport { width: device-width; }
+    
+    However, this doesn't work for devices running Windows Phone 8 versions older
+    than Update 3 (a.k.a. GDR3), as it causes such devices to show a mostly desktop
+    view instead of narrow "phone" view. To address this, you'll need to include the
+    following CSS and JavaScript to work around the bug.
+    
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement('style')
+        msViewportStyle.appendChild(
+            document.createTextNode(
+                '@-ms-viewport{width:auto!important}'
+            )
+        )
+        document.querySelector('head').appendChild(msViewportStyle)
+    }
+*/
+@-webkit-viewport {
+  width: device-width; }
+@-moz-viewport {
+  width: device-width; }
+@-ms-viewport {
+  width: device-width; }
+@-o-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
+.pull_left {
+  float: left; }
+
+.pull_right {
+  float: right; }
+
+.text_warning {
+  color: #c09853; }
+
+.text_error {
+  color: #b94a48; }
+
+.text_valid {
+  color: #468847; }
+
+.text_info {
+  color: #3a87ad; }
+
+.text_left {
+  text-align: left; }
+
+.text_right {
+  text-align: right; }
+
+.text_center {
+  text-align: center; }
+
+.text_hide {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  text-transform: capitalize; }
+
+.img_responsive {
+  display: block;
+  height: auto;
+  max-width: 100%; }
+
+.img_circle {
+  border-radius: 50%; }
+
+.sr_only {
+  height: 1px;
+  width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute; }
+
+.invisible {
+  visibility: hidden; }
+
+/*
+    Media block
+    Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+    
+    Example use:
+    
+    <div class="mb">
+        <div class="mb_left">
+        </div>
+
+        <div class="mb_right">
+        </div>
+    </div>
+*/
+.mb,
+.mb_right {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1; }
+
+.mb .mb_left {
+  float: left;
+  margin-right: 10px; }
+
 /* -------------------------------------------------------------- 
 	Extend Base
 -------------------------------------------------------------- */
@@ -1384,7 +1429,9 @@ ol {
 	Media Queries
 -------------------------------------------------------------- */
 @media print {
-  * {
+  *,
+  *:before,
+  *:after {
     -ms-filter: none !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -1405,9 +1452,8 @@ ol {
   abbr[title]:after {
     content: " (" attr(title) ")"; }
 
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
     content: ""; }
 
   pre,
@@ -1438,15 +1484,21 @@ ol {
   select {
     background: #fff !important; }
 
-  .table td,
-  .table th {
-    background-color: #fff !important; }
+  .navbar {
+    display: none; }
+
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important; }
 
   .label {
     border: 1px solid #000; }
 
   .table {
     border-collapse: collapse !important; }
+    .table td,
+    .table th {
+      background-color: #fff !important; }
 
   .table-bordered th,
   .table-bordered td {
