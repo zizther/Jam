@@ -6,10 +6,10 @@
 //
 // Parameters:
 // @param [float] $pxval: The px value
-// @param [float] $base: Base font size. (Default is 16 - this can be left)
+// @param [float] $base: Base font size. (This can be left)
 //
 //============================================================
-@function em($pxval, $base: $base-pixel-size) {
+@function px-to-em($pxval, $base: $base-pixel-size) {
     @return ($pxval / $base) * 1em;
 }
 
@@ -17,6 +17,8 @@
 //============================================================
 //
 // Strip unit
+//
+// Strips the unit from the given value
 //
 // Parameters:
 // @param [value] $value: A value with unit (px, em, %, etc)
@@ -36,12 +38,12 @@
 //
 // Clamp a number
 //
-// Restricting a number between a min and max value
+// Restricting a number between a min and max range
 //
 // Parameters:
 // @param [value] $value: The value to be evaluated
-// @param [value] $min: The min value
-// @param [value] $max: The max value
+// @param [value] $min: The min range value
+// @param [value] $max: The max range value
 // @return [value] value
 //
 // 4 clamped to 1-3 equals 3
@@ -93,7 +95,7 @@
 //
 // Tint
 //
-// Slightly lighten a color
+// Slightly lighten a colour
 //
 // @param [Colour] $colour - colour to tint
 // @param [Number] $percentage - percentage of `$colour` in returned colour
@@ -112,7 +114,7 @@
 //
 // Shade
 //
-// Slightly darken a color
+// Slightly darken a colour
 //
 // @param [Colour] $colour - colour to shade
 // @param [Number] $percentage - percentage of `$colour` in returned colour
@@ -131,7 +133,7 @@
 //
 // Colour luminance
 //
-// Calulating the luminance of a colour
+// Calculates the luminance of a colour
 //
 // Returns the luminance of '$colour' as a float (between 0 and 1)
 // 1 is pure white, 0 is pure black
