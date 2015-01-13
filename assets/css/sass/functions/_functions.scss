@@ -12,3 +12,159 @@
 @function em($pxval, $base: $base-pixel-size) {
     @return ($pxval / $base) * 1em;
 }
+
+
+//============================================================
+//
+// Strip unit
+//
+// Parameters:
+// @param [value] $value: A value with unit (px, em, %, etc)
+// @return [value] value without the unit
+//
+// Usage:
+// $length: 42em;
+// $int: strip-unit($length); // 42
+//
+//============================================================
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+
+//============================================================
+//
+// Clamp a number
+//
+// Restricting a number between a min and max value
+//
+// Parameters:
+// @param [value] $value: The value to be evaluated
+// @param [value] $min: The min value
+// @param [value] $max: The max value
+// @return [value] value
+//
+// 4 clamped to 1-3 equals 3
+// -5 clamped to 1-10 equals 1
+// 42 clamped to 10-100 equals 42
+//
+// Usage:
+// $pc: percentage(clamp($value, 0, 100));
+// $darkColor: darken($color, $pc);
+//
+//============================================================
+@function clamp($value, $min, $max) {
+    @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+
+//============================================================
+//
+// Convert angle
+//
+// Convert an angle into another unit
+//
+// Parameters:
+// @param [value] $value: The deg value
+// @param [value] $unit: The output unit
+// @return [value] value: The converted values with the input unit
+//
+// Usage:
+// $angle-deg: 30deg;
+// $angle-rad: convert-angle($angle-deg, rad); // 0.5236rad
+//
+//============================================================
+@function convert-angle($value, $unit) {
+    $convertable-units: deg grad turn rad;
+    $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
+    
+    @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+        @return $value
+            / nth($conversion-factors, index($convertable-units, unit($value)))
+            * nth($conversion-factors, index($convertable-units, $unit));
+    }
+    @else {
+        @warn "Cannot convert #{unit($value)} to #{$unit}";
+    }
+}
+
+
+//============================================================
+//
+// Tint
+//
+// Slightly lighten a color
+//
+// @param [Colour] $colour - colour to tint
+// @param [Number] $percentage - percentage of `$colour` in returned colour
+// @return [Colour]
+//
+// Usage:
+// color: tint(#bada55, 42%); // color: #e2efb7;
+//
+//============================================================
+@function tint($colour, $percentage) {
+    @return mix($colour, white, $percentage);
+}
+
+
+//============================================================
+//
+// Shade
+//
+// Slightly darken a color
+//
+// @param [Colour] $colour - colour to shade
+// @param [Number] $percentage - percentage of `$colour` in returned colour
+// @return [Colour]
+//
+// Usage:
+// background-color: shade(#663399, 42%); // background-color: #2a1540;
+//
+//============================================================
+@function shade($color, $percentage) {
+    @return mix($color, black, $percentage);
+}
+
+
+//============================================================
+//
+// Colour luminance
+//
+// Calulating the luminance of a colour
+//
+// Returns the luminance of '$colour' as a float (between 0 and 1)
+// 1 is pure white, 0 is pure black
+// @param [Colour] $colour - Any colour value
+// @return [Number]
+// @link http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+//
+// Usage:
+// $colour: #bada55;
+// $luminance: luminance($colour); // 0.6123778773 
+//
+//============================================================
+@function luminance($colour) {
+    $colours: (
+        'red': red($colour),
+        'green': green($colour),
+        'blue': blue($colour)
+    );
+
+    @each $name, $value in $colours {
+        $adjusted: 0;
+        $value: $value / 255;
+
+        @if $value < 0.03928 {
+            $value: $value / 12.92;
+        }
+        @else {
+            $value: ($value + .055) / 1.055;
+            $value: pow($value, 2.4);
+        }
+    
+        $colours: map-merge($colours, ($name: $value));
+    }
+
+    @return (map-get($colours, 'red') * .2126) + (map-get($colours, 'green') * .7152) + (map-get($colours, 'blue') * .0722);
+}
