@@ -3,6 +3,7 @@
 -------------------------------------------------------------- */
 .button {
     -webkit-user-drag: none;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     background-color: #e6e6e6;
     border: none;
     border-radius: 2px;
