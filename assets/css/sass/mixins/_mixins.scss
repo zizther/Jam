@@ -104,7 +104,7 @@
 //
 //
 //============================================================
-@mixin image-sprite($image, $sprite-map, $sprite-map-2x: false) {
+@mixin image-sprite($image, $sprite-map, $sprite-map-2x: null) {
     background-image: sprite-url($sprite-map);
     background-position: sprite-position($sprite-map, $image);
     background-repeat: no-repeat;
@@ -222,7 +222,7 @@
 // @param [string] $height: Height (Include unit - px, em, rem) (Optional)
 //
 //============================================================
-@mixin size($width, $height: false) {
+@mixin size($width, $height: null) {
     @if $height {
         height: $height;
         width: $width;

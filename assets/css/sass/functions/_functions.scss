@@ -62,37 +62,6 @@
 
 //============================================================
 //
-// Convert angle
-//
-// Convert an angle into another unit
-//
-// Parameters:
-// @param [value] $value: The deg value
-// @param [value] $unit: The output unit
-// @return [value] value: The converted values with the input unit
-//
-// Usage:
-// $angle-deg: 30deg;
-// $angle-rad: convert-angle($angle-deg, rad); // 0.5236rad
-//
-//============================================================
-@function convert-angle($value, $unit) {
-    $convertable-units: deg grad turn rad;
-    $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
-    
-    @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
-        @return $value
-            / nth($conversion-factors, index($convertable-units, unit($value)))
-            * nth($conversion-factors, index($convertable-units, $unit));
-    }
-    @else {
-        @warn "Cannot convert #{unit($value)} to #{$unit}";
-    }
-}
-
-
-//============================================================
-//
 // Tint
 //
 // Slightly lighten a colour
