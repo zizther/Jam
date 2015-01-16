@@ -34,6 +34,7 @@
         "./assets/css/sass/project/_display.scss",
         "./assets/css/sass/project/_fonts.scss",
         "./assets/css/sass/project/_global.scss",
+        "./assets/css/sass/project/_helpers.scss",
         "./assets/css/sass/project/_icons.scss",
         "./assets/css/sass/project/_sprites.scss",
         "./assets/css/sass/project/_x_browser.scss",
