@@ -99,10 +99,9 @@ textarea {
     background-image: none;
     color: #404040;
     display: block;
-    height: 34px;
     line-height: $line-height-base;
     padding: 6px 12px;
-    transition: border 150ms ease-out;
+    transition: border 200ms ease-out;
     width: 100%;
     
     &:focus {
@@ -112,7 +111,9 @@ textarea {
         color: #999;
         opacity: 1;
     }
-    &:-ms-input-placeholder,
+    &:-ms-input-placeholder {
+        color: #999;
+    }
     &::-webkit-input-placeholder {
         color: #999;
     }
