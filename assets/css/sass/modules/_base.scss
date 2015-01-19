@@ -25,6 +25,7 @@ embed {
 }
 :focus {
 	outline: -webkit-focus-ring-color auto 0; // Stop Chrome's horrid blue outline
+	outline: 0 !important; // Removes dotted line from focus on elements
 }
 
 /*** Opera fix ***/

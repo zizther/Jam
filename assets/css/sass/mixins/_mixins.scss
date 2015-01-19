@@ -9,12 +9,16 @@
 //
 //============================================================
 @mixin clearfix {
-    *zoom: 1;
-    
+    & {
+        *zoom: 1;
+    }
+    &:before,
     &:after {
-        clear: both;
         content: "";
         display: table;
+    }
+    &:after {
+        clear: both;
     }
 }
 
@@ -100,7 +104,7 @@
 //
 //
 //============================================================
-@mixin image-sprite($image, $sprite-map, $sprite-map-2x: false) {
+@mixin image-sprite($image, $sprite-map, $sprite-map-2x: null) {
     background-image: sprite-url($sprite-map);
     background-position: sprite-position($sprite-map, $image);
     background-repeat: no-repeat;
@@ -218,7 +222,7 @@
 // @param [string] $height: Height (Include unit - px, em, rem) (Optional)
 //
 //============================================================
-@mixin size($width, $height: false) {
+@mixin size($width, $height: null) {
     @if $height {
         height: $height;
         width: $width;
@@ -401,9 +405,8 @@
 // @param [string] $direction: up|down|left|right
 //
 //============================================================
-@mixin triangle ($size, $color, $direction) {
-	height: 0;
-	width: 0;
+@mixin triangle ($size: null, $direction: null, $color: currentColor) {
+	@include size(0);
 	
 	@if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
 		border-color: transparent;

@@ -390,7 +390,8 @@ embed {
   outline: 0 !important; }
 
 :focus {
-  outline: -webkit-focus-ring-color auto 0; }
+  outline: -webkit-focus-ring-color auto 0;
+  outline: 0 !important; }
 
 /*** Opera fix ***/
 .opera-only :-o-prefocus {
@@ -493,8 +494,7 @@ img {
   padding: 0.5em 1em;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: background 150ms ease-out;
-          transition: background 150ms ease-out;
+  transition: background 150ms ease-out;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -607,8 +607,7 @@ textarea {
   height: 34px;
   line-height: 1.55;
   padding: 6px 12px;
-  -webkit-transition: border 150ms ease-out;
-          transition: border 150ms ease-out;
+  transition: border 150ms ease-out;
   width: 100%; }
   input[type="text"]:focus,
   input[type="password"]:focus,
@@ -877,11 +876,14 @@ input[type="checkbox"],
 .grid,
 .row {
   *zoom: 1; }
-  .grid:after,
-  .row:after {
-    clear: both;
-    content: "";
-    display: table; }
+.grid:before, .grid:after,
+.row:before,
+.row:after {
+  content: "";
+  display: table; }
+.grid:after,
+.row:after {
+  clear: both; }
 
 .grid {
   margin: 0 auto;
@@ -955,8 +957,7 @@ input[type="checkbox"],
     line-height: 1.5em;
     padding: 5px 20px;
     text-decoration: none;
-    -webkit-transition: all 150ms ease-out;
-            transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
     white-space: nowrap; }
   .menu a {
     border: 1px solid transparent;
@@ -1401,10 +1402,11 @@ ol {
 **/
 .clearfix {
   *zoom: 1; }
-  .clearfix:after {
-    clear: both;
-    content: "";
-    display: table; }
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+.clearfix:after {
+  clear: both; }
 
 /**
  * Visually hidden
