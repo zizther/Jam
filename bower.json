@@ -1,6 +1,6 @@
 {
     "name":"jam",
-    "version":"2.3.3",
+    "version":"2.3.4",
     "author":"Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",
     "description":"A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.",
     "keywords":[
