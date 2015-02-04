@@ -1,6 +1,6 @@
 {
     "name":"jam",
-    "version":"2.3.4",
+    "version":"2.4.0",
     "author":"Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",
     "description":"A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.",
     "keywords":[
@@ -21,10 +21,10 @@
     "main":[
         "./assets/css/sass/core/_print.scss",
         "./assets/css/sass/core/_reset.scss",
+        "./assets/css/sass/core/_base.scss",
         "./assets/css/sass/mixins/_mixins.scss",
         "./assets/css/sass/mixins/_screen_mixins.scss",
         "./assets/css/sass/functions/_functions.scss",
-        "./assets/css/sass/modules/_base.scss",
         "./assets/css/sass/modules/_buttons.scss",
         "./assets/css/sass/modules/_forms.scss",
         "./assets/css/sass/modules/_grid.scss",
