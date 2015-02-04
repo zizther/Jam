@@ -118,7 +118,7 @@ var jamConfig = {
     // Compass - required for autoprefixer
     compass: {
         options: {
-            sourcemap: true
+            sourcemap: false
         },
         dist: {
             options: {

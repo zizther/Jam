@@ -36,7 +36,7 @@
         }
         
         // Disabled state
-        &.menu_disabled {
+        &.menu-disabled {
             > a {
                 background-image: none;
                 border-color: transparent;
@@ -53,7 +53,7 @@
         }
     }
     a,
-    .menu_heading {
+    .menu-heading {
         display: block;
         color: inherit;
         line-height: 1.5em;
@@ -69,7 +69,7 @@
         border-right: none;
         color: #777;
     }
-    .menu_heading {
+    .menu-heading {
         @include font-size(2);
         border-bottom-color: #dfdfdf;
         border-bottom-style: solid;
@@ -80,8 +80,9 @@
     }
     
     /*** Horizontal menu ***/
-    &.menu_horizontal {
+    &.menu-horizontal {
         border: none;
+        width: 100%;
         
         > ul {
             display: inline-block;
@@ -99,50 +100,56 @@
             li {
                 display: block;
                 
-                &.pure-menu-separator {
+                &.menu-separator {
                 	height: 1px;
                 	margin: 7px 2px;
                 	width: auto;
                 }
             }
             
-            &.pure-menu-separator {
+            &.menu-separator {
             	height: 50%;
             	margin: 0 7px;
             	width: 1px;
             }
         }
-        > .menu_heading {
+        > .menu-heading {
             border: none;
             display: inline-block;
             margin: 0;
             vertical-align: middle;
             zoom: 1;
         }
-    }// END .menu_horizontal
+    }// END .menu-horizontal
     
-    &.menu_fixed {
+    &.menu-fixed {
         border: none;
         border-bottom: 1px solid #b7b7b7;
     }
 }// END .menu
 
 
-// Hidden menu
-.menu_hidden {
+/*
+    Hidden menu
+*/
+.menu-hidden {
     display: none;
 }
 
-// Fixed menu
-.menu_fixed {
+/*
+    Fixed menu
+*/
+.menu-fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-// Menu separator
-.menu_separator {
+/*
+    Menu separator
+*/
+.menu-separator {
     @include font-size(0);
     background-color: #dfdfdf;
     display: block;
@@ -151,7 +158,9 @@
     overflow: hidden;
 }
 
-// Paginator
+/*
+    Paginator
+*/
 .paginator {
     letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
     list-style: none;
@@ -176,7 +185,7 @@
     .prev,
     .next {
         color: #c0c1c3;
-        text-shadow: 0 -1px 0 rgba(0,0,0, 0.45);
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .45);
     }
     .prev {
         border-radius: 2px 0 0 2px;
@@ -190,12 +199,12 @@
 }
 
 
-@media (max-width: 480px) {
+@media #{$bp-small} {
 
     .menu {
-        .menu_horizontal {
-            width: 100%;
+        .menu-horizontal {
+            width: auto;
         }
     }
     
-}// END @media (max-width: 480px)
+}// END @media #{$bp-small}

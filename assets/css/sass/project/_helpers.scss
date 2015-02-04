@@ -39,62 +39,64 @@
 
 
 // Floats
-.pull_left {
+.pull-left {
     float: left;
 }
-.pull_right {
+.pull-right {
     float: right;
 }
 
 
 // Contextual emphasis
-.text_warning {
+.text-warning {
 	color: $colour-warning;
 }
-.text_error {
+.text-error {
 	color: $colour-error;
 }
-.text_valid {
+.text-valid {
 	color: $colour-valid;
 }
-.text_info {
+.text-info {
 	color: $colour-info;
 }
 
 
 // Alignment
-.text_left {
+.text-left {
 	text-align: left;
 }
-.text_right {
+.text-right {
 	text-align: right;
 }
-.text_center {
+.text-center {
 	text-align: center;
 }
 
 
 // Hide text
-.text_hide {
+.text-hide {
     @include hide-text(); // Hide text from an element
 }
 
 
 // Responsive images (ensure images don't scale beyond their parents)
-.img_responsive {
+.img-responsive {
     @include img-responsive();
 }
 
 
 // Perfect circle
-.img_circle {
+.img-circle {
     border-radius: 50%; // set radius in percents
 }
 
 
-// Only display content to screen readers
-// See: http://a11yproject.com/posts/how-to-hide-content/
-.sr_only {
+/*
+    Only display content to screen readers
+    See: http://a11yproject.com/posts/how-to-hide-content/
+*/
+.sr-only {
 	@include size(1px);
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -118,21 +120,21 @@
     Example use:
     
     <div class="mb">
-        <div class="mb_left">
+        <div class="mb-left">
         </div>
 
-        <div class="mb_right">
+        <div class="mb-right">
         </div>
     </div>
 */
 .mb,
-.mb_right {
+.mb-right {
     overflow: hidden;
     _overflow: visible;
     zoom: 1;
 }
 .mb {
-    .mb_left {
+    .mb-left {
         float: left;
         margin-right: 10px;
     }

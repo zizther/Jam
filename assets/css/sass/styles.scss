@@ -12,8 +12,13 @@
 // Reset
 @import 'core/reset';
 
-// Components
-@import 'modules/base';
+// Jam normalisation 
+@import 'core/base';
+
+// Print styles
+@import 'core/print';
+
+// Modules
 @import 'modules/buttons';
 @import 'modules/forms';
 @import 'modules/grid';
@@ -29,6 +34,3 @@
 @import 'project/global';
 @import 'project/xbrowser';
 @import 'project/display';
-
-// Print styles
-@import 'core/print';

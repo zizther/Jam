@@ -1,0 +1,56 @@
+/* -------------------------------------------------------------- 
+	Global
+-------------------------------------------------------------- */
+* {
+    & >,
+    &:before,
+    &:after {
+        box-sizing: border-box; // Only suitable for IE8+
+    }
+}
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	text-rendering: optimizeLegibility;
+}
+html {
+	font-size: 62.5%; // Used to make the math easier for rem font sizes. Now 16px = 1.6rem
+}
+
+
+// Outline
+a:hover,
+a:active,
+a:focus,
+button:hover,
+button:active,
+button:focus,
+input::-moz-focus-inner,
+object,
+embed {
+	outline: 0 !important;
+}
+:focus {
+	outline: -webkit-focus-ring-color auto 0; // Stop Chrome's horrid blue outline
+	outline: 0 !important; // Removes dotted line from focus on elements
+}
+
+/*** Opera fix ***/
+.opera-only :-o-prefocus {
+    word-spacing: -0.43em;
+}
+
+// Lists
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+// Images
+img {
+    vertical-align: middle;
+}

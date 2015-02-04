@@ -4,16 +4,16 @@
 .button {
     -webkit-user-drag: none;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    background-color: #e6e6e6;
+    background-color: $primary-button-color;
     border: none;
-    border-radius: 2px;
-    color: #444;
+    border-radius: $primary-button-border-radius;
+    color: $primary-button-color;
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
     font-size: 100%;
     line-height: normal;
-    padding: 0.5em 1em;
+    padding: $primary-button-padding;
     text-align: center;
     text-decoration: none;
     transition: background 200ms ease-out;
@@ -27,14 +27,19 @@
         padding: 0;
         border: 0;
     }
+    &:hover {
+        background: darken($primary-button-color, 8%);
+    }
 }// END .button
 
-// Disabled state
+/*
+    Disabled state
+*/
 .button[disabled],
-.button_disabled,
-.button_disabled:hover,
-.button_disabled:focus,
-.button_disabled:active {
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active {
     background-image: none;
     border: none;
     box-shadow: none;
@@ -43,7 +48,9 @@
     opacity: .4;
 }
 
-// Hidden
-.button_hidden {
+/*
+    Hidden
+*/
+.button-hidden {
     display: none;
 }

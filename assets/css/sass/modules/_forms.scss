@@ -68,9 +68,11 @@ select optgroup {
     font-style: inherit;
 }
 
-// Fix for Chrome number input
-// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
-// See https://github.com/twbs/bootstrap/issues/8350 for more.
+/*
+    Fix for Chrome number input
+    Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
+    See https://github.com/twbs/bootstrap/issues/8350 for more.
+*/
 input[type="number"] {
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -95,6 +97,7 @@ input[type="color"],
 select,
 textarea {
     @include font-size(1.4);
+    -webkit-appearance: none; // Remove iOS stylings
     background-color: #fff;
     background-image: none;
     color: #404040;
@@ -124,6 +127,17 @@ textarea {
         cursor: not-allowed;
         opacity: 1;
     }
+}
+
+button,
+select,
+input,
+textarea {
+    background-image: none; // Remove gradient Firefox mobile puts on buttons and form elements
+	border: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.1;
 }
 
 
@@ -187,14 +201,15 @@ input[type="checkbox"] {
 }
 
 
-/*** Special styles for iOS temporal inputs ***/
+/*
+    Special styles for iOS temporal inputs
 
-// In Mobile Safari, setting `display: block` on temporal inputs causes the
-// text within the input to become vertically misaligned.
-// As a workaround, we set a pixel line-height that matches the
-// given height of the input. Since this fucks up everything else, we have to
-// appropriately reset it for Internet Explorer and the size variations.
-
+    In Mobile Safari, setting `display: block` on temporal inputs causes the
+    text within the input to become vertically misaligned.
+    As a workaround, we set a pixel line-height that matches the
+    given height of the input. Since this fucks up everything else, we have to
+    appropriately reset it for Internet Explorer and the size variations.
+*/
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -204,18 +219,22 @@ input[type="month"] {
 
 
 
-/*** Form groups ***/
+/*
+    Form groups
 
-// Designed to help with the organization and spacing of vertical forms. For
-// horizontal forms, use the predefined grid classes.
-.form_group {
+    Designed to help with the organization and spacing of vertical forms.
+    For horizontal forms, use the predefined grid classes.
+*/
+.form-group {
     margin-bottom: 15px;
 }
 
 
-/*** Checkboxes and radios ***/
+/*
+    Checkboxes and radios
 
-// Indent the labels to position radios/checkboxes as hanging controls.
+    Indent the labels to position radios/checkboxes as hanging controls.
+*/
 .radio,
 .checkbox {
     display: block;
@@ -233,9 +252,9 @@ input[type="month"] {
     }
 }
 .radio input[type="radio"],
-.radio_inline input[type="radio"],
+.radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
-.checkbox_inline input[type="checkbox"] {
+.checkbox-inline input[type="checkbox"] {
     float: left;
     margin-left: -20px;
 }
@@ -245,9 +264,11 @@ input[type="month"] {
 }
 
 
-/*** Radios and checkboxes on same line ***/
-.radio_inline,
-.checkbox_inline {
+/*
+    Radios and checkboxes on same line
+*/
+.radio-inline,
+.checkbox-inline {
     cursor: pointer;
     display: inline-block;
     font-weight: normal;
@@ -255,22 +276,24 @@ input[type="month"] {
     padding-left: 20px;
     vertical-align: middle;
 }
-.radio_inline + .radio_inline,
-.checkbox_inline + .checkbox_inline {
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
     margin-left: 10px; // space out consecutive inline controls
     margin-top: 0;
 }
 
 
-/*** Apply same disabled cursor tweak as for inputs ***/
+/*
+    Apply same disabled cursor tweak as for inputs
 
-// Note: Neither radios nor checkboxes can be readonly.
+    Note: Neither radios nor checkboxes can be readonly.
+*/
 input[type="radio"],
 input[type="checkbox"],
 .radio,
-.radio_inline,
+.radio-inline,
 .checkbox,
-.checkbox_inline {
+.checkbox-inline {
     &[disabled],
     fieldset[disabled] & {
         cursor: not-allowed;
@@ -278,43 +301,51 @@ input[type="checkbox"],
 }
 
 
-/*** Static form control text ***/
+/*
+    Static form control text
 
-// Apply class to a `p` element to make any string of text align with labels in a horizontal form layout.
-.form_control_static {
+    Apply class to a `p` element to make any string of text align with labels in a horizontal form layout.
+*/
+.form-control-static {
     margin-bottom: 0; // Remove default margin from `p`
     padding-top: 17px;
 }
 
 
-/*** Help text ***/
+/*
+    Help text
 
-// Apply to any element you wish to create light text for placement immediately below a form control. Use for general help, formatting, or instructional text.
-.help_block {
+    Apply to any element you wish to create light text for placement immediately 
+    below a form control. Use for general help, formatting, or instructional text.
+*/
+.help-block {
 	color: lighten(#252525, 25%); // lighten the text some for contrast
-    display: block; // account for any element using help-block
+    display: block; // Account for any element using help-block
     margin-bottom: 10px;
     margin-top: 5px;
 }
 
 
-/*** Horizontal forms ***/
+/*
+    Horizontal forms
 
-// Horizontal forms are built on grid classes and allow you to create forms with labels on the left and inputs on the right.
-.form_horizontal {
+    Horizontal forms are built on grid classes and allow you to create forms with
+    labels on the left and inputs on the right.
+*/
+.form-horizontal {
     // Consistent vertical alignment of labels, radios, and checkboxes
-    .control_label,
+    .control-label,
     .radio,
     .checkbox,
-    .radio_inline,
-    .checkbox_inline {
+    .radio-inline,
+    .checkbox-inline {
         margin-bottom: 0;
         margin-top: 0;
         padding-top: 17px; // Default padding plus a border
     }
 
     // Make form groups behave like rows
-    .form_group {
+    .form-group {
         display: block;
         width: 100%;
     }

@@ -26,6 +26,12 @@ $large: 1024px; // 64em
 $x-large: 1440px; // 90em
 $xx-large: 1920px; // 120em
 
+/*** Buttons ***/
+$primary-button-bg-color: #e6e6e6;
+$primary-button-color: #444;
+$primary-button-border-radius: 2px;
+$primary-button-padding: 0.5em 1em;
+
 /*** Tables ***/
 $table-cell-padding: 8px;
 $table-condensed-cell-padding: 5px;
@@ -47,9 +53,9 @@ $screen: "only screen" !default;
 $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "#{$screen} and (orientation: portrait)" !default;
 
-$bp-x-small: "#{$screen} and (min-width: #{x-small})" !default;
-$bp-small: "#{$screen} and (min-width: #{small})" !default;
-$bp-medium: "#{$screen} and (min-width: #{medium})" !default;
-$bp-large: "#{$screen} and (min-width: #{large})" !default;
-$bp-x-large: "#{$screen} and (min-width: #{x-large})" !default;
-$bp-xx-large: "#{$screen} and (min-width: #{xx-large})" !default;
+$bp-x-small: "#{$screen} and (min-width: #{$x-small})" !default;
+$bp-small: "#{$screen} and (min-width: #{$small})" !default;
+$bp-medium: "#{$screen} and (min-width: #{$medium})" !default;
+$bp-large: "#{$screen} and (min-width: #{$large})" !default;
+$bp-x-large: "#{$screen} and (min-width: #{$x-large})" !default;
+$bp-xx-large: "#{$screen} and (min-width: #{$xx-large})" !default;

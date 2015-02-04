@@ -26,10 +26,16 @@
         padding: 1em;
         width: 100%; 
     } 
+}
+
+@media #{$bp-medium} {
     
-    @for $i from 1 through 12 {
-        .column_#{$i} { 
-            width: 100% / 12 * $i;
+    .grid {
+        @for $i from 1 through 12 {
+            .column_#{$i} { 
+                width: 100% / 12 * $i;
+            }
         }
     }
-}  
+    
+}
