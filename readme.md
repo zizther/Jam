@@ -1,7 +1,7 @@
 #Jam
 
 A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.
-[getjam.co](Jam)
+[getjam.io](Jam)
 
 
 **Install with Bower:**
@@ -19,7 +19,7 @@ $ bower install jam
 Pure is meant to be a starting point for every website or web app. We take care
 of all the CSS work that every site needs, without making it look cookie-cutter:
 
-* A responsive grid that can be customized to your needs.
+* A responsive grid that can be customised to your needs.
 
 * A solid base built on [Normalize.css][] to fix cross-browser compatibility
   issues.
@@ -33,13 +33,13 @@ of all the CSS work that every site needs, without making it look cookie-cutter:
 
 * Various common table styles.
 
-* An extremely minimalist look that is super-easy to customize.
+* An extremely minimalist look that is super-easy to customise.
 
 * Responsive by default, with a non-responsive option.
 
 * Easy customisation.
 
-* Extremely small file size: **4.5KB minified + gzip**.
+* Extremely small file size: **4.8KB minified + gzip**.
 
 
 [Normalize.css]: http://necolas.github.io/normalize.css/
