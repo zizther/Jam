@@ -15,6 +15,9 @@
 // Jam normalisation 
 @import 'core/base';
 
+// Jam helpers
+@import 'core/helpers';
+
 // Print styles
 @import 'core/print';
 
@@ -30,7 +33,6 @@
 @import 'project/sprites';
 @import 'project/icons';
 @import 'project/animation';
-@import 'project/helpers';
 @import 'project/global';
 @import 'project/xbrowser';
 @import 'project/display';
