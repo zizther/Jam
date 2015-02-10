@@ -22,9 +22,13 @@ legend {
 
 label {
     display: inline-block;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 5px;
     max-width: 100%;  // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+}
+
+.label-hdr {
+    @extend %clearfix;
 }
 
 // Override content-box in Normalize (* isn't specific enough)
