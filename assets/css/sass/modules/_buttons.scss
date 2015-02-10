@@ -40,12 +40,14 @@
 .button-disabled:hover,
 .button-disabled:focus,
 .button-disabled:active {
-    background-image: none;
-    border: none;
+    @include opacity(.5);
     box-shadow: none;
     cursor: not-allowed;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-    opacity: .4;
+    pointer-events: none;
+    
+    &:hover {
+        background-color: $primary-button-bg-color;
+    }
 }
 
 /*
