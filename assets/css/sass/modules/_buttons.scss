@@ -4,7 +4,7 @@
 .button {
     -webkit-user-drag: none;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    background-color: $primary-button-color;
+    background-color: $primary-button-bg-color;
     border: none;
     border-radius: $primary-button-border-radius;
     color: $primary-button-color;
@@ -28,7 +28,7 @@
         border: 0;
     }
     &:hover {
-        background: darken($primary-button-color, 8%);
+        background: darken($primary-button-bg-color, 8%);
     }
 }// END .button
 
