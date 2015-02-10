@@ -38,7 +38,21 @@
 @viewport           { width: device-width; }
 
 
-// Floats
+/*** Container ***/
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: $container-width;
+}
+.container-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $container-width;
+    width: 100%;
+}
+
+
+/*** Floats ***/
 .pull-left {
     float: left;
 }
@@ -47,7 +61,7 @@
 }
 
 
-// Contextual emphasis
+/*** Contextual emphasis ***/
 .text-warning {
 	color: $colour-warning;
 }
@@ -62,7 +76,7 @@
 }
 
 
-// Alignment
+/*** Alignment ***/
 .text-left {
 	text-align: left;
 }
@@ -74,28 +88,32 @@
 }
 
 
-// Hide text
+/*** Hide text ***/
 .text-hide {
     @include hide-text(); // Hide text from an element
 }
 
-
+/*** Image ***/
 // Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
     @include img-responsive();
 }
 
-
 // Perfect circle
-.img-circle {
+.image-circle {
     border-radius: 50%; // set radius in percents
+}
+
+// Border radius on image
+.image-rounded {
+    border-radius: $image-border-radius;
 }
 
 
 /*
-    Only display content to screen readers
-    See: http://a11yproject.com/posts/how-to-hide-content/
-*/
+ * Only display content to screen readers
+ * See: http://a11yproject.com/posts/how-to-hide-content/
+ */
 .sr-only {
 	@include size(1px);
 	border: 0;
@@ -107,25 +125,25 @@
 }
 
 
-// Toggling content
+/*** Invisible ***/
 .invisible {
     visibility: hidden;
 }
 
 
 /*
-    Media block
-    Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
-    
-    Example use:
-    
-    <div class="mb">
-        <div class="mb-left">
-        </div>
+ * Media block
+ * Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+ * 
+ * Example use:
+ *  
+ * <div class="mb">
+ *     <div class="mb-left">
+ *     </div>
 
-        <div class="mb-right">
-        </div>
-    </div>
+ *     <div class="mb-right">
+ *     </div>
+ * </div>
 */
 .mb,
 .mb-right {
