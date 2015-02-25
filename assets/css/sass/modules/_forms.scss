@@ -4,7 +4,7 @@
 fieldset {
     border: 0;
     margin: 0;
-    min-width: 0; // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets, so we reset that to ensure it behaves more like a standard block element. See https://github.com/twbs/bootstrap/issues/12359.
+    min-width: 0; // Chrome and Firefox set a 'min-width: -webkit-min-content;' on fieldsets, so we reset that to ensure it behaves more like a standard block element. See https://github.com/twbs/bootstrap/issues/12359.
     padding: 0;
 }
 
@@ -22,7 +22,7 @@ legend {
 
 label {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 5px;
     max-width: 100%;  // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 }
@@ -45,7 +45,7 @@ input[type="checkbox"] {
     margin-top: 1px \9; /* IE8-9 */
 }
 
-// Set the height of select and file controls to match text inputs
+// Set the height of select and file elements to match text inputs
 input[type="file"] {
     display: block;
 }
@@ -72,67 +72,6 @@ select optgroup {
     font-style: inherit;
 }
 
-/*
-    Fix for Chrome number input
-    Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
-    See https://github.com/twbs/bootstrap/issues/8350 for more.
-*/
-input[type="number"] {
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        height: auto;
-    }
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-select,
-textarea {
-    @include font-size(1.4);
-    -webkit-appearance: none; // Remove iOS stylings
-    background-color: #fff;
-    background-image: none;
-    color: #404040;
-    display: block;
-    line-height: $line-height-base;
-    padding: 6px 12px;
-    transition: border 200ms ease-out;
-    width: 100%;
-    
-    &:focus {
-        outline: 0;
-    }
-    &::-moz-placeholder {
-        color: #999;
-        opacity: 1;
-    }
-    &:-ms-input-placeholder {
-        color: #999;
-    }
-    &::-webkit-input-placeholder {
-        color: #999;
-    }
-    
-    &[disabled],
-    &[readonly] {
-        background-color: #eee;
-        cursor: not-allowed;
-        opacity: 1;
-    }
-}
-
 button,
 select,
 input,
@@ -141,14 +80,107 @@ textarea {
 	border: none;
     font-family: inherit;
     font-size: inherit;
-    line-height: 1.1;
 }
 
 
 /*
-    Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-    since IE8 won't execute CSS that contains a CSS3 selector.
-*/
+ * Common form elements
+ *
+ * Shared size and type resets for form elements. Apply .form-element to any
+ * of the following form elements:
+ *
+ * select
+ * textarea
+ * input[type="text"]
+ * input[type="password"]
+ * input[type="datetime"]
+ * input[type="datetime-local"]
+ * input[type="date"]
+ * input[type="month"]
+ * input[type="time"]
+ * input[type="week"]
+ * input[type="number"]
+ * input[type="email"]
+ * input[type="url"]
+ * input[type="search"]
+ * input[type="tel"]
+ * input[type="color"]
+ */
+.form-element {    
+    @include font-size(1.4);
+    background-color: $input-bg;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid $input-border-color;
+    color: $input-color;
+    display: block;
+    height: $input-height;
+    line-height: $line-height-base;
+    padding: $input-padding;
+    transition: border 200ms ease-out;
+    width: 100%;
+    
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that elements under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: #eee;
+        cursor: not-allowed;
+        opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    }
+    
+    &:focus {
+        outline: 0;
+    }
+    &::-moz-placeholder {
+        color: $input-placeholder-color;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $input-placeholder-color;
+    }
+    &::-webkit-input-placeholder {
+        color: $input-placeholder-color;
+    }
+    
+    /*** Native invalid styles ***/
+    &:focus {
+        &:invalid {
+            border-color: $colour-error;
+            color: $colour-error;
+            
+            &:focus {
+                border-color: $colour-error;
+            }
+        }
+    }
+}
+
+// Reset height for textarea
+textarea.form-element {
+    height: auto;
+}
+
+/*
+ * Fix for Chrome number input
+ * Setting certain font-sizes causes the 'I' bar to appear on hover of the bottom increment button.
+ * See https://github.com/twbs/bootstrap/issues/8350 for more.
+ */
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        height: auto;
+    }
+}
+
+
+/*
+ * Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+ * since IE8 won't execute CSS that contains a CSS3 selector.
+ */
 input:not([type]):focus {
     border-color: #66afe9;
     outline: 0;
@@ -158,47 +190,18 @@ fieldset[disabled]  {
     input,
     select,
     textarea {
-        background-color: #eee;
         cursor: not-allowed;
         opacity: 1;
     }
 }
 
-/*** Native invalid styles ***/
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea,
-select {
-    &:focus {
-        &:invalid {
-            border-color: #ee5f5b;
-            color: #b94a48;
-            
-            &:focus {
-                border-color: #e9322d;
-            }
-        }
-    }
-}
 input[type="file"],
 input[type="radio"],
 input[type="checkbox"] {
     &:focus {
         &:invalid {           
             &:focus {
-                outline-color: #e9322d;
+                outline-color: $colour-error;
             }
         }
     }
@@ -206,14 +209,14 @@ input[type="checkbox"] {
 
 
 /*
-    Special styles for iOS temporal inputs
-
-    In Mobile Safari, setting `display: block` on temporal inputs causes the
-    text within the input to become vertically misaligned.
-    As a workaround, we set a pixel line-height that matches the
-    given height of the input. Since this fucks up everything else, we have to
-    appropriately reset it for Internet Explorer and the size variations.
-*/
+ * Special styles for iOS temporal inputs
+ *
+ * In Mobile Safari, setting 'display: block' on temporal inputs causes the
+ * text within the input to become vertically misaligned.
+ * As a workaround, we set a pixel line-height that matches the
+ * given height of the input. Since this fucks up everything else, we have to
+ * appropriately reset it for Internet Explorer and the size variations.
+ */
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -222,44 +225,44 @@ input[type="month"] {
 }
 
 
-
 /*
-    Form groups
-
-    Designed to help with the organization and spacing of vertical forms.
-    For horizontal forms, use the predefined grid classes.
-*/
+ * Form groups
+ *
+ * Designed to help with the organisation and spacing of vertical forms.
+ */
 .form-group {
     margin-bottom: 15px;
 }
 
 
 /*
-    Checkboxes and radios
-
-    Indent the labels to position radios/checkboxes as hanging controls.
-*/
+ * Checkboxes and radios
+ *
+ * Indent the labels to position radios/checkboxes as hanging elements.
+ */
 .radio,
 .checkbox {
     display: block;
     margin-bottom: 10px;
     margin-top: 10px;
-    min-height: 16px; // clear the floating input if there is no label text
-    padding-left: 20px;
+    min-height: 16px; // Clear the floating input if there is no label text
     vertical-align: middle;
     
     label {
         cursor: pointer;
         display: inline;
-        font-weight: normal;
+        font-weight: 400;
         margin-bottom: 0;
+        min-height: 20px;
+        padding-left: 20px;
     }
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
-    float: left;
+    position: absolute;
+    margin-top: 4px \9;
     margin-left: -20px;
 }
 .radio + .radio,
@@ -269,8 +272,8 @@ input[type="month"] {
 
 
 /*
-    Radios and checkboxes on same line
-*/
+ * Radios and checkboxes on same line
+ */
 .radio-inline,
 .checkbox-inline {
     cursor: pointer;
@@ -282,16 +285,16 @@ input[type="month"] {
 }
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
-    margin-left: 10px; // space out consecutive inline controls
+    margin-left: 10px; // Space out consecutive inline elements
     margin-top: 0;
 }
 
 
 /*
-    Apply same disabled cursor tweak as for inputs
-
-    Note: Neither radios nor checkboxes can be readonly.
-*/
+ * Apply same disabled cursor tweak as for inputs
+ *
+ * Note: Neither radios nor checkboxes can be readonly.
+ */
 input[type="radio"],
 input[type="checkbox"],
 .radio,
@@ -306,24 +309,23 @@ input[type="checkbox"],
 
 
 /*
-    Static form control text
-
-    Apply class to a `p` element to make any string of text align with labels in a horizontal form layout.
-*/
-.form-control-static {
-    margin-bottom: 0; // Remove default margin from `p`
+ * Static form element text
+ */
+.form-element-static {
+    margin-bottom: 0; // Remove default margin from 'p'
     padding-top: 17px;
 }
 
 
 /*
-    Help text
-
-    Apply to any element you wish to create light text for placement immediately 
-    below a form control. Use for general help, formatting, or instructional text.
-*/
+ * Help text
+ *
+ * Apply to any element you wish to create light text for placement immediately 
+ * below a form element. Use for general help, formatting, or instructional text.
+ */
 .help-block {
-	color: lighten(#252525, 25%); // lighten the text some for contrast
+    @include font-size(1.3);
+	color: lighten($input-color, 25%); // Lighten the text some for contrast
     display: block; // Account for any element using help-block
     margin-bottom: 10px;
     margin-top: 5px;
@@ -331,26 +333,76 @@ input[type="checkbox"],
 
 
 /*
-    Horizontal forms
-
-    Horizontal forms are built on grid classes and allow you to create forms with
-    labels on the left and inputs on the right.
-*/
-.form-horizontal {
-    // Consistent vertical alignment of labels, radios, and checkboxes
-    .control-label,
-    .radio,
-    .checkbox,
-    .radio-inline,
-    .checkbox-inline {
-        margin-bottom: 0;
-        margin-top: 0;
-        padding-top: 17px; // Default padding plus a border
-    }
-
-    // Make form groups behave like rows
-    .form-group {
-        display: block;
-        width: 100%;
+ * Inline forms
+ *
+ * Make forms appear inline(-block) by adding the '.form-inline' class. Inline
+ * forms begin stacked on extra small (mobile) devices and then go inline when
+ * viewports reach <= 768px.
+ *
+ * Requires wrapping inputs and labels with '.form-group' for proper display of
+ * default HTML form elements and our custom form elements (e.g., input groups).
+ */
+.form-inline {
+    @media #{$bp-medium} {
+        // Inline-block all the things for "inline"
+        .form-group {
+            display: inline-block;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+        
+        // In navbar-form, allow folks to *not* use '.form-group'
+        .form-element {
+            display: inline-block;
+            vertical-align: middle;
+            width: auto; // Prevent labels from stacking above inputs in '.form-group'
+        }
+        
+        // Make static elements behave like regular ones
+        .form-element-static {
+            display: inline-block;
+            padding-top: 0;
+        }
+        
+        .input-group {
+            display: inline-table;
+            vertical-align: middle;
+        
+            .input-group-addon,
+            .input-group-btn,
+            .form-element {
+                width: auto;
+            }
+        }
+        
+        // Input groups need that 100% width though
+        .input-group > .form-element {
+            width: 100%;
+        }
+        
+        .element-label {
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+        
+        // Remove default margin on radios/checkboxes that were used for stacking, and
+        // then undo the floating of radios and checkboxes to match.
+        .radio,
+        .checkbox {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-top: 0;
+            vertical-align: middle;
+        
+            label {
+                padding-left: 0;
+            }
+        }
+        .radio input[type="radio"],
+        .checkbox input[type="checkbox"] {
+            margin-left: 0;
+            margin-right: 3px;
+            position: relative;
+        }
     }
 }

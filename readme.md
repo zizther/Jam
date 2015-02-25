@@ -199,7 +199,7 @@ probably create a Chrome Plugin helper for this.
 
 ##License
 
-This software is free to use under the Yahoo! Inc. BSD license.
+This software is free to use under the MIT license.
 See the [LICENSE file][] for license text and copyright information.
 
 

@@ -1,6 +1,13 @@
 /* -------------------------------------------------------------- 
 	Table
 -------------------------------------------------------------- */
+caption {
+    color: #777;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    text-align: left;
+}
+
 table {
     max-width: 100%;
     background-color: $table-bg;

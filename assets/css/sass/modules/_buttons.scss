@@ -12,7 +12,7 @@
     display: inline-block;
     font-family: inherit;
     font-size: 100%;
-    line-height: normal;
+    line-height: $line-height-base;
     padding: $primary-button-padding;
     text-align: center;
     text-decoration: none;
@@ -28,13 +28,14 @@
         border: 0;
     }
     &:hover {
-        background: darken($primary-button-bg-color, 8%);
+        background: $primary-button-bg-hover-color;
     }
 }// END .button
 
 /*
-    Disabled state
-*/
+ * Disabled state
+ */
+[disabled] .button,
 .button[disabled],
 .button-disabled,
 .button-disabled:hover,
@@ -51,8 +52,8 @@
 }
 
 /*
-    Hidden
-*/
+ * Hidden
+ */
 .button-hidden {
     display: none;
 }

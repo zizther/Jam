@@ -1,43 +1,3 @@
-/*
-    IE10 in Windows (Phone) 8
-
-    Support for responsive views via media queries is kind of borked in IE10, for
-    Surface/desktop in split view and for Windows Phone 8. This particular fix
-    must be accompanied by a snippet of JavaScript to sniff the user agent and
-    apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
-    our Getting Started page for more information on this bug.
-
-    For more information, see the following:
-    Docs: http://getbootstrap.com/getting-started/#support-ie10-width
-    
-    Internet Explorer 10 doesn't differentiate device width from viewport width,
-    and thus doesn't properly apply the media queries in Bootstrap's CSS.
-    Normally you'd just add a quick snippet of CSS to fix this:
-    
-    @-ms-viewport { width: device-width; }
-    
-    However, this doesn't work for devices running Windows Phone 8 versions older
-    than Update 3 (a.k.a. GDR3), as it causes such devices to show a mostly desktop
-    view instead of narrow "phone" view. To address this, you'll need to include the
-    following CSS and JavaScript to work around the bug.
-    
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement('style')
-        msViewportStyle.appendChild(
-            document.createTextNode(
-                '@-ms-viewport{width:auto!important}'
-            )
-        )
-        document.querySelector('head').appendChild(msViewportStyle)
-    }
-*/
-@-webkit-viewport   { width: device-width; }
-@-moz-viewport      { width: device-width; }
-@-ms-viewport       { width: device-width; }
-@-o-viewport        { width: device-width; }
-@viewport           { width: device-width; }
-
-
 /*** Container ***/
 .container {
     margin-left: auto;
@@ -76,7 +36,7 @@
 }
 
 
-/*** Alignment ***/
+/*** text alignment ***/
 .text-left {
 	text-align: left;
 }
@@ -86,17 +46,20 @@
 .text-center {
 	text-align: center;
 }
+.text-justify {
+    text-align: justify;
+}
 
 
 /*** Hide text ***/
-.text-hide {
-    @include hide-text(); // Hide text from an element
+.hide-text {
+    @include hide-text; // Hide text from an element
 }
 
 /*** Image ***/
 // Responsive images (ensure images don't scale beyond their parents)
-.img-responsive {
-    @include img-responsive();
+.image-responsive {
+    @include img-responsive;
 }
 
 // Perfect circle
@@ -130,6 +93,22 @@
     visibility: hidden;
 }
 
+/*** Hidden ***/
+.hidden {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+
+/*** Aspect Ratio ***/
+.four-three {
+    @include aspect-ratio(4, 3);
+}
+.sixteen-nine {
+    @include aspect-ratio(16, 9);
+}
+
 
 /*
  * Media block
@@ -140,7 +119,7 @@
  * <div class="mb">
  *     <div class="mb-left">
  *     </div>
-
+ *
  *     <div class="mb-right">
  *     </div>
  * </div>
@@ -157,3 +136,39 @@
         margin-right: 10px;
     }
 }
+
+
+/*
+    IE10 in Windows (Phone) 8
+
+    Internet Explorer 10 in Windows 8 and Windows Phone 8
+    Internet Explorer 10 doesn't differentiate device width from viewport width, and thus doesn't properly apply the media queries in Bootstrap's CSS. Normally you'd just add a quick snippet of CSS to fix this:
+    
+    @-ms-viewport {
+            width: device-width;
+    }
+    
+    However, this doesn't work for devices running Windows Phone 8 versions older than Update 3 (a.k.a. GDR3), as it causes such devices to show a mostly desktop view instead of narrow "phone" view. To address this, you'll need to include the following CSS and JavaScript to work around the bug.
+    
+    @-webkit-viewport   { width: device-width; }
+    @-moz-viewport      { width: device-width; }
+    @-ms-viewport       { width: device-width; }
+    @-o-viewport        { width: device-width; }
+    @viewport           { width: device-width; }
+    
+    
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+      var msViewportStyle = document.createElement('style')
+      msViewportStyle.appendChild(
+        document.createTextNode(
+          '@-ms-viewport{width:auto!important}'
+        )
+      )
+      document.querySelector('head').appendChild(msViewportStyle)
+    }
+*/
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }

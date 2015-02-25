@@ -118,7 +118,8 @@ var jamConfig = {
     // Compass - required for autoprefixer
     compass: {
         options: {
-            sourcemap: false
+            sourcemap: false,
+            raw: 'Sass::Script::Number.precision = 10\n'
         },
         dist: {
             options: {

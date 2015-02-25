@@ -64,18 +64,18 @@
 //
 // Tint
 //
-// Slightly lighten a colour
+// Slightly lighten a color
 //
-// @param [Colour] $colour - colour to tint
-// @param [Number] $percentage - percentage of `$colour` in returned colour
-// @return [Colour]
+// @param [Color] $color - color to tint
+// @param [Number] $percentage - percentage of '$color' in the returned color
+// @return [Color]
 //
 // Usage:
 // color: tint(#bada55, 42%); // color: #e2efb7;
 //
 //============================================================
-@function tint($colour, $percentage) {
-    @return mix($colour, white, $percentage);
+@function tint($color, $percentage) {
+    @return mix($color, white, $percentage);
 }
 
 
@@ -83,11 +83,11 @@
 //
 // Shade
 //
-// Slightly darken a colour
+// Slightly darken a color
 //
-// @param [Colour] $colour - colour to shade
-// @param [Number] $percentage - percentage of `$colour` in returned colour
-// @return [Colour]
+// @param [Color] $color - color to shade
+// @param [Number] $percentage - percentage of '$color' in the returned color
+// @return [Color]
 //
 // Usage:
 // background-color: shade(#663399, 42%); // background-color: #2a1540;
@@ -100,29 +100,29 @@
 
 //============================================================
 //
-// Colour luminance
+// Color luminance
 //
-// Calculates the luminance of a colour
+// Calculates the luminance of a color
 //
 // Returns the luminance of '$colour' as a float (between 0 and 1)
 // 1 is pure white, 0 is pure black
-// @param [Colour] $colour - Any colour value
+// @param [Color] $color - Any colour value
 // @return [Number]
 // @link http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
 //
 // Usage:
-// $colour: #bada55;
-// $luminance: luminance($colour); // 0.6123778773 
+// $color: #bada55;
+// $luminance: luminance($color); // 0.6123778773 
 //
 //============================================================
-@function luminance($colour) {
-    $colours: (
-        'red': red($colour),
-        'green': green($colour),
-        'blue': blue($colour)
+@function luminance($color) {
+    $colors: (
+        'red': red($color),
+        'green': green($color),
+        'blue': blue($color)
     );
 
-    @each $name, $value in $colours {
+    @each $name, $value in $colors {
         $adjusted: 0;
         $value: $value / 255;
 
@@ -134,8 +134,8 @@
             $value: pow($value, 2.4);
         }
     
-        $colours: map-merge($colours, ($name: $value));
+        $colors: map-merge($colors, ($name: $value));
     }
 
-    @return (map-get($colours, 'red') * .2126) + (map-get($colours, 'green') * .7152) + (map-get($colours, 'blue') * .0722);
+    @return (map-get($colors, 'red') * .2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
 }

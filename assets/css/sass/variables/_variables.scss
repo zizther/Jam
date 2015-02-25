@@ -1,22 +1,22 @@
 /* -------------------------------------------------------------- 
 	Project Variables
 -------------------------------------------------------------- */
+/*** Typography ***/
+$font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif; // sans-serif fonts
+$font-georgia: Georgia, "Times New Roman", Times, serif; // serif fonts
+$font-monaco: Monaco, Menlo, Consolas, "Courier New", monospace; // monospace fonts
+
 /*** Base pixel size ***/
 $base-pixel-size: 16px !default;
 
 /*** Line height ***/
-$line-height-base: 1.55;
+$line-height-base: 1.42857143;
 
 /*** Colours ***/
 $colour-valid: #468847;
 $colour-warning: #c09853;
 $colour-error: #b94a48;
 $colour-info: #3a87ad;
-
-/*** Typography ***/
-$font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif; // sans-serif fonts
-$font-georgia: Georgia, "Times New Roman", Times, serif; // serif fonts
-$font-monaco: Monaco, Menlo, Consolas, "Courier New", monospace; // monospace fonts
 
 /*** Sizes ***/
 $x-small: 320px; // 20em
@@ -28,15 +28,35 @@ $xx-large: 1920px; // 120em
 
 /*** Buttons ***/
 $primary-button-bg-color: #e6e6e6;
+$primary-button-bg-hover-color: #d2d2d2;
 $primary-button-color: #444;
 $primary-button-border-radius: 2px;
-$primary-button-padding: 0.5em 1em;
+$primary-button-padding: 7px 12px;
+
+/*** Menus ***/
+$menu-font-size: 1.6; // rem font size
+$menu-background: transparent;
+$menu-button-bg-color: #e6e6e6;
+$menu-button-bg-hover-color: #d2d2d2;
+$menu-button-text-color: #444;
+$menu-button-bg-colour: #1b809e;
+$menu-button-text-selected: #fff;
+$menu-border-color: #b7b7b7;
+$menu-heading-color: #555;
 
 /*** Container ***/
 $container-width: 1000px;
 
 /*** Image ***/
 $image-border-radius: 5px;
+
+/*** Forms ***/
+$input-bg: #fff;
+$input-border-color: #ccc;
+$input-color: #404040;
+$input-placeholder-color: #999;
+$input-height: 34px;
+$input-padding: 6px 12px;
 
 /*** Tables ***/
 $table-cell-padding: 8px;
@@ -52,6 +72,7 @@ $table-border-color: #ddd; // Table and cell border
 /*** Grid ***/
 $grid-columns: 12;
 $grid-max-width: $large;
+$grid-column-padding: 1em;
 
 /*** Breakpoints ***/
 $screen: "only screen" !default;

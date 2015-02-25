@@ -1,30 +1,23 @@
-@import "compass/utilities/sprites";
+@import "compass/utilities/sprites"
 
 /* -------------------------------------------------------------- 
 	Sprites
-	 
-    // _sprites.scss
-    $icons: sprite-map("icons/*.png", $layout: smart);
-    $icons-2x: sprite-map("icons-2x/*.png", $layout: smart);
-    
-    Usage:
-    1. Get Compass to create the sprites.
-    2. The first paramater is the image path relative to the graphics folder and the image format you wish to sprite. This should be in quotes.
-    3. The second parameter is the sprite layout. Options: vertical, horizontal, diagonal or smart.
-        
+	
+	Example usage:
 
-    In global.scss you can then call these sprites into the image-sprites mixin
-    
-    // _global.scss
-    .close_btn {
-        @include image-sprite('close_btn', $icons, $icons-2x);
-    }
-    
-    Usage:
-    1. Call the retina-sprite mixin.
-    2. The first parameter is the file name of the image to show. This should be in quotes.
-    3. The second parameter is the varaible for the pixel ratio 1 sprite.
-    4. The third parameter is the variable for the pixel ratio 2 sprite (This is optional).
-    
-    If the third parameter is left blank the mixin will not output a media query.
+    @import "social/*.png";
+	
+	In global.scss you can then use @extend this sprite
+	
+	// _global.scss
+	i {
+		&.icon_name {
+			@include social-sprite(fb_icon, true);
+		}
+	}
+	
+    - Call the <map>-sprite mixin to get the position, height and width for the icon.
+    - Replace <map> with the new of the sprites folder name.
+    - The first parameter is the name of the icon name in the sprite folder.
+    - The second parameter outputs the height and width, removing this or putting false will not output height or width
 -------------------------------------------------------------- */

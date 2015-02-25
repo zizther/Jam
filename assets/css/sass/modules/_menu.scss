@@ -2,8 +2,8 @@
 	Menu
 -------------------------------------------------------------- */
 .menu {
-    @include font-size(1.6);
-    background: #dedede;
+    @include font-size($menu-font-size);
+    background: $menu-background;
     
     > ul {
         list-style: none;
@@ -20,61 +20,59 @@
         position: relative;
         
         a {
+            background: $menu-button-bg-color;
             padding: 5px 20px;
             
             &:hover,
-            &:focus {
-                background: #eee;
+            &:focus,
+            &:active {
+                background: $menu-button-bg-hover-color;
             }
         }
         
         // Selected state
-        &.selected {
+        &.menu-selected {
             a {
-                color: #000;
+                background: $menu-button-bg-colour;
+                color: $menu-button-text-selected;
             }
         }
         
         // Disabled state
         &.menu-disabled {
             > a {
-                background-image: none;
+                @include opacity(.5);
+                background: $menu-button-bg-color;
                 border-color: transparent;
-                color: #bfbfbf;
                 cursor: default;
-            }
-            a {
+                
                 &:hover,
-                &:focus {
-                    background: #fff;
-                    color: #bfbfbf;
+                &:focus,
+                &:active {
+                    background: $menu-button-bg-color;
                 }
             }
         }
+    }
+    a {
+        border: 1px solid transparent;
+        border-left: none;
+        border-right: none;
+        color: $menu-button-text-color;
     }
     a,
     .menu-heading {
         display: block;
         color: inherit;
-        line-height: 1.5em;
         padding: 5px 20px;
         text-decoration: none;
         transition: all 150ms ease-out;
         white-space: nowrap;
     }
-    
-    a {
-        border: 1px solid transparent;
-        border-left: none;
-        border-right: none;
-        color: #777;
-    }
     .menu-heading {
-        @include font-size(2);
-        border-bottom-color: #dfdfdf;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        color: #565d64;
+        border-bottom: 1px solid $menu-border-color;
+        color: $menu-heading-color;
+        font-size: inherit;
         margin-top: 0.5em;
         text-transform: uppercase;   
     }
@@ -124,21 +122,21 @@
     
     &.menu-fixed {
         border: none;
-        border-bottom: 1px solid #b7b7b7;
+        border-bottom: 1px solid $menu-border-color;
     }
 }// END .menu
 
 
 /*
-    Hidden menu
-*/
+ * Hidden menu
+ */
 .menu-hidden {
     display: none;
 }
 
 /*
-    Fixed menu
-*/
+ * Fixed menu
+ */
 .menu-fixed {
     position: fixed;
     top: 0;
@@ -147,57 +145,60 @@
 }
 
 /*
-    Menu separator
-*/
+ * Menu separator
+ */
 .menu-separator {
-    @include font-size(0);
-    background-color: #dfdfdf;
+    background-color: $menu-border-color;
     display: block;
+    font-size: 0px;
     height: 1px;
     margin: 7px 2px;
     overflow: hidden;
 }
 
 /*
-    Paginator
-*/
+ * Paginator
+ */
 .paginator {
     letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
     list-style: none;
     margin: 0;
     padding: 0;
-    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */  
-    
+        
     li {
-        display: inline-block;
+        display: inline;
         letter-spacing: normal;
         text-rendering: auto;
         vertical-align: top;
         word-spacing: normal;
         zoom: 1;
+        
+        a {
+            height: 1.1em;
+            padding: .8em 1.4em;
+            text-decoration: none;
+            vertical-align: top;
+        }
     }
-    .button {
-        border-radius: 0;
-        height: 1.1em;
-        padding: 0.8em 1.4em;
-        vertical-align: top;
+    .paginator-button {
+        a {
+            background: $menu-button-bg-color;
+            color: $menu-button-text-color;
+            
+            &:hover,
+            &:focus,
+            &:active {
+                background: $menu-button-bg-hover-color;
+            }
+        }
     }
-    .prev,
-    .next {
-        color: #c0c1c3;
-        text-shadow: 0 -1px 0 rgba(0, 0, 0, .45);
-    }
-    .prev {
-        border-radius: 2px 0 0 2px;
-    }
-    .next {
-        border-radius: 0 2px 2px 0;
+    .paginator-active {
+        a {
+            background: $menu-button-bg-colour;
+            color: $menu-button-text-selected;
+        }
     }
 }
-.paginator {
-    word-spacing: -0.43em;
-}
-
 
 @media #{$bp-small} {
 

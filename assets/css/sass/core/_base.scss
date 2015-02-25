@@ -2,15 +2,14 @@
 	Global
 -------------------------------------------------------------- */
 * {
-    & >,
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box; // Only suitable for IE8+
+	text-rendering: optimizeLegibility;
+    
     &:before,
     &:after {
         box-sizing: border-box; // Only suitable for IE8+
     }
-}
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	text-rendering: optimizeLegibility;
 }
 html {
 	font-size: 62.5%; // Used to make the math easier for rem font sizes. Now 16px = 1.6rem
@@ -42,7 +41,7 @@ embed {
 // Lists
 ul,
 ol {
-    margin: 0;
+    margin: 0 0 0 20px;
     padding: 0;
 }
 
