@@ -498,6 +498,24 @@
 
 //============================================================
 //
+// Qualifing an element
+//
+// Helps qualify a selector withing its assosiated ruleset.
+// Qualifing by prepending an element name.
+//
+// Paramters:
+// @param [string] $element
+//
+//============================================================
+@mixin when-is($element){
+    @at-root #{$element + &} {
+        @content;
+    }
+}
+
+
+//============================================================
+//
 // Keyframes
 //
 // Outputs keyframes with suitable vendor prefixes
