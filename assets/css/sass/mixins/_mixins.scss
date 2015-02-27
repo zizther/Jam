@@ -501,7 +501,7 @@
 // Qualifing an element
 //
 // Helps qualify a selector within its associated ruleset.
-// Qualifing by prepending an element name.
+// Qualifying by prepending an element name.
 //
 // Paramters:
 // @param [string] $element
@@ -525,10 +525,10 @@
 //
 //============================================================
 @mixin keyframes($animation-name) {
-    @-webkit-keyframes $animation-name {
+    @-webkit-keyframes #{$animation-name} {
         @content;
     }
-    @keyframes $animation-name {
+    @keyframes #{$animation-name} {
         @content;
     }
 }
