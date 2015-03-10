@@ -13,10 +13,10 @@ $base-pixel-size: 16px !default;
 $line-height-base: 1.42857143;
 
 /*** Colours ***/
-$colour-valid: #468847;
-$colour-warning: #c09853;
-$colour-error: #b94a48;
-$colour-info: #3a87ad;
+$color-valid: #468847;
+$color-warning: #c09853;
+$color-error: #b94a48;
+$color-info: #3a87ad;
 
 /*** Sizes ***/
 $x-small: 320px; // 20em
@@ -28,7 +28,7 @@ $xx-large: 1920px; // 120em
 
 /*** Buttons ***/
 $primary-button-bg-color: #e6e6e6;
-$primary-button-bg-hover-color: #d2d2d2;
+$primary-button-bg-hover-color: darken($primary-button-bg-color, 6%);
 $primary-button-color: #444;
 $primary-button-border-radius: 2px;
 $primary-button-padding: 7px 12px;
@@ -39,7 +39,7 @@ $menu-background: transparent;
 $menu-button-bg-color: #e6e6e6;
 $menu-button-bg-hover-color: #d2d2d2;
 $menu-button-text-color: #444;
-$menu-button-bg-colour: #1b809e;
+$menu-button-selected-bg-color: #1b809e;
 $menu-button-text-selected: #fff;
 $menu-border-color: #b7b7b7;
 $menu-heading-color: #555;
@@ -61,12 +61,10 @@ $input-padding: 6px 12px;
 /*** Tables ***/
 $table-cell-padding: 8px;
 $table-condensed-cell-padding: 5px;
-
 $table-bg: transparent; // Overall background-color
 $table-bg-accent: #f9f9f9; // For striping
 $table-bg-hover: #f5f5f5;
 $table-bg-active: #f5f5f5;
-
 $table-border-color: #ddd; // Table and cell border
 
 /*** Grid ***/

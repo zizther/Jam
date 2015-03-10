@@ -149,11 +149,11 @@ textarea {
     /*** Native invalid styles ***/
     &:focus {
         &:invalid {
-            border-color: $colour-error;
-            color: $colour-error;
+            border-color: $color-error;
+            color: $color-error;
             
             &:focus {
-                border-color: $colour-error;
+                border-color: $color-error;
             }
         }
     }
@@ -201,7 +201,7 @@ input[type="checkbox"] {
     &:focus {
         &:invalid {           
             &:focus {
-                outline-color: $colour-error;
+                outline-color: $color-error;
             }
         }
     }

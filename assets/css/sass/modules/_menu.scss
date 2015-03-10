@@ -33,7 +33,7 @@
         // Selected state
         &.menu-selected {
             a {
-                background: $menu-button-bg-colour;
+                background: $menu-button-selected-bg-color;
                 color: $menu-button-text-selected;
             }
         }
@@ -194,7 +194,7 @@
     }
     .paginator-active {
         a {
-            background: $menu-button-bg-colour;
+            background: $menu-button-selected-bg-color;
             color: $menu-button-text-selected;
         }
     }
