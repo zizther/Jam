@@ -1,0 +1,58 @@
+{
+    "name":"jam",
+    "version":"2.4.3",
+    "author":"Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",
+    "description":"A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.",
+    "keywords":[
+        "css",
+        "js",
+        "sass",
+        "mobile-first",
+        "responsive",
+        "front-end",
+        "framework",
+        "web"
+    ],
+    "license":"MIT",
+    "repository":{
+        "type":"git",
+        "url":"git://github.com/zizther/jam.git"
+    },
+    "main":[
+        "./assets/css/sass/core/_helpers.scss",
+        "./assets/css/sass/core/_print.scss",
+        "./assets/css/sass/core/_reset.scss",
+        "./assets/css/sass/core/_base.scss",
+        "./assets/css/sass/mixins/_mixins.scss",
+        "./assets/css/sass/mixins/_screen_mixins.scss",
+        "./assets/css/sass/functions/_functions.scss",
+        "./assets/css/sass/modules/_buttons.scss",
+        "./assets/css/sass/modules/_forms.scss",
+        "./assets/css/sass/modules/_grid.scss",
+        "./assets/css/sass/modules/_menu.scss",
+        "./assets/css/sass/modules/_tables.scss",
+        "./assets/css/sass/project/_animation.scss",
+        "./assets/css/sass/project/_display.scss",
+        "./assets/css/sass/project/_fonts.scss",
+        "./assets/css/sass/project/_global.scss",
+        "./assets/css/sass/project/_icons.scss",
+        "./assets/css/sass/project/_sprites.scss",
+        "./assets/css/sass/project/_x_browser.scss",
+        "./assets/css/sass/variables/_easing.scss",
+        "./assets/css/sass/variables/_variables.scss",
+        "./assets/css/sass/styles.scss",
+        "./assets/css/styles.css"
+    ],
+    "ignore":[
+        "bower.json",
+        "source",
+        "spec",
+        ".gitignore",
+        "bower.json",
+        "LICENSE.md",
+        "readme.md"
+    ],
+    "dependencies":{
+        "modernizr": "*"
+    }
+}
