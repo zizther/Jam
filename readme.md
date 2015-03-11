@@ -1,27 +1,42 @@
+[jam-url]: http://getjam.io
+[license-url]: https://github.com/zizther/jam/blob/master/LICENSE.md
+[nodejs-url]: https://nodejs.org
+[gruntcli-url]: http://gruntjs.com/getting-started#installing-the-cli
+[yeoman-url]: http://yeoman.io
+[normalize-url]: http://necolas.github.io/normalize.css
+[homebrew-url]: http://brew.sh
 #Jam
 
-A simple, lightweight framework with a set of small, responsive CSS modules to help kick start all your web projects.
-[getjam.io](Jam)
+A simple, lightweight grunt-based HTML & Sass responsive front-end framework to help kick start all your projects.
+###[getjam.io][jam-url]###
 
 
-**Install with Bower:**
+**Install with Yeoman:**
+
+_You must have [Node][nodejs-url], [Grunt CLI][gruntcli-url] and [Yeoman][yeoman-url] installed,_
+
+```shell
+$ npm install -g generator-jam
+```
+
+```shell
+$ yo jam
+```
+
+**Alternatively you can install the Sass without Grunt and NPM**
 
 ```shell
 $ bower install jam
 ```
 
 
-[Jam]: http://getjam.co/
-
-
 ##Features
 
-Pure is meant to be a starting point for every website or web app. We take care
-of all the CSS work that every site needs, without making it look cookie-cutter:
+Jam is meant to be a starting point for every website or web app:
 
 * A responsive grid that can be customised to your needs.
 
-* A solid base built on [Normalize.css][] to fix cross-browser compatibility
+* A solid base built on [Normalize.css][normalize-url] to fix cross-browser compatibility
   issues.
 
 * Consistently styled buttons that work with `<a>` and `<button>` elements.
@@ -39,24 +54,10 @@ of all the CSS work that every site needs, without making it look cookie-cutter:
 
 * Easy customisation.
 
-* Extremely small file size: **4.8KB minified + gzip**.
-
-
-[Normalize.css]: http://necolas.github.io/normalize.css/
-
 
 ##Get Started
 
-To get started using Pure, go to the [Pure CSS website][Pure]. The website has
-extensive documentation and examples necessary to get you started using Pure.
-
-You can also install Pure using [Bower][], using the following command:
-
-```shell
-$ bower install jam
-```
-
-[Bower]: http://bower.io/
+To get started using Jam, go to [getjam.io][jam-url]. The website has documentation and examples necessary to get you started using Jam.
 
 
 ##Browser Support and Testing
@@ -71,9 +72,7 @@ Jam is tested and works in:
 
 ##Docs and guidelines
 
-Docs and guidelines can be found at [getjam.co][jam-site]
-
-[jam-site]: http://getjam.co
+Docs and guidelines can be found at [getjam.io][jam-url]
 
 ---
 
@@ -81,10 +80,10 @@ Docs and guidelines can be found at [getjam.co][jam-site]
 To compile and optimse the assets in the site you will need to have grunt and other packages installed. To do this you will need Node with NPM installed and Grunt-CLI
 
 ## Install Node
-[Download node JS](http://nodejs.org/download/)
+[Download node JS][nodejs-url]
 This will also install NPM
 
-If you have issues with Node or NPM try installing it with [homebrew](http://brew.sh/)
+If you have issues with Node or NPM try installing it with [homebrew][homebrew-url]
 
 	brew install node --without-npm
 	echo prefix=~/.node >> ~/.npmrc
@@ -200,7 +199,4 @@ probably create a Chrome Plugin helper for this.
 ##License
 
 This software is free to use under the MIT license.
-See the [LICENSE file][] for license text and copyright information.
-
-
-[LICENSE file]: https://github.com/zizther/jam/blob/master/LICENSE.md
+See the [LICENSE file][license-url] for license text and copyright information.
