@@ -1,32 +1,32 @@
 // Mixins
-@import 'mixins/mixins';
-@import 'mixins/screen_mixins';
+@import 'jam/mixins/mixins';
+@import 'jam/mixins/screen_mixins';
 
 // Functions
-@import 'functions/functions';
+@import 'jam/functions/functions';
 
 // Variables
-@import "variables/variables";
-@import "variables/easing";
+@import "jam/variables/variables";
+@import "jam/variables/easing";
 
 // Reset
-@import 'core/reset';
+@import 'jam/reset';
 
 // Jam normalisation 
-@import 'core/base';
+@import 'jam/base';
 
 // Jam helpers
-@import 'core/helpers';
+@import 'jam/helpers';
 
 // Print styles
-@import 'core/print';
+@import 'jam/print';
 
 // Modules
-@import 'modules/buttons';
-@import 'modules/forms';
-@import 'modules/grid';
-@import 'modules/menu';
-@import 'modules/tables';
+@import 'jam/buttons';
+@import 'jam/forms';
+@import 'jam/grid';
+@import 'jam/menu';
+@import 'jam/tables';
 
 // Project styles
 @import 'project/fonts';
