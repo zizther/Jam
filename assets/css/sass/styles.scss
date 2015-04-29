@@ -1,13 +1,14 @@
 // Mixins
-@import 'jam/mixins/mixins';
-@import 'jam/mixins/screen_mixins';
+@import 'jam/mixins';
+@import 'jam/screen_mixins';
 
 // Functions
-@import 'jam/functions/functions';
+@import 'jam/functions';
 
 // Variables
-@import "jam/variables/variables";
-@import "jam/variables/easing";
+@import "jam/variables";
+@import "jam/easing_variables";
+@import "project/variables";
 
 // Reset
 @import 'jam/reset';
