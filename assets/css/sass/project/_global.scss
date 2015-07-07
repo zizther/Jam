@@ -2,60 +2,9 @@
 	Extend Base
 -------------------------------------------------------------- */
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-family: $font-helvetica;
     font-weight: 400;
     line-height: $line-height-base;
-}
-
-// Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    -webkit-font-smoothing: auto;
-    line-height: 1.1;
-    margin: 0;
-}
-
-// Paragraphs
-p {
-    @include font-size(1.4);
-	margin: 0 0 14px;
-}
-ul,
-ol {
-    @include font-size(1.4);
-	margin-bottom: 16px;  
-}
-
-// Links
-a {
-    text-decoration: underline;
-    
-    &:hover {
-        text-decoration: none;
-    }
-}
-	
-// Clear
-.clear {
-	clear: both;
-}
-
-/**
- * Clearfix - use @extend .clearfix on classes or ID's which require it
- * e.g.
- *     .buttons {
- *         @extend %clearfix;
- *     }
-**/
-.clearfix,
-%clearfix {
-	@include clearfix;
 }
 
 
