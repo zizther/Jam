@@ -1,5 +1,6 @@
 [jam-url]: http://getjam.io
 [license-url]: https://github.com/zizther/jam/blob/master/LICENSE.md
+[changelog-url]: http://getjam.io/changelog
 [nodejs-url]: https://nodejs.org
 [gruntcli-url]: http://gruntjs.com/getting-started#installing-the-cli
 [yeoman-url]: http://yeoman.io
@@ -73,6 +74,10 @@ Jam is tested and works in:
 ##Docs and guidelines
 
 Docs and guidelines can be found at [getjam.io][jam-url]
+
+##Changelog
+
+[View the changelog][changelog-url]
 
 ---
 
