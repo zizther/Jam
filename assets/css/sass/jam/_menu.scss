@@ -160,12 +160,13 @@
  * Paginator
  */
 .paginator {
+    display: inline-block;
     letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
     list-style: none;
     margin: 0;
     padding: 0;
         
-    li {
+    > li {
         display: inline;
         letter-spacing: normal;
         text-rendering: auto;
@@ -173,9 +174,9 @@
         word-spacing: normal;
         zoom: 1;
         
-        a {
-            height: 1.1em;
-            padding: .8em 1.4em;
+        > a {
+	        float: left;
+            padding: .5em 1em;
             text-decoration: none;
             vertical-align: top;
         }
