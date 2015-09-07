@@ -29,9 +29,4 @@ intermediate
 publish
 .idea
 *.sass-cache
-composer.lock
-vendor/*
-assets/css/compass_app_log.txt
 node_modules
-Gruntfile.js
-package.json
