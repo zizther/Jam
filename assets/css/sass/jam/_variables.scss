@@ -70,7 +70,7 @@ $table-border-color: #ddd; // Table and cell border
 /*** Grid ***/
 $grid-columns: 12;
 $grid-max-width: $large;
-$grid-column-padding: 1em;
+$grid-gutter-width: 1em;
 
 /*** Breakpoints ***/
 $screen: "only screen" !default;

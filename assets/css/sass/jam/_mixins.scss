@@ -43,6 +43,65 @@
 
 //============================================================
 //
+// Make a container 
+//
+//============================================================
+@mixin make-container($gutter: $grid-gutter-width) {
+	@extend %clearfix;
+	margin-left: auto;
+  	margin-right: auto;
+  	padding-left: ($gutter / 2);
+  	padding-right: ($gutter / 2);
+}
+
+
+//============================================================
+//
+// Grid mixins 
+//
+// Setup custom grids
+//
+// Parameters:
+// @param [gutter] $gutter: The gutter width
+// @param [columns] $columns: the number of columns
+//
+//============================================================
+/*** Creates a wrapper for a series of columns ***/
+@mixin make-row($gutter: $grid-gutter-width) {
+  	@extend %clearfix;
+  	margin-left: ($gutter / -2);
+  	margin-right: ($gutter / -2);
+  
+}
+
+/*** Make the element grid-ready (applying everything but the width) ***/
+@mixin make-col($gutter: $grid-gutter-width) {
+	float: left;
+	min-height: 1px;
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
+	position: relative;
+}
+
+/*** Set a width (to be used in or out of media queries) ***/
+@mixin make-col-span($columns) {
+	width: percentage(($columns / $grid-columns));
+}
+
+/*** Get fancy by offsetting, or changing the sort order ***/
+@mixin make-col-offset($columns) {
+	margin-left: percentage(($columns / $grid-columns));
+}
+@mixin make-col-push($columns) {
+	left: percentage(($columns / $grid-columns));
+}
+@mixin make-col-pull($columns) {
+	right: percentage(($columns / $grid-columns));
+}
+
+
+//============================================================
+//
 // HIDPI-media-query 
 //
 // The HIDPI Meda Query will allow you to generate a media
