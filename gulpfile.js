@@ -34,7 +34,6 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
-	tinypng = require('gulp-tinypng'),
 	browserSync = require('browser-sync'),
 	sass = require('gulp-sass');
 
