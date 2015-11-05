@@ -102,14 +102,6 @@ gulp.task('sass-production', function(){
 // Sass watch
 gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
 
-// TinyPNG
-gulp.task('tinypng', function() {
-    gulp.src(paths.graphics.src + '*.{jpg,jpeg,png}')
-        .pipe(cache(tingpng('N-6kXlkgMaREJe8g-e2inwaJDS84Ixsa')))
-        .pipe(gulp.dest(paths.graphics.src))
-        .pipe(notify({ message: 'Graphics task complete' }));
-});
-
 // Image compression
 gulp.task('images', function() {
   return gulp.src(paths.graphics.src + '*.{jpg,jpeg,png}')
@@ -143,4 +135,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['watch']);
 
 // Build task
-gulp.task('build', ['modernizr', 'sass-production', 'concat', 'tinypng'], function() {});
+gulp.task('build', ['modernizr', 'sass-production', 'concat', 'images'], function() {});
