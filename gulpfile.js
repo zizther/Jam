@@ -14,7 +14,7 @@ var paths = {
         dest: basePaths.assets + 'js/dist/'
     },
     styles: {
-        sass: root + 'sass/',
+        sass: basePaths.root + 'sass/',
         css: basePaths.assets + 'css/'
     }
 };
