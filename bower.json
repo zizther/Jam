@@ -1,6 +1,6 @@
 {
     "name":"jam",
-    "version":"2.7.1",
+    "version":"2.7.2",
     "homepage": "http://getjam.io",
     "description":"A simple, lightweight Sass framework with a set of small, responsive CSS modules to help kick start all your web projects.",
     "author":"Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",

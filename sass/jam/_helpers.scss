@@ -94,12 +94,12 @@
 
 
 /*** Invisible ***/
-.invisible {
+.invisible-el {
     visibility: hidden;
 }
 
 /*** Hidden ***/
-.hidden {
+.hidden-el {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0 !important;
     visibility: hidden !important;
