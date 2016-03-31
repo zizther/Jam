@@ -1,4 +1,4 @@
-/* -------------------------------------------------------------- 
+/* --------------------------------------------------------------
 	Table
 -------------------------------------------------------------- */
 caption {
@@ -9,8 +9,14 @@ caption {
 }
 
 table {
-    max-width: 100%;
     background-color: $table-bg;
+    border-collapse: collapse; // Added back from Normalize 3.x
+    border-spacing: 0; // Added back from Normalize 3.x
+    max-width: 100%;
+}
+td,
+th {
+    padding: 0; // Added back from Normalize 3.x
 }
 th {
     text-align: left;
@@ -23,7 +29,7 @@ th {
 .table {
 	margin-bottom: 20px;
     width: 100%;
-    
+
     // Cells
     thead,
     tbody,
@@ -38,13 +44,13 @@ th {
             }
         }
     }
-    
+
     // Bottom align for column headings
     thead > tr > th {
         border-bottom: 2px solid $table-border-color;
         vertical-align: bottom;
     }
-    
+
     // Remove top border from thead by default
     caption + thead,
     colgroup + thead,
@@ -56,7 +62,7 @@ th {
             }
         }
     }
-    
+
     // Account for multiple tbody instances
     tbody + tbody {
         border-top: 2px solid $table-border-color;
@@ -92,7 +98,7 @@ th {
 */
 .table-bordered {
     border: 1px solid $table-border-color;
-    
+
     > thead,
     > tbody,
     > tfoot {
@@ -194,10 +200,10 @@ table {
         overflow-y: hidden;
         overflow-x: scroll;
         width: 100%;
-        
+
         > .table {
             margin-bottom: 0;
-            
+
             > thead,
             > tbody,
             > tfoot {
@@ -211,7 +217,7 @@ table {
         }
         > .table-bordered {
             border: 0;
-            
+
             > thead,
             > tbody,
             > tfoot {
@@ -235,5 +241,5 @@ table {
         }
 
     }
-    
+
 }// END @media (max-width: 767px) {
