@@ -14,12 +14,12 @@ var paths = {
         dest: basePaths.assets + 'js/dist/'
     },
     styles: {
-        sass: basePaths.root + 'sass/',
+        sass: basePaths.root + 'scss/',
         css: basePaths.assets + 'css/'
     }
 };
 
-var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie >= 9'],
+var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie >= 11'],
 	sassPrecision = 10;
 
 
@@ -27,6 +27,7 @@ var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.
  * NPM Packages
  */
 var gulp = require('gulp'),
+    exec = require('child_process').exec;,
 	modernizr = require('gulp-modernizr'),
 	notify = require('gulp-notify'),
 	cache = require('gulp-cache'),
@@ -49,13 +50,22 @@ gulp.task('info', function(){
     console.log('Yo!');
     console.log('Here is a list of the tasks avaliable to you:');
     console.log('');
-    console.log('1. gulp - This will perform the watch task and deal with the files as you develop.');
-    console.log('2. gulp build - This is for production. It will concatinate, optimise and do other cool stuff for you.');
-    console.log('3. gulp info - This will list all the avaliable options to you');
+    console.log('1. gulp info - This will list all the avaliable options to you');
+    console.log('2. gulp - This will perform the watch task and deal with the files as you develop.');
+    console.log('3. gulp build - This is for production. It will concatinate, optimise and do other cool stuff for you.');
     console.log('');
     console.log('--------------------------------------------------');
     console.log('');
 });
+
+// NPM Tasks
+gulp.task('exec-postcss', function (cb) {
+    exec('npm run postcss', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+})
 
 // Modernizr
 gulp.task('modernizr', function() {
@@ -71,7 +81,7 @@ gulp.task('sass-dev', function(){
 	var processors = [
         autoprefixer({browsers: autoprefixerBrowsers})
     ];
-	
+
 	gulp.src(paths.styles.sass + '**/*.scss')
     	.pipe(sass({
 	    	precision: sassPrecision,
@@ -87,7 +97,7 @@ gulp.task('sass-production', function(){
 	var processors = [
         autoprefixer({browsers: autoprefixerBrowsers})
     ];
-	
+
 	gulp.src(paths.styles.sass + '**/*.scss')
     	.pipe(sass({
 	    	precision: sassPrecision,
@@ -126,7 +136,7 @@ gulp.task('watch', function() {
 		  	baseDir: basePaths.root
 	  	}
   	});
-  	
+
   	gulp.watch(paths.styles.sass + '**/*.scss', ['sass-watch']);
 });
 
