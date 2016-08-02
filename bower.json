@@ -1,8 +1,8 @@
 {
     "name":"jam",
-    "version":"2.7.2",
+    "version":"3.0.0-alpha.1",
     "homepage": "http://getjam.io",
-    "description":"A simple, lightweight Sass framework with a set of small, responsive CSS modules to help kick start all your web projects.",
+    "description":"A simple, lightweight gulp-based HTML & Sass responsive front-end framework to help kick start all your projects.",
     "author":"Nathan Reed <info@vimia.co.uk> (http://vimia.co.uk)",
     "keywords":[
         "css",
@@ -20,40 +20,12 @@
         "url":"git://github.com/zizther/jam.git"
     },
     "main":[
-        "./sass/jam/_easing_variables.scss",
-        "./sass/jam/_variables.scss",
-        "./sass/jam/_mixins.scss",
-        "./sass/jam/_screen_mixins.scss",
-        "./sass/jam/_functions.scss",
-        "./sass/jam/_base.scss",
-        "./sass/jam/_buttons.scss",
-        "./sass/jam/_forms.scss",
-        "./sass/jam/_grid.scss",
-        "./sass/jam/_helpers.scss",
-        "./sass/jam/_menu.scss",
-        "./sass/jam/_print.scss",
-        "./sass/jam/_reset.scss",
-        "./sass/jam/_tables.scss",
-        "./sass/project/_animation.scss",
-        "./sass/project/_display.scss",
-        "./sass/project/_fonts.scss",
-        "./sass/project/_global.scss",
-        "./sass/project/_icons.scss",
-        "./sass/project/_sprites.scss",
-        "./sass/project/_variables.scss",
-        "./sass/project/_x_browser.scss",
-        "./sass/styles.scss",
-        "./assets/css/styles.css"
+        "./scss/jam.css"
     ],
     "ignore":[
-        "bower.json",
-        "source",
-        "spec",
-        ".gitignore",
-        "bower.json",
+        "/.*",
         "LICENSE.md",
         "readme.md",
-        "config.rb"
     ],
     "dependencies":{}
 }
