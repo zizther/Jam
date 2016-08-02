@@ -24,13 +24,14 @@ var paths = {
  * NPM Packages
  */
 var gulp = require('gulp'),
-    exec = require('child_process').exec;,
+    exec = require('child_process').exec,
 	modernizr = require('gulp-modernizr'),
 	notify = require('gulp-notify'),
-	cache = require('gulp-cache'),
+	cache = require('gulp-cached'),
+    remember = require('gulp-remember'),
     cleancss = require('gulp-clean-css'),
 	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
+	//uglify = require('gulp-uglify'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	browserSync = require('browser-sync'),
@@ -77,12 +78,15 @@ gulp.task('modernizr', function() {
 // Sass
 gulp.task('sass', function() {
     gulp.src(paths.styles.sass + '**/*.scss')
+        .pipe(cache('sass')) // only pass through changed files
     	.pipe(sass({
 	    	precision: 10,
 	    	sourceComments: true,
 	    	outputStyle: 'nested'
     	}).on('error', sass.logError))
+        .pipe(remember('sass')) // add back all files to the stream
 		.pipe(gulp.dest(paths.styles.css));
+        .pipe(notify({ message: 'Sass task complete' }));
 });
 
 // Sass dev
@@ -90,9 +94,6 @@ gulp.task('sass-dev', ['sass', 'exec-postcss'], function(){});
 
 // Sass production
 gulp.task('sass-production', ['sass', 'exec-postcss', 'compress-css'], function(){});
-
-// Sass watch
-gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
 
 // Compress CSS
 gulp.task('compress-css', function(){
@@ -102,25 +103,31 @@ gulp.task('compress-css', function(){
             console.log(details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(gulp.dest(paths.styles.css));
+        .pipe(notify({ message: 'CSS compression task complete' }));
 });
 
 // Image compression
 gulp.task('images', function() {
   return gulp.src(paths.graphics.src + '*.{jpg,jpeg,png}')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(cache('images'))
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(remember('images'))
     .pipe(gulp.dest(paths.graphics.src))
     .pipe(notify({ message: 'Graphics task complete' }));
 });
 
 // Concat and Uglify JS
-gulp.task('concat', function(){
-    return gulp.src(paths.scripts.src + '**/*.js')
-        .pipe(concat('main.min.js'))
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(notify({ message: 'Scripts task complete' }));
-});
+// gulp.task('concat', function(){
+//     return gulp.src(paths.scripts.src + '**/*.js')
+//         .pipe(concat('main.min.js'))
+//         .pipe(gulp.dest(paths.scripts.dest))
+//         .pipe(uglify())
+//         .pipe(gulp.dest(paths.scripts.dest))
+//         .pipe(notify({ message: 'Scripts task complete' }));
+// });
+
+// Sass watch
+gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
 
 // Watch
 gulp.task('watch', function() {
@@ -130,7 +137,14 @@ gulp.task('watch', function() {
 	  	}
   	});
 
-  	gulp.watch(paths.styles.sass + '**/*.scss', ['sass-watch']);
+    var sassWatcher = gulp.watch(paths.styles.sass + '**/*.scss', ['sass-watch']); // watch the same files in our sass task
+
+    sassWatcher.on('change', function (event) {
+        if (event.type === 'deleted') { // if a file is deleted, forget about it
+            delete cache.caches['sass'][event.path];
+            remember.forget('sass', event.path);
+        }
+    });
 });
 
 // Default task
