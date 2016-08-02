@@ -1,0 +1,21 @@
+//============================================================
+//
+// HIDPI-media-query 
+//
+// The HIDPI Meda Query will allow you to generate a media
+// query that targets HIDPI devices.
+// Find your device pixel ratio. Check out http://bjango.com/articles/min-device-pixel-ratio/
+//
+// Parameters:
+// @param [float] $ratio: The device screen ratio (Default value set to 2. Be aware some devices are 1.3)
+//
+//============================================================
+@mixin hidpi($ratio: 2) {
+	@media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+    only screen and (min--moz-device-pixel-ratio: $ratio),
+    only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+    only screen and (min-resolution: #{round($ratio*96)}dpi),
+    only screen and (min-resolution: #{$ratio}dppx) {
+    	@content;
+	}
+}

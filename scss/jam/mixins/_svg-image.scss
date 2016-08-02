@@ -1,0 +1,34 @@
+//============================================================
+//
+// SVG Image
+//
+// The mixin uses a @2x.png retina filename.
+// This mixin depends on Modernizr to test for svg to fallback to images if SVG is not supported
+// E.g. logo.svg, logo.png and logo@2x.png
+//
+// Parameters:
+// @param [string] $filepath: The path to the file without the file extension. (Place this in quotes "")
+// @param [string] $width: The width of the image (include px)
+// @param [string] $height: The height of the image (include px)
+// @param [string] $fallback-extension: The extension type of the image. (The default is png. Don't include the '.')
+//
+//============================================================
+@mixin svg-image($filepath, $width, $height, $fallback-extension: png){
+    background-image: url($filepath + '.svg');
+    background-size: $width $height;
+
+    .no-svg & {
+        background-image: url($filepath + '.' + $fallback-extension);
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    	only screen and (-moz-min-device-pixel-ratio: 2),
+    	only screen and (-o-min-device-pixel-ratio: 2/1),
+    	only screen and (min-device-pixel-ratio: 2),
+    	only screen and (min-resolution: 192dpi),
+    	only screen and (min-resolution: 2dppx) {
+    		& {
+    			background-image: url($filepath + '@2x.' + $fallback-extension);
+    		}
+    	}
+    }
+}

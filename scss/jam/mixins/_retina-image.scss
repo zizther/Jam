@@ -1,0 +1,32 @@
+//============================================================
+//
+// Retina image
+//
+// The mixin uses a @2x.png retina filename.
+// E.g. logo.png and logo@2x.png
+//
+// Parameters:
+// @param [string] $filepath: The path to the file without the file extension. (Place this in quotes "")
+// @param [string] $width: The width of the image (include px)
+// @param [string] $height: The height of the image (include px)
+// @param [string] $extension: The extension type of the image. (The default is png. Don't include the '.')
+//
+//============================================================
+@mixin retina-image($filepath, $width, $height, $extension: png) {
+	background-image: url($filepath + '.' + $extension);
+	background-repeat: no-repeat;
+	height: $height;
+	width: $width;
+
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (-moz-min-device-pixel-ratio: 2),
+	only screen and (-o-min-device-pixel-ratio: 2/1),
+	only screen and (min-device-pixel-ratio: 2),
+	only screen and (min-resolution: 192dpi),
+	only screen and (min-resolution: 2dppx) {
+		& {
+			background-image: url($filepath + '@2x.' + $extension);
+			background-size: $width $height;
+		}
+	}
+}
