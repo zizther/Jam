@@ -10,6 +10,7 @@ module.exports = {
   },
   autoprefixer: {
     browsers: [
+      // To find out browser support check out http://browserl.ist/
       '> 5%',
       'last 2 versions',
       'Firefox ESR',
