@@ -11,6 +11,9 @@
     "url": "https://github.com/zizther/jam/issues"
   },
   "license": "MIT",
+  "scripts": {
+    "postcss": "postcss --config gulp/postcss.js --replace assets/css/*.css",
+  },
   "style": "assets/css/jam.css",
   "sass": "scss/jam.scss",
   "engines": {
@@ -28,6 +31,8 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.7",
+    "postcss-cli": "^2.5.2",
+    "postcss-flexbugs-fixes": "^2.0.0",
     "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.0",
