@@ -18,7 +18,6 @@ module.exports = {
       // For example, at the time of writing, Edge 20 on an up-to-date system uses EdgeHTML 12.
       // See also https://github.com/Fyrd/caniuse/issues/1928
       'Edge >= 12',
-      'Explorer >=11',
       // Out of leniency, we prefix these 1 version further back than the official policy.
       'iOS >= 8',
       'Safari >= 8',

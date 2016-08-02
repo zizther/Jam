@@ -19,9 +19,6 @@ var paths = {
     }
 };
 
-var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie >= 11'],
-	sassPrecision = 10;
-
 
 /*
  * NPM Packages
@@ -31,6 +28,7 @@ var gulp = require('gulp'),
 	modernizr = require('gulp-modernizr'),
 	notify = require('gulp-notify'),
 	cache = require('gulp-cache'),
+    cleancss = require('gulp-clean-css'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	postcss = require('gulp-postcss'),
@@ -76,40 +74,35 @@ gulp.task('modernizr', function() {
 		.pipe(gulp.dest(paths.scripts.dest))
 });
 
-// Sass dev
-gulp.task('sass-dev', function(){
-	var processors = [
-        autoprefixer({browsers: autoprefixerBrowsers})
-    ];
-
-	gulp.src(paths.styles.sass + '**/*.scss')
+// Sass
+gulp.task('sass', function() {
+    gulp.src(paths.styles.sass + '**/*.scss')
     	.pipe(sass({
-	    	precision: sassPrecision,
+	    	precision: 10,
 	    	sourceComments: true,
 	    	outputStyle: 'nested'
     	}).on('error', sass.logError))
-    	.pipe(postcss(processors))
 		.pipe(gulp.dest(paths.styles.css));
 });
+
+// Sass dev
+gulp.task('sass-dev', ['sass', 'exec-postcss'], function(){});
 
 // Sass production
-gulp.task('sass-production', function(){
-	var processors = [
-        autoprefixer({browsers: autoprefixerBrowsers})
-    ];
-
-	gulp.src(paths.styles.sass + '**/*.scss')
-    	.pipe(sass({
-	    	precision: sassPrecision,
-	    	sourceComments: false,
-	    	outputStyle: 'compressed'
-    	}).on('error', sass.logError))
-    	.pipe(postcss(processors))
-		.pipe(gulp.dest(paths.styles.css));
-});
+gulp.task('sass-production', ['sass', 'exec-postcss', 'compress-css'], function(){});
 
 // Sass watch
 gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
+
+// Compress CSS
+gulp.task('compress-css', function(){
+    return gulp.src(paths.styles.css + '*.css')
+        .pipe(cleancss({debug: true}, function(details) {
+            console.log(details.name + ': ' + details.stats.originalSize);
+            console.log(details.name + ': ' + details.stats.minifiedSize);
+        }))
+        .pipe(gulp.dest(paths.styles.css));
+});
 
 // Image compression
 gulp.task('images', function() {
