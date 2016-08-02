@@ -118,9 +118,9 @@
 /*
  * Media block
  * Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
- * 
+ *
  * Example use:
- *  
+ *
  * <div class="mb">
  *     <div class="mb-left">
  *     </div>
@@ -141,39 +141,3 @@
         margin-right: 10px;
     }
 }
-
-
-/*
-    IE10 in Windows (Phone) 8
-
-    Internet Explorer 10 in Windows 8 and Windows Phone 8
-    Internet Explorer 10 doesn't differentiate device width from viewport width, and thus doesn't properly apply the media queries in Bootstrap's CSS. Normally you'd just add a quick snippet of CSS to fix this:
-    
-    @-ms-viewport {
-            width: device-width;
-    }
-    
-    However, this doesn't work for devices running Windows Phone 8 versions older than Update 3 (a.k.a. GDR3), as it causes such devices to show a mostly desktop view instead of narrow "phone" view. To address this, you'll need to include the following CSS and JavaScript to work around the bug.
-    
-    @-webkit-viewport   { width: device-width; }
-    @-moz-viewport      { width: device-width; }
-    @-ms-viewport       { width: device-width; }
-    @-o-viewport        { width: device-width; }
-    @viewport           { width: device-width; }
-    
-    
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style')
-      msViewportStyle.appendChild(
-        document.createTextNode(
-          '@-ms-viewport{width:auto!important}'
-        )
-      )
-      document.querySelector('head').appendChild(msViewportStyle)
-    }
-*/
-@-webkit-viewport   { width: device-width; }
-@-moz-viewport      { width: device-width; }
-@-ms-viewport       { width: device-width; }
-@-o-viewport        { width: device-width; }
-@viewport           { width: device-width; }
