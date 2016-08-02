@@ -1,20 +1,21 @@
 [jam-url]: http://getjam.io
 [license-url]: https://github.com/zizther/jam/blob/master/LICENSE.md
 [changelog-url]: http://getjam.io/changelog
+[issues-url]: https://github.com/zizther/jam/issues
 [nodejs-url]: https://nodejs.org
-[gruntcli-url]: http://gruntjs.com/getting-started#installing-the-cli
 [yeoman-url]: http://yeoman.io
 [normalize-url]: http://necolas.github.io/normalize.css
 [homebrew-url]: http://brew.sh
 #Jam
 
-A simple, lightweight grunt-based HTML & Sass responsive front-end framework to help kick start all your projects.
+A simple, lightweight gulp-based HTML & Sass responsive front-end framework to help kick start all your projects.
 ###[getjam.io][jam-url]###
+
 
 
 **Install with Yeoman:**
 
-_You must have [Node][nodejs-url], [Grunt CLI][gruntcli-url] and [Yeoman][yeoman-url] installed,_
+_You must have [Node][nodejs-url] and [Yeoman][yeoman-url] installed,_
 
 ```shell
 $ npm install -g generator-jam
@@ -24,7 +25,7 @@ $ npm install -g generator-jam
 $ yo jam
 ```
 
-**Alternatively you can install the Sass without Grunt and NPM**
+**Alternatively you can install with Bower:**
 
 ```shell
 $ bower install jam
@@ -65,11 +66,13 @@ To get started using Jam, go to [getjam.io][jam-url]. The website has documentat
 
 Jam is tested and works in:
 
-* IE 8+
-* Latest Stable: Firefox, Chrome, Safari
-* iOS 6.x+
+* IE 11+
+* Edge 12+
+* Latest 2 stable versions: Firefox, Chrome, Safari
+* iOS 8.x+
 * Android 4.x
 
+*IE9 & 10 are not officially supported, however Jam may work without any issues.*
 
 ##Docs and guidelines
 
@@ -79,10 +82,13 @@ Docs and guidelines can be found at [getjam.io][jam-url]
 
 [View the changelog][changelog-url]
 
+##Bugs and feature requests
+Have a bug or a feature request? Please first read the issue guidelines and search for existing and closed issues. If your problem or idea is not addressed yet, please [open a new issue][issues-url].
+
 ---
 
 # Frontend
-To compile and optimse the assets in the site you will need to have grunt and other packages installed. To do this you will need Node with NPM installed and Grunt-CLI
+To compile and optimse the assets in the site you will need to use gulp. You will need Node with NPM installed.
 
 ## Install Node
 [Download node JS][nodejs-url]
@@ -93,48 +99,40 @@ If you have issues with Node or NPM try installing it with [homebrew][homebrew-u
 	brew install node --without-npm
 	echo prefix=~/.node >> ~/.npmrc
 	curl -L https://www.npmjs.org/install.sh | sh
-	
+
 Node and npm should be correctly installed at this point. The final step is to add ```~/.node/bin``` to your PATH so commands you install globally are usable. This should be added to your ```~/.bash_profile```.
 
 	export PATH="$HOME/.node/bin:$PATH"
-
-
-## Install Grunt-CLI
-Once you have Node and NPM installed, run this command
-	
-	npm install -g grunt-cli
-	
-Anywhere you see -g this means to install the package globally
 
 
 ## Install the project node modules
 Go to the project root and run
 
 	npm install
-	
+
 ## Update project node modules
 Run this command at the project root
 
 	npm update
-	
-## Using Grunt
+
+## Using Gulp
 There are 3 tasks available:
 
-	grunt
-	
+	gulp
+
 This will perform the watch function to compile the CSS and run other functions
 
-	grunt build
-	
+	gulp build
+
 This will compile and optimise the CSS, optimise images and handle any JS stuff.
 This should not be run manually. It is designed to only be used when merging with specific branches
 
-	grunt info
-	
+	gulp info
+
 This will display all tasks available to you.
 
-## Grunt notifications
-Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
+## Gulp notifications
+Automatic desktop notifications for gulp messages, errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
 
 #### Mac
 
@@ -146,7 +144,6 @@ If you are using OS X 10.8 Mountain Lion or newer a notification system is built
 notification API that Node can access. Only code written in Objective C and signed in XCode can access it.
 This is not very friendly for Node users so we are using the tiny signed MIT-licensed native application
 [Terminal Notifier](https://github.com/alloy/terminal-notifier) from [Eloy Durán](https://github.com/alloy).
-I've changed the default icon which is owned by Apple to the Grunt logo.
 
 ##### Growl for OS X
 
