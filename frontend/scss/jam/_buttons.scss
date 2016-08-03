@@ -1,59 +1,169 @@
-/* -------------------------------------------------------------- 
+/* --------------------------------------------------------------
 	Buttons
 -------------------------------------------------------------- */
-.button {
+.btn {
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
     -webkit-user-drag: none;
-    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    background-color: $primary-button-bg-color;
-    border: none;
-    border-radius: $primary-button-border-radius;
-    color: $primary-button-color;
+    border: $input-btn-border-width solid transparent;
     cursor: pointer;
     display: inline-block;
-    font-family: inherit;
-    font-size: 100%;
-    line-height: $line-height-base;
-    padding: $primary-button-padding;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
     text-align: center;
-    text-decoration: none;
-    transition: background 200ms ease-out;
+    transition: all .2s ease-in-out;
     user-select: none;
-    vertical-align: baseline;
+    vertical-align: middle;
     white-space: nowrap;
-    zoom: 1;
-    
-    // Firefox: Get rid of the inner focus border
-    &::-moz-focus-inner {
-        padding: 0;
-        border: 0;
-    }
-    &:hover {
-        background: $primary-button-bg-hover-color;
-    }
-}// END .button
 
-/*
- * Disabled state
- */
-[disabled] .button,
-.button[disabled],
-.button-disabled,
-.button-disabled:hover,
-.button-disabled:focus,
-.button-disabled:active {
-    @include opacity(.5);
-    box-shadow: none;
-    cursor: not-allowed;
+    // &,
+    // &:active,
+    // &.active {
+    //     &:focus,
+    //     &.focus {
+    //         // Webkit only
+    //         outline: 5px auto -webkit-focus-ring-color;
+    //         outline-offset: -2px;
+    //     }
+    // }
+
+    @include hover-focus {
+        text-decoration: none;
+    }
+    &.focus {
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        background-image: none;
+        outline: 0;
+    }
+
+    &.disabled,
+    &:disabled {
+        cursor: $cursor-disabled;
+        opacity: .65;
+    }
+
+    // @TODO: Is this still needed?
+    // Firefox: Get rid of the inner focus border
+    // &::-moz-focus-inner {
+    //     padding: 0;
+    //     border: 0;
+    // }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn,
+[disabled] .btn {
     pointer-events: none;
-    
-    &:hover {
-        background-color: $primary-button-bg-color;
+}
+
+
+//
+// Alternate buttons
+.btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+.btn-secondary {
+    @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-info {
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+.btn-success {
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+.btn-warning {
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+.btn-danger {
+    @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+
+// Remove all backgrounds
+.btn-outline-primary {
+    @include button-outline-variant($btn-primary-bg);
+}
+.btn-outline-secondary {
+    @include button-outline-variant($btn-secondary-border);
+}
+.btn-outline-info {
+    @include button-outline-variant($btn-info-bg);
+}
+.btn-outline-success {
+    @include button-outline-variant($btn-success-bg);
+}
+.btn-outline-warning {
+    @include button-outline-variant($btn-warning-bg);
+}
+.btn-outline-danger {
+    @include button-outline-variant($btn-danger-bg);
+}
+
+// Link buttons
+//
+// Make a button look and behave like a link
+.btn-link {
+    border-radius: 0;
+    color: $link-color;
+    font-weight: normal;
+
+    &,
+    &:active,
+    &.active,
+    &:disabled {
+        background-color: transparent;
+    }
+    &,
+    &:focus,
+    &:active {
+        border-color: transparent;
+    }
+
+    @include hover {
+        border-color: transparent;
+    }
+    @include hover-focus {
+        background-color: transparent;
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+    &:disabled {
+        @include hover-focus {
+            color: $btn-link-disabled-color;
+            text-decoration: none;
+        }
     }
 }
 
-/*
- * Hidden
- */
-.button-hidden {
-    display: none;
+// Button Sizes
+.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
+}
+.btn-sm {
+    // line-height: ensure proper height of button next to small input
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+}
+
+// Block button
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+    margin-top: $btn-block-spacing-y;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
 }

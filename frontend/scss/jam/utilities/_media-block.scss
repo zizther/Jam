@@ -1,0 +1,25 @@
+/*
+ * Media block
+ * Reference: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+ *
+ * Example use:
+ *
+ * <div class="mb">
+ *     <div class="mb-left">
+ *     </div>
+ *
+ *     <div class="mb-right">
+ *     </div>
+ * </div>
+*/
+.mb,
+.mb-right {
+    overflow: hidden;
+    zoom: 1;
+}
+.mb {
+    .mb-left {
+        float: left;
+        margin-right: 10px;
+    }
+}

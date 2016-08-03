@@ -1,8 +1,8 @@
-/* -------------------------------------------------------------- 
+/* --------------------------------------------------------------
 	Grid
-	
+
 	Example usage:
-    
+
     <div class="grid">
         <div class="row">
             <div class="col col-3"></div>
@@ -11,47 +11,84 @@
         </div>
     </div>
 -------------------------------------------------------------- */
-.grid,
-.row {
-    @include clearfix;
-}
+// .grid,
+// .row {
+//     @include clearfix;
+// }
+//
+// .grid {
+//     margin: 0 auto;
+//     width: 100%;
+//
+//     .col {
+//         float: left;
+//         min-height: 1px;
+//         position: relative;
+//         padding: $grid-gutter-width;
+//         width: 100%;
+//     }
+// }
+//
+// @media #{$bp-medium} {
+//
+//     .grid {
+//         @for $i from 1 through 12 {
+//             .col-#{$i} {
+//                 width: 100% / 12 * $i;
+//             }
+//         }
+//         @for $i from 1 through 12 {
+//             .col-offset-#{$i} {
+//                 margin-left: 100% / 12 * $i;
+//             }
+//         }
+//         @for $i from 1 through 12 {
+//             .col-push-#{$i} {
+//                 left: 100% / 12 * $i;
+//             }
+//         }
+//         @for $i from 1 through 12 {
+//             .col-pull-#{$i} {
+//                 right: 100% / 12 * $i;
+//             }
+//         }
+//     }
+//
+// }
 
-.grid {
-    margin: 0 auto;
-    width: 100%;
-    
-    .col {
-        float: left;
-        min-height: 1px;
-        position: relative;
-        padding: $grid-gutter-width;
-        width: 100%; 
-    } 
-}
 
-@media #{$bp-medium} {
-    
-    .grid {
-        @for $i from 1 through 12 {
-            .col-#{$i} { 
-                width: 100% / 12 * $i;
-            }
-        }
-        @for $i from 1 through 12 {
-            .col-offset-#{$i} { 
-                margin-left: 100% / 12 * $i;
-            }
-        }
-        @for $i from 1 through 12 {
-            .col-push-#{$i} { 
-                left: 100% / 12 * $i;
-            }
-        }
-        @for $i from 1 through 12 {
-            .col-pull-#{$i} { 
-                right: 100% / 12 * $i;
-            }
-        }
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+@if $enable-grid-classes {
+    .container {
+        @include make-container();
+        @include make-container-max-widths();
     }
-    
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+@if $enable-grid-classes {
+    .container-fluid {
+        @include make-container();
+    }
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+@if $enable-grid-classes {
+    .row {
+        @include make-row();
+    }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+@if $enable-grid-classes {
+    @include make-grid-columns();
 }

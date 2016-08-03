@@ -4,16 +4,10 @@
 // Adapted from: A new micro clearfix hack
 //
 //============================================================
-@mixin clearfix {
-    & {
-        *zoom: 1;
-    }
-    &:before,
-    &:after {
+@mixin clearfix() {
+    &::after {
+        clear: both;
         content: "";
         display: table;
-    }
-    &:after {
-        clear: both;
     }
 }
