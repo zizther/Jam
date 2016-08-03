@@ -3,6 +3,7 @@
  */
 var basePaths = {
     root: './',
+    frontend: './frontend/',
     dist: './dist/'
 };
 var paths = {
@@ -10,11 +11,11 @@ var paths = {
         src: basePaths.dist + 'graphics/'
     },
     scripts: {
-        src: basePaths.root + 'js/',
+        src: basePaths.frontend + 'js/',
         dest: basePaths.dist + 'js/'
     },
     styles: {
-        sass: basePaths.root + 'scss/',
+        sass: basePaths.frontend + 'scss/',
         css: basePaths.dist + 'css/'
     }
 };
@@ -31,7 +32,8 @@ var gulp = require('gulp'),
     remember = require('gulp-remember'),
     cleancss = require('gulp-clean-css'),
 	concat = require('gulp-concat'),
-	//uglify = require('gulp-uglify'),
+	uglify = require('gulp-uglify'),
+    pump = require('pump'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	browserSync = require('browser-sync'),
@@ -117,14 +119,25 @@ gulp.task('images', function() {
 });
 
 // Concat and Uglify JS
-// gulp.task('concat', function(){
-//     return gulp.src(paths.scripts.src + '**/*.js')
-//         .pipe(concat('main.min.js'))
-//         .pipe(gulp.dest(paths.scripts.dest))
-//         .pipe(uglify())
-//         .pipe(gulp.dest(paths.scripts.dest))
-//         .pipe(notify({ message: 'Scripts task complete' }));
-// });
+gulp.task('concat-js', function(cb){
+    pump(
+        [
+            gulp.src(paths.scripts.src + '**/*.js'),
+            concat('main.min.js'),
+            uglify(),
+            gulp.dest(paths.scripts.dest),
+            notify({ message: 'Scripts task complete' })
+        ],
+        cb
+    );
+
+    // return gulp.src(paths.scripts.src + '**/*.js')
+    //     .pipe(concat('main.min.js'))
+    //     .pipe(gulp.dest(paths.scripts.dest))
+    //     .pipe(uglify())
+    //     .pipe(gulp.dest(paths.scripts.dest))
+    //     .pipe(notify({ message: 'Scripts task complete' }));
+});
 
 // Sass watch
 gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
@@ -133,7 +146,7 @@ gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
 gulp.task('watch', function() {
   	browserSync({
 	  	server: {
-		  	baseDir: basePaths.root
+		  	baseDir: basePaths.frontend
 	  	}
   	});
 
@@ -151,4 +164,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['watch']);
 
 // Build task
-gulp.task('build', ['modernizr', 'sass-production', 'concat', 'images'], function() {});
+gulp.task('build', ['modernizr', 'sass-production', 'concat-js', 'images'], function() {});
