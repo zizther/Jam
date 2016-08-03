@@ -3,19 +3,19 @@
  */
 var basePaths = {
     root: './',
-    assets: './assets/'
+    dist: './dist/'
 };
 var paths = {
     graphics: {
-        src: basePaths.assets + 'graphics/'
+        src: basePaths.dist + 'graphics/'
     },
     scripts: {
-        src: basePaths.assets + 'js/src/',
-        dest: basePaths.assets + 'js/dist/'
+        src: basePaths.root + 'js/',
+        dest: basePaths.dist + 'js/'
     },
     styles: {
         sass: basePaths.root + 'scss/',
-        css: basePaths.assets + 'css/'
+        css: basePaths.dist + 'css/'
     }
 };
 
