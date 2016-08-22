@@ -34,17 +34,17 @@ input[type="file"] {
     input[type="datetime-local"],
     input[type="month"] {
         &.form-control {
-            line-height: @input-height-base;
+            line-height: $input-height-base;
         }
 
         &.input-sm,
         .input-group-sm & {
-            line-height: @input-height-small;
+            line-height: $input-height-small;
         }
 
         &.input-lg,
         .input-group-lg & {
-            line-height: @input-height-large;
+            line-height: $input-height-large;
         }
     }
 }
@@ -255,7 +255,7 @@ select.form-control-lg {
     padding-left: 1.25rem;
 }
 
-.form-check-input {}
+.form-check-input {
     margin-left: -1.25rem;
     margin-top: .25rem;
     position: absolute;
