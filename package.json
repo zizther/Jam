@@ -14,8 +14,8 @@
   "scripts": {
     "postcss": "postcss --config gulp/postcss.js --replace assets/css/*.css",
   },
-  "style": "assets/css/jam.css",
-  "sass": "scss/jam.scss",
+  "style": "assets/css/styles.css",
+  "sass": "scss/styles.scss",
   "engines": {
     "node": ">=4"
   },
