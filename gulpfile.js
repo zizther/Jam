@@ -15,7 +15,7 @@ var paths = {
         dest: basePaths.dist + 'js/'
     },
     styles: {
-        sass: basePaths.frontend + 'scss/',
+        scss: basePaths.frontend + 'scss/',
         css: basePaths.dist + 'css/'
     }
 };
@@ -25,19 +25,13 @@ var paths = {
  * NPM Packages
  */
 var gulp = require('gulp'),
+    gulpLoadPlugins = require('gulp-load-plugins'),
     exec = require('child_process').exec,
-	modernizr = require('gulp-modernizr'),
-	notify = require('gulp-notify'),
-	cache = require('gulp-cached'),
-    remember = require('gulp-remember'),
-    cleancss = require('gulp-clean-css'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
-    pump = require('pump'),
-	postcss = require('gulp-postcss'),
+    pump = require('pump'),,
 	autoprefixer = require('autoprefixer'),
-	browserSync = require('browser-sync'),
-	sass = require('gulp-sass');
+	browserSync = require('browser-sync');
+
+const $ = gulpLoadPlugins(); // Load all plugins which start with 'gulp-'. Reference using $.
 
 
 /*
@@ -71,24 +65,23 @@ gulp.task('exec-postcss', function (cb) {
 // Modernizr
 gulp.task('modernizr', function() {
   	gulp.src(paths.scripts.src + 'app/**/*.js')
-    	.pipe(modernizr())
+    	.pipe($.modernizr())
 		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(uglify())
+		.pipe($.uglify())
 		.pipe(gulp.dest(paths.scripts.dest))
 });
 
 // Sass
 gulp.task('sass', function() {
-    gulp.src(paths.styles.sass + '**/*.scss')
-        .pipe(cache('sass')) // only pass through changed files
-    	.pipe(sass({
+    gulp.src(paths.styles.scss + '**/*.scss')
+    	.pipe($.sass({
 	    	precision: 10,
 	    	sourceComments: true,
 	    	outputStyle: 'nested'
-    	}).on('error', sass.logError))
-        .pipe(remember('sass')) // add back all files to the stream
-		.pipe(gulp.dest(paths.styles.css));
-        .pipe(notify({ message: 'Sass task complete' }));
+    	}).on('error', $.sass.logError))
+		.pipe(gulp.dest(paths.styles.css))
+        .pipe($.livereload())
+        .pipe($.notify({ message: 'Sass task complete' }));
 });
 
 // Sass dev
@@ -100,22 +93,20 @@ gulp.task('sass-production', ['sass', 'exec-postcss', 'compress-css'], function(
 // Compress CSS
 gulp.task('compress-css', function(){
     return gulp.src(paths.styles.css + '*.css')
-        .pipe(cleancss({debug: true}, function(details) {
+        .pipe($.cleancss({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(gulp.dest(paths.styles.css));
-        .pipe(notify({ message: 'CSS compression task complete' }));
+        .pipe($.notify({ message: 'CSS compression task complete' }));
 });
 
 // Image compression
 gulp.task('images', function() {
   return gulp.src(paths.graphics.src + '*.{jpg,jpeg,png}')
-    .pipe(cache('images'))
-    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(remember('images'))
+    .pipe($.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest(paths.graphics.src))
-    .pipe(notify({ message: 'Graphics task complete' }));
+    .pipe($.notify({ message: 'Graphics task complete' }));
 });
 
 // Concat and Uglify JS
@@ -123,20 +114,13 @@ gulp.task('concat-js', function(cb){
     pump(
         [
             gulp.src(paths.scripts.src + '**/*.js'),
-            concat('main.min.js'),
-            uglify(),
+            $.concat('main.min.js'),
+            $.uglify(),
             gulp.dest(paths.scripts.dest),
-            notify({ message: 'Scripts task complete' })
+            $.notify({ message: 'Scripts task complete' })
         ],
         cb
     );
-
-    // return gulp.src(paths.scripts.src + '**/*.js')
-    //     .pipe(concat('main.min.js'))
-    //     .pipe(gulp.dest(paths.scripts.dest))
-    //     .pipe(uglify())
-    //     .pipe(gulp.dest(paths.scripts.dest))
-    //     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 // Sass watch
@@ -146,18 +130,13 @@ gulp.task('sass-watch', ['sass-dev'], browserSync.reload);
 gulp.task('watch', function() {
   	browserSync({
 	  	server: {
-		  	baseDir: basePaths.frontend
+		  	baseDir: basePaths.root
 	  	}
   	});
 
-    var sassWatcher = gulp.watch(paths.styles.sass + '**/*.scss', ['sass-watch']); // watch the same files in our sass task
+    $.livereload.listen({ basePath: basePaths.root });
 
-    sassWatcher.on('change', function (event) {
-        if (event.type === 'deleted') { // if a file is deleted, forget about it
-            delete cache.caches['sass'][event.path];
-            remember.forget('sass', event.path);
-        }
-    });
+    gulp.watch(paths.styles.scss + '**/*.scss', ['sass-watch']); // watch the same files in our sass task
 });
 
 // Default task
