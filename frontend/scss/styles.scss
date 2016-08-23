@@ -1,8 +1,8 @@
 // Mixins
-@import 'jam/mixins/*';
+@import 'jam/mixins';
 
-// Utility
-@import "jam/utilities/*";
+// Functions
+@import 'jam/functions';
 
 // Variables
 @import "jam/variables";
@@ -11,14 +11,14 @@
 // Reset
 @import 'jam/normalize';
 
+// Utility
+@import "jam/utilities";
+
 // Print styles
 @import 'jam/print';
 
 // Jam normalisation
 @import 'jam/base';
-
-// Jam helpers
-@import 'jam/helpers';
 
 // Modules
 @import 'jam/type';

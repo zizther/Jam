@@ -42,14 +42,6 @@ $enable-rounded: false !default;
 $enable-print-styles: true !default;
 
 
-// Base pixel size
-$base-pixel-size: 16px !default;
-
-
-// Line height
-$line-height-base: 1.5 !default;
-
-
 // Colors
 // Grayscale and brand colors for use across Bootstrap.
 $gray-dark: #373a3c !default;
@@ -113,33 +105,33 @@ $body-color: $gray-dark !default;
 // Components
 //
 // Define common padding and border radius sizes and more.
-$line-height-lg:         (4 / 3) !default;
-$line-height-sm:         1.5 !default;
+$line-height-lg: (4 / 3) !default;
+$line-height-sm: 1.5 !default;
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
-$border-radius-sm:       .2rem !default;
+$border-radius: .25rem !default;
+$border-radius-lg: .3rem !default;
+$border-radius-sm: .2rem !default;
 
 $component-active-color: #fff !default;
-$component-active-bg:    $brand-primary !default;
+$component-active-bg: $brand-primary !default;
 
-$caret-width:            .3em !default;
-$caret-width-lg:         $caret-width !default;
+$caret-width: .3em !default;
+$caret-width-lg: $caret-width !default;
 
 
 // Z-index master list
 //
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
-$zindex-dropdown-backdrop:  990 !default;
-$zindex-navbar:            1000 !default;
-$zindex-dropdown:          1000 !default;
-$zindex-popover:           1060 !default;
-$zindex-tooltip:           1070 !default;
-$zindex-navbar-fixed:      1030 !default;
-$zindex-navbar-sticky:     1030 !default;
-$zindex-modal-bg:          1040 !default;
-$zindex-modal:             1050 !default;
+$zindex-dropdown-backdrop: 990 !default;
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-navbar-sticky: 1030 !default;
+$zindex-modal-bg: 1040 !default;
+$zindex-modal: 1050 !default;
 
 
 // Links
@@ -156,6 +148,9 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
+
+// Base pixel size
+$base-pixel-size: 16px !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 62.5% !default;
