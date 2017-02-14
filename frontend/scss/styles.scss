@@ -14,9 +14,6 @@
 // Utility
 @import "jam/utilities";
 
-// Print styles
-@import 'jam/print';
-
 // Jam normalisation
 @import 'jam/base';
 
@@ -40,3 +37,7 @@
 @import 'project/animation';
 @import 'project/global';
 @import 'project/display';
+
+// Print styles
+@import 'jam/print';
+@import 'project/print';
