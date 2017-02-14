@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "postcss --config gulp/postcss.js --replace assets/css/*.css",
+    "postcss": "postcss --config gulp/postcss.js --replace assets/css/*.css"
   },
   "style": "assets/css/styles.css",
   "sass": "scss/styles.scss",
