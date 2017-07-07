@@ -6,7 +6,7 @@
 
 // Variables
 @import "jam/variables";
-@import "project/variables";
+@import "app/variables";
 
 // Reset
 @import 'jam/normalize';
@@ -32,12 +32,12 @@
 @import 'jam/code';
 
 // Project styles
-@import 'project/fonts';
-@import 'project/icons';
-@import 'project/animation';
-@import 'project/global';
-@import 'project/display';
+@import 'app/fonts';
+@import 'app/icons';
+@import 'app/animation';
+@import 'app/global';
+@import 'app/display';
 
 // Print styles
 @import 'jam/print';
-@import 'project/print';
+@import 'app/print';
