@@ -12,39 +12,32 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "postcss --config gulp/postcss.js --replace assets/css/*.css"
+    "postcss": "postcss --config gulp/postcss.js --replace css/*.css"
   },
-  "style": "assets/css/styles.css",
+  "style": "css/styles.css",
   "sass": "scss/styles.scss",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "files": [
-    "assets",
-    "gulp",
-    "js/*.js",
     "scss/**/*.scss",
+    "gulp",
+    "package.json",
     "gulp.js",
     "readme.md",
     "LICENSE.md"
   ],
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.3.7",
-    "postcss-cli": "^2.5.2",
-    "postcss-flexbugs-fixes": "^2.0.0",
-    "browser-sync": "^2.14.0",
+    "autoprefixer": "^7.1.1",
+    "postcss-cli": "^4.1.0",
+    "postcss-flexbugs-fixes": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.2.4",
-    "gulp-livereload": "^3.8.1",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^3.0.2",
-    "gulp-modernizr": "*",
-    "gulp-notify": "^2.2.0",
-    "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "pump": "^1.0.1"
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-clean-css": "^3.4.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "pump": "^1.0.2"
   }
 }
