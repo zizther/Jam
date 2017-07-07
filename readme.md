@@ -3,7 +3,6 @@
 [changelog-url]: http://getjam.io/changelog
 [issues-url]: https://github.com/zizther/jam/issues
 [nodejs-url]: https://nodejs.org
-[yeoman-url]: http://yeoman.io
 [normalize-url]: http://necolas.github.io/normalize.css
 [homebrew-url]: http://brew.sh
 #Jam
@@ -11,21 +10,7 @@
 A simple, lightweight gulp-based HTML & Sass responsive front-end framework to help kick start all your projects.
 ###[getjam.io][jam-url]###
 
-
-
-**Install with Yeoman:**
-
-_You must have [Node][nodejs-url] and [Yeoman][yeoman-url] installed,_
-
-```shell
-$ npm install -g generator-jam
-```
-
-```shell
-$ yo jam
-```
-
-**Alternatively you can install with Bower:**
+**Install with with Bower:**
 
 ```shell
 $ bower install jam
@@ -60,6 +45,14 @@ Jam is meant to be a starting point for every website or web app:
 ##Get Started
 
 To get started using Jam, go to [getjam.io][jam-url]. The website has documentation and examples necessary to get you started using Jam.
+##Using CSS files
+
+To use the CSS file directly in your project you can reference it by using
+`<link href="/css/styles.css" rel="stylesheet">`
+
+##Using Scss files
+
+If you want to use the Scss files you can compile them using the gulp file in this project ([Find out more here](#frontend)) or use your own tasks to fit within your project.
 
 
 ##Browser Support and Testing
@@ -87,7 +80,7 @@ Have a bug or a feature request? Please first read the issue guidelines and sear
 
 ---
 
-# Frontend
+# Frontend{#frontend}
 To compile and optimse the assets in the site you will need to use gulp. You will need Node with NPM installed.
 
 ## Install Node
@@ -116,20 +109,13 @@ Run this command at the project root
 	npm update
 
 ## Using Gulp
-There are 3 tasks available:
+There are 2 tasks available:
 
 	gulp
 
 This will perform the watch function to compile the CSS and run other functions
 
 	gulp build
-
-This will compile and optimise the CSS, optimise images and handle any JS stuff.
-This should not be run manually. It is designed to only be used when merging with specific branches
-
-	gulp info
-
-This will display all tasks available to you.
 
 ## Gulp notifications
 Automatic desktop notifications for gulp messages, errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
