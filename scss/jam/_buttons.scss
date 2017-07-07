@@ -44,13 +44,6 @@
         cursor: $cursor-disabled;
         opacity: .65;
     }
-
-    // @TODO: Is this still needed?
-    // Firefox: Get rid of the inner focus border
-    // &::-moz-focus-inner {
-    //     padding: 0;
-    //     border: 0;
-    // }
 }
 
 // Future-proof disabling of clicks on `<a>` elements
