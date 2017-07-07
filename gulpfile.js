@@ -52,7 +52,7 @@ gulp.task('compress-css', function(){
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
         }))
-        .pipe(gulp.dest(paths.styles.css));
+        .pipe(gulp.dest(paths.styles.css))
         .pipe($.notify({ message: 'CSS compression task complete' }));
 });
 
