@@ -11,17 +11,7 @@
 
 // Rounded corners
 .img-rounded {
-    @include border-radius($border-radius-lg);
-}
-
-// Image thumbnails
-.img-thumbnail {
-    @include border-radius($thumbnail-border-radius);
-    background-color: $thumbnail-bg;
-    border: $thumbnail-border-width solid $thumbnail-border-color;
-    padding: $thumbnail-padding;
-    transition: all .2s ease-in-out;
-    @include img-fluid(inline-block); // Keep them at most 100% wide
+    border-radius: $image-border-radius;
 }
 
 // Perfect circle
