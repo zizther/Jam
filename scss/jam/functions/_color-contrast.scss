@@ -1,0 +1,29 @@
+//============================================================
+//
+// Color contrast
+//
+// Works out the background colour to determine the text
+// colour to use.
+//
+// @param [Color] $color - background color to test against
+// @return [Color] the font color to use
+//
+// Usage:
+// color: color-yiq(#663399);
+//
+//
+//============================================================
+@mixin color-yiq($color) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+    @if ($yiq >= 150) {
+        color: #111;
+    }
+    @else {
+        color: #fff;
+    }
+}

@@ -49,8 +49,3 @@ publish
 #####
 node_modules
 npm-debug.log
-
-###########
-# Jam files
-###########
-assets/js/dist/*
