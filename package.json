@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "jam",
     "version": "3.0.0-alpha.1",
     "description": "A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.",
@@ -57,4 +58,47 @@
         "gulp-cssnano": "^2.1.2",
         "gulp-notify": "^3.0.0"
     }
+=======
+  "name": "jam",
+  "version": "3.0.0-alpha.1",
+  "description": "A simple, lightweight gulp-based HTML & Sass responsive front-end framework to help kick start all your projects.",
+  "homepage": "http://getjam.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zizther/Jam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zizther/jam/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postcss": "postcss --config gulp/postcss.js --replace css/*.css"
+  },
+  "style": "css/styles.css",
+  "sass": "scss/styles.scss",
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "scss/**/*.scss",
+    "gulp",
+    "package.json",
+    "gulp.js",
+    "readme.md",
+    "LICENSE.md"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "postcss-cli": "^4.1.0",
+    "postcss-flexbugs-fixes": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-clean-css": "^3.4.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "pump": "^1.0.2"
+  }
+>>>>>>> 0ff3b449a092bf83efd31ed1dde4140d8f5533fe
 }
