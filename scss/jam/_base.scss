@@ -243,8 +243,14 @@ figure {
 
 // Images
 img {
-	border-style: none; // Remove the border on images inside links in IE 10-.
 	vertical-align: middle;
+}
+
+// Media
+// Prevent image overflow (opinionated).
+img,
+video {
+ 	max-width: 100%;
 }
 
 svg:not(:root) {
