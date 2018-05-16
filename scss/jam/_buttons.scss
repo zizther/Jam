@@ -1,8 +1,8 @@
 /* --------------------------------------------------------------
 	Buttons
 -------------------------------------------------------------- */
-.button {
-    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base);
+.btn {
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
     -webkit-user-drag: none;
     border: $input-btn-border-width solid transparent;
     cursor: pointer;
@@ -15,7 +15,18 @@
     vertical-align: middle;
     white-space: nowrap;
 
-    @include hover-focus-active {
+    // &,
+    // &:active,
+    // &.active {
+    //     &:focus,
+    //     &.focus {
+    //         // Webkit only
+    //         outline: 5px auto -webkit-focus-ring-color;
+    //         outline-offset: -2px;
+    //     }
+    // }
+
+    @include hover-focus {
         text-decoration: none;
     }
     &.focus {
@@ -37,30 +48,57 @@
 
 // Future-proof disabling of clicks on `<a>` elements
 a.btn.disabled,
-fieldset[disabled] a.btn {
+fieldset[disabled] a.btn,
+[disabled] .btn {
     pointer-events: none;
 }
 
 
 //
 // Alternate buttons
-//
-@each $color, $value in $theme-colors {
-    .btn-#{$color} {
-        @include button-variant($value, $value);
-    }
+.btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+.btn-secondary {
+    @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-info {
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+.btn-success {
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+.btn-warning {
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+.btn-danger {
+    @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
-@each $color, $value in $theme-colors {
-    .btn-outline-#{$color} {
-        @include button-outline-variant($value, $white);
-    }
+// Remove all backgrounds
+.btn-outline-primary {
+    @include button-outline-variant($btn-primary-bg);
+}
+.btn-outline-secondary {
+    @include button-outline-variant($btn-secondary-border);
+}
+.btn-outline-info {
+    @include button-outline-variant($btn-info-bg);
+}
+.btn-outline-success {
+    @include button-outline-variant($btn-success-bg);
+}
+.btn-outline-warning {
+    @include button-outline-variant($btn-warning-bg);
+}
+.btn-outline-danger {
+    @include button-outline-variant($btn-danger-bg);
 }
 
 // Link buttons
 //
 // Make a button look and behave like a link
-.button-link {
+.btn-link {
     border-radius: 0;
     color: $link-color;
     font-weight: normal;
@@ -80,13 +118,13 @@ fieldset[disabled] a.btn {
     @include hover {
         border-color: transparent;
     }
-    @include hover-focus-active {
+    @include hover-focus {
         background-color: transparent;
         color: $link-hover-color;
         text-decoration: $link-hover-decoration;
     }
     &:disabled {
-        @include hover-focus-active {
+        @include hover-focus {
             color: $btn-link-disabled-color;
             text-decoration: none;
         }
@@ -94,23 +132,23 @@ fieldset[disabled] a.btn {
 }
 
 // Button Sizes
-.button-lg {
+.btn-lg {
     // line-height: ensure even-numbered height of button next to large input
-    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg);
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
 }
-.button-sm {
+.btn-sm {
     // line-height: ensure proper height of button next to small input
-    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm);
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
 }
 
 // Block button
-.button-block {
+.btn-block {
     display: block;
     width: 100%;
 }
 
 // Vertically space out multiple block buttons
-.button-block + .button-block {
+.btn-block + .btn-block {
     margin-top: $btn-block-spacing-y;
 }
 
@@ -118,7 +156,7 @@ fieldset[disabled] a.btn {
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    &.button-block {
+    &.btn-block {
         width: 100%;
     }
 }

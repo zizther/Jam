@@ -18,13 +18,14 @@
 @import 'jam/base';
 
 // Modules
-@import 'jam/typography';
 @import 'jam/buttons';
 @import 'jam/forms';
-@import 'jam/input-group';
-@import 'jam/tables';
+@import 'jam/grid';
 @import 'jam/images';
+@import 'jam/input-group';
 @import 'jam/media';
+@import 'jam/tables';
+@import 'jam/typography';
 
 // Project styles
 @import 'app/fonts';
