@@ -1,10 +1,12 @@
 // Display utilities
-.d-block {
-    display: block !important;
-}
-.d-inline-block {
-    display: inline-block !important;
-}
-.d-inline {
-    display: inline !important;
+.diplay {
+    &--block {
+        display: block !important;
+    }
+    &--inline-block {
+        display: inline-block !important;
+    }
+    &--inline {
+        display: inline !important;
+    }
 }

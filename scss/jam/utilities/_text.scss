@@ -1,35 +1,30 @@
 // Text
 
-// Alignment
-.text-justify { text-align: justify !important; }
-.text-nowrap { white-space: nowrap !important; }
-.text-truncate { @include text-truncate; }
+.text {
+    // Alignment
+    &--justify { text-align: justify !important; }
+    &--nowrap { white-space: nowrap !important; }
+    &--truncate { @include text-truncate; }
 
-// Responsive alignment
-@each $breakpoint in map-keys($grid-breakpoints) {
-    @include media-breakpoint-up($breakpoint) {
-        .text-#{$breakpoint}-left   { text-align: left !important; }
-        .text-#{$breakpoint}-right  { text-align: right !important; }
-        .text-#{$breakpoint}-center { text-align: center !important; }
+    // Transformation
+    &--lowercase { text-transform: lowercase !important; }
+    &--uppercase { text-transform: uppercase !important; }
+    &--capitalize { text-transform: capitalize !important; }
+
+    // Misc
+    &--hide {
+        @include text-hide();
     }
 }
 
-// Transformation
-.text-lowercase { text-transform: lowercase !important; }
-.text-uppercase { text-transform: uppercase !important; }
-.text-capitalize { text-transform: capitalize !important; }
-
-// Weight and italics
-.font-weight-normal { font-weight: normal; }
-.font-weight-bold { font-weight: bold; }
-.font-italic { font-style: italic; }
-
 // Contextual colors
 @each $color, $value in $theme-colors {
-    @include text-emphasis-variant('.text-#{$color}', $value);
+    @include text-emphasis-variant('.text--#{$color}', $value);
 }
 
-// Misc
-.text-hide {
-    @include text-hide();
+// Weight and italics
+.font {
+    &--weight-normal { font-weight: normal; }
+    &--weight-bold { font-weight: bold; }
+    &--italic { font-style: italic; }
 }

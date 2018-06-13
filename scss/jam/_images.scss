@@ -9,11 +9,6 @@
     @include img-fluid();
 }
 
-// Rounded corners
-.img-rounded {
-    border-radius: $image-border-radius;
-}
-
 // Perfect circle
 .img-circle {
     border-radius: 50%;

@@ -5,20 +5,20 @@
  * Example use:
  *
  * <div class="mb">
- *     <div class="mb-left">
+ *     <div class="mb--left">
  *     </div>
  *
- *     <div class="mb-right">
+ *     <div class="mb--right">
  *     </div>
  * </div>
 */
-.mb,
-.mb-right {
-    overflow: hidden;
-    zoom: 1;
-}
 .mb {
-    .mb-left {
+    &,
+    &--right {
+        overflow: hidden;
+        zoom: 1;
+    }
+    &--left {
         float: left;
         margin-right: 10px;
     }
