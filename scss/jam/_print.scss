@@ -34,7 +34,7 @@
 
         pre,
         blockquote {
-            border: $border-width solid #999;   // Bootstrap custom code; using `$border-width` instead of 1px
+            border: $border-width solid #999;
             page-break-inside: avoid;
         }
 
