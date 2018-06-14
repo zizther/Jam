@@ -8,7 +8,7 @@
 @import "jam/variables";
 @import "app/variables";
 
-// Vendor
+// Vendors
 @import 'vendor/modern-normalize';
 @import 'vendor/_grid';
 
@@ -21,16 +21,14 @@
 // Modules
 @import 'jam/buttons';
 @import 'jam/forms';
-@import 'jam/images';
-@import 'jam/tables';
-@import 'jam/typography';
+//@import 'jam/images';
+//@import 'jam/tables';
+//@import 'jam/typography';
 
 // Project styles
-@import 'app/fonts';
-@import 'app/icons';
 @import 'app/animation';
 @import 'app/global';
-@import 'app/display';
+@import 'app/icons';
 
 // Print styles
 @import 'jam/print';
