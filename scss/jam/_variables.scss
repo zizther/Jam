@@ -4,51 +4,19 @@
 	Copy settings from this file into the provided `project/_variables.scss` to override
 	the Jam defaults without modifying key, versioned files.
 -------------------------------------------------------------- */
-// Spacing
-//
-// Control the default styling of most Bootstrap elements by modifying these
-// variables. Mostly focused on spacing.
-// You can add more entries to the $spacers map, should you need more variation.
-$spacer:   1rem !default;
-$spacer-x: $spacer !default;
-$spacer-y: $spacer !default;
-$spacers: (
-  0: (
-    x: 0,
-    y: 0
-  ),
-  1: (
-    x: $spacer-x,
-    y: $spacer-y
-  ),
-  2: (
-    x: ($spacer-x * 1.5),
-    y: ($spacer-y * 1.5)
-  ),
-  3: (
-    x: ($spacer-x * 3),
-    y: ($spacer-y * 3)
-  )
-) !default;
-$border-width: 1px !default;
-
-
 // Settings
 // Quickly modify global styling by enabling or disabling optional features.
-$enable-flex: false !default;
 $enable-hover-media-query: false !default; // Enable when support for Media Queries Level 4: http://drafts.csswg.org/mediaqueries/#hover
-$enable-grid-classes: true !default;
-$enable-rounded: false !default;
 $enable-print-styles: true !default;
 
 
 // Colors
-// Grayscale and brand colors for use across Bootstrap.
 $gray-dark: #373a3c !default;
 $gray: #55595c !default;
 $gray-light: #818a91 !default;
 $gray-lighter: #eceeef !default;
 $gray-lightest: #f7f7f9 !default;
+$white: #fff;
 
 $brand-primary: #0275d8 !default;
 $brand-success: #5cb85c !default;
@@ -56,6 +24,31 @@ $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
 $brand-inverse: $gray-dark !default;
+
+
+// Theme colors
+$theme-colors: () !default;
+$theme-colors: map-merge((
+    primary: $brand-primary,
+    success: $brand-success,
+    info: $brand-info,
+    warning: $brand-warning,
+    danger: $brand-danger
+), $theme-colors);
+
+
+// Cursor disabled
+$cursor-disabled: not-allowed !default;
+
+
+// Spacing
+//
+// Control the default styling of most Jam elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
 
 
 // Breakpoint Sizes
@@ -66,34 +59,23 @@ $large: 1024px !default; // 64em
 $x-large: 1440px !default; // 90em
 $xx-large: 1920px !default; // 120em
 
-// Grid breakpoints
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-$grid-breakpoints: (
-    xs: 0,
-    sm: 544px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px
-) !default;
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+
+// Breakpoints
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$bp-x-small: "#{$screen} and (min-width: #{$x-small})" !default;
+$bp-small: "#{$screen} and (min-width: #{$small})" !default;
+$bp-medium: "#{$screen} and (min-width: #{$medium})" !default;
+$bp-large: "#{$screen} and (min-width: #{$large})" !default;
+$bp-x-large: "#{$screen} and (min-width: #{$x-large})" !default;
+$bp-xx-large: "#{$screen} and (min-width: #{$xx-large})" !default;
 
 
-// Grid containers
-// Define the maximum width of `.container` for different screen sizes.
-$container-max-widths: (
-    sm: 576px,
-    md: 720px,
-    lg: 940px,
-    xl: 1140px
-) !default;
-@include _assert-ascending($container-max-widths, "$container-max-widths");
-
-
-// Grid columns
-// Set the number of columns and specify the width of the gutters.
-$grid-columns: 12 !default;
-$grid-gutter-width: 30px !default;
+// Container
+$container-width: 1000px;
 
 
 // Body
@@ -105,33 +87,8 @@ $body-color: $gray-dark !default;
 // Components
 //
 // Define common padding and border radius sizes and more.
-$line-height-lg: (4 / 3) !default;
-$line-height-sm: 1.5 !default;
-
+$border-width: 1px !default;
 $border-radius: .25rem !default;
-
-$image-border-radius: .25em !default;
-
-$component-active-color: #fff !default;
-$component-active-bg: $brand-primary !default;
-
-$caret-width: .3em !default;
-$caret-width-lg: $caret-width !default;
-
-
-// Z-index master list
-//
-// Warning: Avoid customizing these values. They're used for a bird's eye view
-// of components dependent on the z-axis and are designed to all work together.
-$zindex-dropdown-backdrop: 990 !default;
-$zindex-navbar: 1000 !default;
-$zindex-dropdown: 1000 !default;
-$zindex-popover: 1060 !default;
-$zindex-tooltip: 1070 !default;
-$zindex-navbar-fixed: 1030 !default;
-$zindex-navbar-sticky: 1030 !default;
-$zindex-modal-bg: 1040 !default;
-$zindex-modal: 1050 !default;
 
 
 // Links
@@ -148,6 +105,7 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
+
 
 // Base pixel size
 $base-pixel-size: 16px !default;
@@ -202,14 +160,9 @@ $blockquote-border-width: .25rem !default;
 $hr-border-color: rgba(0,0,0,.1) !default;
 $hr-border-width: $border-width !default;
 
-$mark-padding: .2em !default;
-
-$dt-font-weight: bold !default;
-
-$kbd-box-shadow: inset 0 -.1rem 0 rgba(0,0,0,.25) !default;
-$nested-kbd-font-weight: bold !default;
-
 $list-inline-padding: 5px !default;
+
+$paragraph-margin-bottom: 30px !default;
 
 
 // Buttons
@@ -244,21 +197,10 @@ $btn-danger-color: #fff !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: $btn-danger-bg !default;
 
-$btn-link-disabled-color: $gray-light !default;
-
-$btn-padding-x-sm: .5rem !default;
-$btn-padding-y-sm: .25rem !default;
-
-$btn-padding-x-lg: 1.5rem !default;
-$btn-padding-y-lg: .75rem !default;
+$btn-link-disabled-color: $gray-light !default;;
 
 $btn-block-spacing-y: .5rem !default;
 $btn-toolbar-margin: .5rem !default;
-
-// Allows for customizing button radius independently from global border radius
-$btn-border-radius: $border-radius !default;
-$btn-border-radius-lg: $border-radius-lg !default;
-$btn-border-radius-sm: $border-radius-sm !default;
 
 
 // Forms
@@ -274,10 +216,6 @@ $input-border-color: rgba(0,0,0,.15) !default;
 $input-btn-border-width: $border-width !default; // For form controls and buttons
 $input-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !default;
 
-$input-border-radius: $border-radius !default;
-$input-border-radius-lg: $border-radius-lg !default;
-$input-border-radius-sm: $border-radius-sm !default;
-
 $input-bg-focus: $input-bg;
 $input-border-focus: #66afe9 !default;
 $input-box-shadow-focus: rgba(102,175,233,.6) !default;
@@ -285,27 +223,20 @@ $input-color-focus: $input-color;
 
 $input-color-placeholder: #999 !default;
 
-$input-padding-x-sm: .5rem !default;
-$input-padding-y-sm: .25rem !default;
-
-$input-padding-x-lg: 1.5rem !default;
-$input-padding-y-lg: .75rem !default;
-
 $input-height: (($font-size-base * $line-height-base) + ($input-padding-y * 2)) !default;
-$input-height-sm: (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2)) !default;
-$input-height-lg: (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2)) !default;
 
 $input-height-base: $input-height !default;
-$input-height-small: $input-height-sm !default;
-$input-height-large: $input-height-lg !default;
 
 $form-group-margin-bottom: $spacer-y !default;
+
+$form-feedback-valid-color: $brand-success !default;
+$form-feedback-invalid-color: $brand-danger !default;
 
 $input-group-addon-bg: $gray-lighter !default;
 $input-group-addon-border-color: $input-border-color !default;
 
-$cursor-disabled: not-allowed !default;
 
+// Custom controls
 $custom-control-gutter: 1.5rem !default;
 $custom-control-spacer-x: 1rem !default;
 $custom-control-spacer-y: .25rem !default;
@@ -391,51 +322,22 @@ $form-icon-danger: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www
 // Form states and alerts
 //
 // Define colors for form feedback states and, by default, alerts.
-$state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
-$state-success-border:           darken($state-success-bg, 5%) !default;
+$state-success-text: #3c763d !default;
+$state-success-bg: #dff0d8 !default;
+$state-success-border: darken($state-success-bg, 5%) !default;
 
-$state-info-text:                #31708f !default;
-$state-info-bg:                  #d9edf7 !default;
-$state-info-border:              darken($state-info-bg, 7%) !default;
+$state-info-text: #31708f !default;
+$state-info-bg: #d9edf7 !default;
+$state-info-border: darken($state-info-bg, 7%) !default;
 
-$state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               #fcf8e3 !default;
-$mark-bg:                        $state-warning-bg !default;
-$state-warning-border:           darken($state-warning-bg, 5%) !default;
+$state-warning-text: #8a6d3b !default;
+$state-warning-bg: #fcf8e3 !default;
+$mark-bg: $state-warning-bg !default;
+$state-warning-border: darken($state-warning-bg, 5%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
-$state-danger-border:            darken($state-danger-bg, 5%) !default;
-
-
-// Container
-$container-width: 1000px;
-
-
-// List group
-$list-group-bg: #fff !default;
-$list-group-border-color: #ddd !default;
-$list-group-border-width: $border-width !default;
-$list-group-border-radius: $border-radius !default;
-
-$list-group-hover-bg: #f5f5f5 !default;
-$list-group-active-color: $component-active-color !default;
-$list-group-active-bg: $component-active-bg !default;
-$list-group-active-border: $list-group-active-bg !default;
-$list-group-active-text-color: lighten($list-group-active-bg, 40%) !default;
-
-$list-group-disabled-color: $gray-light !default;
-$list-group-disabled-bg: $gray-lighter !default;
-$list-group-disabled-text-color: $list-group-disabled-color !default;
-
-$list-group-link-color: #555 !default;
-$list-group-link-hover-color: $list-group-link-color !default;
-$list-group-link-heading-color: #333 !default;
-
-$list-group-item-padding-x: 1.25rem !default;
-$list-group-item-padding-y: .75rem !default;
-$list-group-item-heading-margin-bottom: 5px !default;
+$state-danger-text: #a94442 !default;
+$state-danger-bg: #f2dede !default;
+$state-danger-border: darken($state-danger-bg, 5%) !default;
 
 
 // Figures
@@ -455,67 +357,6 @@ $table-border-width: $border-width !default;
 $table-border-color: $gray-lighter !default;
 
 
-// Media objects
-$media-margin-top: 15px !default;
-$media-heading-margin-bottom: 5px !default;
-$media-alignment-padding-x: 10px !default;
-
-
-// Pagination
-$pagination-padding-x: .75rem !default;
-$pagination-padding-y: .5rem !default;
-$pagination-padding-x-sm: .75rem !default;
-$pagination-padding-y-sm: .275rem !default;
-$pagination-padding-x-lg: 1.5rem !default;
-$pagination-padding-y-lg: .75rem !default;
-
-$pagination-color: $link-color !default;
-$pagination-bg: #fff !default;
-$pagination-border-width: $border-width !default;
-$pagination-border-color: #ddd !default;
-
-$pagination-hover-color: $link-hover-color !default;
-$pagination-hover-bg: $gray-lighter !default;
-$pagination-hover-border: #ddd !default;
-
-$pagination-active-color: #fff !default;
-$pagination-active-bg: $brand-primary !default;
-$pagination-active-border: $brand-primary !default;
-
-$pagination-disabled-color: $gray-light !default;
-$pagination-disabled-bg: #fff !default;
-$pagination-disabled-border: #ddd !default;
-
-
-// Breakpoints
-$screen: "only screen" !default;
-
-$landscape: "#{$screen} and (orientation: landscape)" !default;
-$portrait: "#{$screen} and (orientation: portrait)" !default;
-
-$bp-x-small: "#{$screen} and (min-width: #{$x-small})" !default;
-$bp-small: "#{$screen} and (min-width: #{$small})" !default;
-$bp-medium: "#{$screen} and (min-width: #{$medium})" !default;
-$bp-large: "#{$screen} and (min-width: #{$large})" !default;
-$bp-x-large: "#{$screen} and (min-width: #{$x-large})" !default;
-$bp-xx-large: "#{$screen} and (min-width: #{$xx-large})" !default;
-
-// Code
-$code-font-size: 90% !default;
-$code-padding-x: .4rem !default;
-$code-padding-y: .2rem !default;
-$code-color: #bd4147 !default;
-$code-bg: #f7f7f9 !default;
-
-$kbd-color: #fff !default;
-$kbd-bg: #333 !default;
-
-$pre-bg: #f7f7f9 !default;
-$pre-color: $gray-dark !default;
-$pre-border-color: #ccc !default;
-$pre-scrollable-max-height: 340px !default;
-
-
 // Easing
 //
 // Thanks to Robert Penner for his sterling work on easing,
@@ -526,41 +367,41 @@ $pre-scrollable-max-height: 340px !default;
 // @see http://matthewlein.com/ceaser/
 
 // Cubic
-$easeInCubic     :  cubic-bezier(0.550, 0.055, 0.675, 0.190);
-$easeOutCubic    :  cubic-bezier(0.215, 0.610, 0.355, 1.000);
-$easeInOutCubic  :  cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easeInCubic : cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeOutCubic : cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1.000);
 
 // Circ
-$easeInCirc      :  cubic-bezier(0.600, 0.040, 0.980, 0.335);
-$easeOutCirc     :  cubic-bezier(0.075, 0.820, 0.165, 1.000);
-$easeInOutCirc   :  cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$easeInCirc : cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeOutCirc : cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeInOutCirc : cubic-bezier(0.785, 0.135, 0.150, 0.860);
 
 // Expo
-$easeInExpo      :  cubic-bezier(0.950, 0.050, 0.795, 0.035);
-$easeOutExpo     :  cubic-bezier(0.190, 1.000, 0.220, 1.000);
-$easeInOutExpo   :  cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$easeInExpo : cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeOutExpo : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInOutExpo : cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
 // Quad
-$easeInQuad      :  cubic-bezier(0.550, 0.085, 0.680, 0.530);
-$easeOutQuad     :  cubic-bezier(0.250, 0.460, 0.450, 0.940);
-$easeInOutQuad   :  cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$easeInQuad : cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeOutQuad : cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeInOutQuad : cubic-bezier(0.455, 0.030, 0.515, 0.955);
 
 // Quart
-$easeInQuart     :  cubic-bezier(0.895, 0.030, 0.685, 0.220);
-$easeOutQuart    :  cubic-bezier(0.165, 0.840, 0.440, 1.000);
-$easeInOutQuart  :  cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$easeInQuart : cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeOutQuart : cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
 
 // Quint
-$easeInQuint     :  cubic-bezier(0.755, 0.050, 0.855, 0.060);
-$easeOutQuint    :  cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$easeInOutQuint  :  cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$easeInQuint : cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeOutQuint : cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
 
 // Sine
-$easeInSine      :  cubic-bezier(0.470, 0.000, 0.745, 0.715);
-$easeOutSine     :  cubic-bezier(0.390, 0.575, 0.565, 1.000);
-$easeInOutSine   :  cubic-bezier(0.445, 0.050, 0.550, 0.950);
+$easeInSine : cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeOutSine : cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeInOutSine : cubic-bezier(0.445, 0.050, 0.550, 0.950);
 
 // Back
-$easeInBack      :  cubic-bezier(0.600, -0.280, 0.735, 0.045);
-$easeOutBack     :  cubic-bezier(0.175,  0.885, 0.320, 1.275);
-$easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+$easeInBack : cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeOutBack : cubic-bezier(0.175,  0.885, 0.320, 1.275);
+$easeInOutBack : cubic-bezier(0.680, -0.550, 0.265, 1.550);

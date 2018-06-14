@@ -76,8 +76,6 @@ mark,
     }
 }
 
-// Misc
-
 // Builds on `abbr`
 .initialism {
     font-size: 90%;
@@ -88,14 +86,4 @@ mark,
 .blockquote {
     font-size: $blockquote-font-size;
     margin-bottom: $spacer;
-}
-
-.blockquote-footer {
-    color: $blockquote-small-color;
-    display: block;
-    font-size: 80%; // back to default font-size
-
-    &::before {
-        content: "\2014 \00A0"; // em dash, nbsp
-    }
 }

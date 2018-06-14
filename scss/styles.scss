@@ -8,8 +8,9 @@
 @import "jam/variables";
 @import "app/variables";
 
-// Reset
-@import 'lib/modern-normalize';
+// Vendor
+@import 'vendor/modern-normalize';
+@import 'vendor/_grid';
 
 // Utility
 @import "jam/utilities";
@@ -20,10 +21,7 @@
 // Modules
 @import 'jam/buttons';
 @import 'jam/forms';
-@import 'jam/grid';
 @import 'jam/images';
-@import 'jam/input-group';
-@import 'jam/media';
 @import 'jam/tables';
 @import 'jam/typography';
 
