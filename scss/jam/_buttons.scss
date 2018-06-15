@@ -1,0 +1,141 @@
+/* --------------------------------------------------------------
+	Buttons
+-------------------------------------------------------------- */
+.btn {
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base);
+    -webkit-user-drag: none;
+    border: $input-btn-border-width solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @include hover-focus-active {
+        text-decoration: none;
+    }
+    &.focus {
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        background-image: none;
+        outline: 0;
+    }
+
+    &:disabled,
+    &.disabled {
+        cursor: $cursor-disabled;
+        opacity: .65;
+    }
+
+    // Alternate buttons
+    &--primary {
+        @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+    }
+    &--secondary {
+        @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+    }
+    &--info {
+        @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+    }
+    &--success {
+        @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+    }
+    &--warning {
+        @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+    }
+    &--danger {
+        @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+    }
+
+    // Remove all backgrounds
+    &--outline-primary {
+        @include button-outline-variant($btn-primary-bg);
+    }
+    &--outline-secondary {
+        @include button-outline-variant($btn-secondary-border);
+    }
+    &--outline-info {
+        @include button-outline-variant($btn-info-bg);
+    }
+    &--outline-success {
+        @include button-outline-variant($btn-success-bg);
+    }
+    &--outline-warning {
+        @include button-outline-variant($btn-warning-bg);
+    }
+    &--outline-danger {
+        @include button-outline-variant($btn-danger-bg);
+    }
+
+    // Link buttons
+    //
+    // Make a button look and behave like a link
+    &--link {
+        border-radius: 0;
+        color: $link-color;
+        font-weight: normal;
+
+        &,
+        &:active,
+        &.active,
+        &:disabled,
+        &.disabled {
+            background-color: transparent;
+        }
+        &,
+        &:focus,
+        &:active {
+            border-color: transparent;
+        }
+
+        @include hover {
+            border-color: transparent;
+        }
+        @include hover-focus {
+            background-color: transparent;
+            color: $link-hover-color;
+            text-decoration: $link-hover-decoration;
+        }
+        &:disabled,
+        &.disabled {
+            @include hover-focus {
+                color: $btn-link-disabled-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Block button
+    &--block {
+        display: block;
+        width: 100%;
+    }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn,
+[disabled] .btn {
+    pointer-events: none;
+}
+
+// Vertically space out multiple block buttons
+.btn--block + .btn--block {
+    margin-top: $btn-block-spacing-y;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn--block {
+        width: 100%;
+    }
+}

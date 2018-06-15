@@ -1,0 +1,17 @@
+//============================================================
+//
+// Tint
+//
+// Slightly lighten a color
+//
+// @param [Color] $color - color to tint
+// @param [Number] $percentage - percentage of '$color' in the returned color
+// @return [Color]
+//
+// Usage:
+// color: tint(#bada55, 42%); // color: #e2efb7;
+//
+//============================================================
+@function tint($color, $percentage) {
+    @return mix($color, white, $percentage);
+}

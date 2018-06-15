@@ -1,0 +1,141 @@
+/* --------------------------------------------------------------
+	Table
+-------------------------------------------------------------- */
+.table {
+    background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+    margin-bottom: $spacer;
+    max-width: 100%;
+    width: 100%;
+
+    th,
+    td {
+        border-top: $table-border-width solid $table-border-color;
+        padding: $table-cell-padding;
+        vertical-align: top;
+    }
+
+    .thead {
+        &--dark {
+            th {
+                background-color: $table-dark-bg;
+                border-color: $table-dark-border-color;
+                color: $table-dark-color;
+            }
+        }
+        &--light {
+            th {
+                background-color: $table-head-bg;
+                border-color: $table-border-color;
+                color: $table-head-color;
+            }
+        }
+
+        th {
+            border-bottom: (2 * $table-border-width) solid $table-border-color;
+            vertical-align: bottom;
+        }
+    }
+
+    tbody + tbody {
+        border-top: (2 * $table-border-width) solid $table-border-color;
+    }
+
+    .table {
+        background-color: $body-bg;
+    }
+
+    // Bordered version
+    //
+    // Add borders all around the table and between all the columns.
+    &--bordered {
+        border: $table-border-width solid $table-border-color;
+
+        th,
+        td {
+            border: $table-border-width solid $table-border-color;
+        }
+
+        thead {
+            th,
+            td {
+                border-bottom-width: (2 * $table-border-width);
+            }
+        }
+    }
+
+
+    // Zebra-striping
+    //
+    // Default zebra-stripe styles (alternating gray and transparent backgrounds)
+    &--striped {
+        tbody tr:nth-of-type(odd) {
+            background-color: $table-accent-bg;
+        }
+    }
+
+
+    // Hover effect
+    //
+    // Placed here since it has to come after the potential zebra striping
+    &--hover {
+        tbody tr {
+            @include hover {
+                background-color: $table-hover-bg;
+            }
+        }
+    }
+
+    &--dark {
+        background-color: $table-dark-bg;
+        color: $table-dark-color;
+
+        th,
+        td,
+        thead th {
+            border-color: $table-dark-border-color;
+        }
+
+        &.table--bordered {
+            border: 0;
+        }
+
+        &.table--striped {
+            tbody tr:nth-of-type(odd) {
+                background-color: $table-dark-accent-bg;
+            }
+        }
+
+        &.table--hover {
+            tbody tr {
+                @include hover {
+                    background-color: $table-dark-hover-bg;
+                }
+            }
+        }
+    }
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table--striped` and prevent
+// inheritance to nested tables.
+@include table-row-variant(active, $table-active-bg);
+
+
+// Responsive tables
+//
+// Generate series of `.table-responsive-*` classes for configuring the screen
+// size of where your table will overflow.
+.table-responsive {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+
+    // Prevent double border on horizontal scroll due to use of `display: block;`
+    &.table--bordered {
+        border: 0;
+    }
+}

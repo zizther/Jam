@@ -1,0 +1,17 @@
+//============================================================
+//
+// Shade
+//
+// Slightly darken a color
+//
+// @param [Color] $color - color to shade
+// @param [Number] $percentage - percentage of '$color' in the returned color
+// @return [Color]
+//
+// Usage:
+// background-color: shade(#663399, 42%); // background-color: #2a1540;
+//
+//============================================================
+@function shade($color, $percentage) {
+    @return mix($color, black, $percentage);
+}

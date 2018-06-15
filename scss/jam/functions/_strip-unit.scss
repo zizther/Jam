@@ -1,0 +1,18 @@
+//============================================================
+//
+// Strip unit
+//
+// Strips the unit from the given value
+//
+// Parameters:
+// @param [value] $value: A value with unit (px, em, %, etc)
+// @return [value] value without the unit
+//
+// Usage:
+// $length: 42em;
+// $int: strip-unit($length); // 42
+//
+//============================================================
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}

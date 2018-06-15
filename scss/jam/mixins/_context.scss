@@ -1,0 +1,16 @@
+//============================================================
+//
+// Context
+//
+// Helps style an element depending on the parent
+// Useful for feature detection
+//
+// Paramters:
+// @param [string | list] $context
+//
+//============================================================
+@mixin when-inside($context){
+    #{$context} & {
+        @content;
+    }
+}

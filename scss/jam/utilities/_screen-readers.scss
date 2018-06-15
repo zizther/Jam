@@ -1,0 +1,9 @@
+// Screenreaders
+.sr {
+    &--only {
+        @include sr-only();
+    }
+    &--only-focusable {
+        @include sr-only-focusable();
+    }
+}

@@ -1,0 +1,38 @@
+// Visibility utilities
+.invisible {
+    visibility: hidden !important;
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+.print {
+    &--visible-block {
+        display: none !important;
+
+        @media print {
+            display: block !important;
+        }
+    }
+    &--visible-inline {
+        display: none !important;
+
+        @media print {
+            display: inline !important;
+        }
+    }
+    &--visible-inline-block {
+        display: none !important;
+
+        @media print {
+            display: inline-block !important;
+        }
+    }
+
+    &--hidden {
+        @media print {
+            display: none !important;
+        }
+    }
+}
