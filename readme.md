@@ -9,13 +9,6 @@
 
 A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.
 
-
-**Alternatively you can install the Sass without Gulp and NPM**
-
-```shell
-$ bower install jam
-```
-
 ---
 
 ## Features
