@@ -203,8 +203,8 @@ input[type="file"] {
 
     &.disabled {
         .form-check-label {
-            color: $text-muted;
             cursor: $cursor-disabled;
+            opacity: .5;
         }
     }
 
