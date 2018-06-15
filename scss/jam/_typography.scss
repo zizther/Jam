@@ -53,12 +53,6 @@ small,
     font-weight: normal;
 }
 
-mark,
-.mark {
-    background-color: $mark-bg;
-    padding: $mark-padding;
-}
-
 // Lists
 .list-unstyled {
     @include list-unstyled;
@@ -76,14 +70,14 @@ mark,
     }
 }
 
-// Builds on `abbr`
-.initialism {
-    font-size: 90%;
-    text-transform: uppercase;
-}
-
 // Blockquotes
 .blockquote {
     font-size: $blockquote-font-size;
     margin-bottom: $spacer;
+}
+
+// Builds on `abbr`
+.initialism {
+    font-size: 90%;
+    text-transform: uppercase;
 }

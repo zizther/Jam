@@ -11,19 +11,25 @@ $enable-print-styles: true !default;
 
 
 // Colors
-$gray-dark: #373a3c !default;
-$gray: #55595c !default;
-$gray-light: #818a91 !default;
-$gray-lighter: #eceeef !default;
-$gray-lightest: #f7f7f9 !default;
-$white: #fff;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$black: #000 !default;
+$white: #fff !default;
 
 $brand-primary: #0275d8 !default;
 $brand-success: #5cb85c !default;
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
-$brand-inverse: $gray-dark !default;
+$brand-inverse: $gray-800 !default;
 
 
 // Theme colors
@@ -81,7 +87,7 @@ $container-width: 1000px;
 // Body
 // Settings for the `<body>` element.
 $body-bg: #fff !default;
-$body-color: $gray-dark !default;
+$body-color: $gray-800 !default;
 
 
 // Components
@@ -148,9 +154,9 @@ $lead-font-weight: 300 !default;
 
 $small-font-size: 80% !default;
 
-$blockquote-small-color:  $gray-light !default;
+$blockquote-small-color:  $gray-600 !default;
 $blockquote-font-size: ($font-size-base * 1.25) !default;
-$blockquote-border-color: $gray-lighter !default;
+$blockquote-border-color: $gray-200 !default;
 $blockquote-border-width: .25rem !default;
 
 $hr-border-color: rgba(0,0,0,.1) !default;
@@ -173,7 +179,7 @@ $btn-primary-color: #fff !default;
 $btn-primary-bg: $brand-primary !default;
 $btn-primary-border: $btn-primary-bg !default;
 
-$btn-secondary-color: $gray-dark !default;
+$btn-secondary-color: $gray-800 !default;
 $btn-secondary-bg: #fff !default;
 $btn-secondary-border: #ccc !default;
 
@@ -193,7 +199,7 @@ $btn-danger-color: #fff !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: $btn-danger-bg !default;
 
-$btn-link-disabled-color: $gray-light !default;;
+$btn-link-disabled-color: $gray-600 !default;;
 
 $btn-block-spacing-y: .5rem !default;
 $btn-toolbar-margin: .5rem !default;
@@ -205,9 +211,9 @@ $input-padding-y: .5rem !default;
 $input-line-height: 1.25 !default;
 
 $input-bg: #fff !default;
-$input-bg-disabled: $gray-lighter !default;
+$input-bg-disabled: $gray-200 !default;
 
-$input-color: $gray !default;
+$input-color: $gray-700 !default;
 $input-border-color: rgba(0,0,0,.15) !default;
 $input-btn-border-width: $border-width !default; // For form controls and buttons
 $input-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !default;
@@ -228,7 +234,7 @@ $form-group-margin-bottom: $spacer-y !default;
 $form-feedback-valid-color: $brand-success !default;
 $form-feedback-invalid-color: $brand-danger !default;
 
-$input-group-addon-bg: $gray-lighter !default;
+$input-group-addon-bg: $gray-200 !default;
 $input-group-addon-border-color: $input-border-color !default;
 
 
@@ -238,15 +244,26 @@ $figure-caption-font-size: 90% !default;
 
 // Tables
 $table-cell-padding: .75rem !default;
-$table-sm-cell-padding: .3rem !default;
+$table-cell-padding-sm: .3rem !default;
 
 $table-bg: transparent !default;
-$table-bg-accent: rgba(0,0,0,.05) !default;
-$table-bg-hover: rgba(0,0,0,.075) !default;
-$table-bg-active: $table-bg-hover !default;
+$table-accent-bg: rgba($black, .05) !default;
+$table-hover-bg: rgba($black, .075) !default;
+$table-active-bg: $table-hover-bg !default;
 
 $table-border-width: $border-width !default;
-$table-border-color: $gray-lighter !default;
+$table-border-color: $gray-300  !default;
+
+$table-head-bg: $gray-200 !default;
+$table-head-color: $gray-700 !default;
+
+$table-dark-bg: $gray-900 !default;
+$table-dark-accent-bg: rgba($white, .05) !default;
+$table-dark-hover-bg: rgba($white, .075) !default;
+$table-dark-border-color: lighten($gray-900, 7.5%) !default;
+$table-dark-color: $body-bg !default;
+
+$table-striped-order: odd !default;
 
 
 // Easing

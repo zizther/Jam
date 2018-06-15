@@ -68,7 +68,7 @@
     //
     // Default zebra-stripe styles (alternating gray and transparent backgrounds)
     &--striped {
-        tbody tr:nth-of-type(odd) {
+        tbody tr:nth-of-type(#{$table-striped-order}) {
             background-color: $table-accent-bg;
         }
     }
@@ -100,7 +100,7 @@
         }
 
         &.table--striped {
-            tbody tr:nth-of-type(odd) {
+            tbody tr:nth-of-type(#{$table-striped-order}) {
                 background-color: $table-dark-accent-bg;
             }
         }
