@@ -14,3 +14,9 @@
         @content;
     }
 }
+
+@mixin when-is($element){
+    @at-root #{$element + &} {
+        @content;
+    }
+}
