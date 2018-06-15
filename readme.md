@@ -8,7 +8,6 @@
 # [Jam](jam-url)
 
 A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.
-## Features
 
 
 **Alternatively you can install the Sass without Gulp and NPM**
@@ -17,6 +16,7 @@ A simple, lightweight Sass responsive front-end framework to normalise browser b
 $ bower install jam
 ```
 
+---
 
 ##Features
 
@@ -57,9 +57,9 @@ Run this command at the project root
 	npm update
 
 ### Using Gulp
-There are 3 tasks available:
+There are 2 tasks available:
 
-	gulp
+	gulp dev
 
 This will perform the watch function to compile the Sass as you develop
 
@@ -89,22 +89,6 @@ View full [documentation here](jam-url)
 
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](issues-new-url).
 
-	npm update
-	
-## Using gulp
----
-
-	gulp
-	
-## Troubleshooting
-
-	gulp build
-	
-This will compile and optimise the CSS, optimise images and handle any JS stuff.
-Should you encounter problems with installing dependencies or running scripts, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
-
-	gulp info
-	
 ---
 
 ## License
