@@ -4,7 +4,7 @@
 [issues-url]: https://github.com/zizther/Jam/issues
 [issues-new-url]: https://github.com/zizther/Jam/issues
 [docs-url]: https://github.com/zizther/Jam/tree/master/docs
-[normalize-url]: https://github.com/necolas/normalize.css
+[normalize-url]: https://github.com/sindresorhus/modern-normalize
 # [Jam](jam-url)
 
 A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.
@@ -24,7 +24,7 @@ Jam is meant to be a starting point for every website or web app:
 
 * A responsive grid that can be customised to your needs.
 
-* A solid base built on [Normalize.css](normalize-url) to fix cross-browser compatibility
+* A solid base built on [modern-normalize](normalize-url) to fix cross-browser compatibility
   issues.
 
 * Consistently styled buttons that work with `<a>` and `<button>` elements.
