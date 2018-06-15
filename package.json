@@ -1,6 +1,6 @@
 {
     "name": "jam",
-    "version": "3.0.0-alpha.1",
+    "version": "3.0.0",
     "description": "A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.",
     "homepage": "https://getjam.io",
     "repository": {
