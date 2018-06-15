@@ -18,7 +18,7 @@ $ bower install jam
 
 ---
 
-##Features
+## Features
 
 Jam is meant to be a starting point for every website or web app:
 
