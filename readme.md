@@ -5,7 +5,7 @@
 [issues-new-url]: https://github.com/zizther/Jam/issues
 [docs-url]: https://github.com/zizther/Jam/tree/master/docs
 [normalize-url]: https://github.com/sindresorhus/modern-normalize
-# [Jam](jam-url)
+# [Jam][jam-url]
 
 A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.
 
@@ -24,7 +24,7 @@ Jam is meant to be a starting point for every website or web app:
 
 * A responsive grid that can be customised to your needs.
 
-* A solid base built on [modern-normalize](normalize-url) to fix cross-browser compatibility
+* A solid base built on [modern-normalize][normalize-url] to fix cross-browser compatibility
   issues.
 
 * Consistently styled buttons that work with `<a>` and `<button>` elements.
@@ -75,19 +75,19 @@ Automatic desktop notifications for gulp messages, errors and warnings using Gro
 ## Documentation
 To compile and optimse the assets in the site you will need to have Gulp and other packages installed. To do this you will need Node with NPM installed and Gulp
 
-View full [documentation here](jam-url)
+View full [documentation here][jam-url]
 
 ---
 
 ## Changelog
 
-[View the changelog](changelog-url)
+[View the changelog][changelog-url]
 
 ---
 
 ## Bugs and feature requests
 
-Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](issues-new-url).
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue][issues-new-url].
 
 ---
 
@@ -95,8 +95,8 @@ Have a bug or a feature request? Please first search for existing and closed iss
 Automatic desktop notifications for Gulp errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
 
 This software is free to use under the MIT license.
-See the [LICENSE file](license-url) for license text and copyright information.
+See the [LICENSE file][license-url] for license text and copyright information.
 
 ## Copyright and license
 
-Code released under the [MIT license](license-url). Docs released under [Creative Commons](license-url).
+Code released under the [MIT license][license-url]. Docs released under [Creative Commons][license-url].
