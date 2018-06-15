@@ -1,0 +1,13 @@
+//============================================================
+//
+// Clearfix
+// Adapted from: A new micro clearfix hack
+//
+//============================================================
+@mixin clearfix() {
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}

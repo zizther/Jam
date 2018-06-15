@@ -1,0 +1,12 @@
+//============================================================
+//
+// Hyphenation
+//
+// Parameters:
+// @param [string] $mode: none|manual|auto
+//
+//============================================================
+@mixin hyphens($mode: auto) {
+	hyphens: $mode;
+	word-wrap: break-word;
+}

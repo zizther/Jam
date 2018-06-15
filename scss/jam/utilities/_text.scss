@@ -1,0 +1,30 @@
+// Text
+
+.text {
+    // Alignment
+    &--justify { text-align: justify !important; }
+    &--nowrap { white-space: nowrap !important; }
+    &--truncate { @include text-truncate; }
+
+    // Transformation
+    &--lowercase { text-transform: lowercase !important; }
+    &--uppercase { text-transform: uppercase !important; }
+    &--capitalize { text-transform: capitalize !important; }
+
+    // Misc
+    &--hide {
+        @include text-hide();
+    }
+}
+
+// Contextual colors
+@each $color, $value in $theme-colors {
+    @include text-emphasis-variant('.text--#{$color}', $value);
+}
+
+// Weight and italics
+.font {
+    &--weight-normal { font-weight: normal; }
+    &--weight-bold { font-weight: bold; }
+    &--italic { font-style: italic; }
+}

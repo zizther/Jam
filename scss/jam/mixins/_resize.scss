@@ -1,0 +1,12 @@
+//============================================================
+//
+// Resize anything
+//
+// Parameters:
+// @param [string] $direction: none|both|horizontal|vertical|initial|inherit
+//
+//============================================================
+@mixin resizable($direction) {
+    overflow: auto; // Safari fix
+    resize: $direction;
+}

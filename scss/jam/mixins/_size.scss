@@ -1,0 +1,20 @@
+//============================================================
+//
+// Size shortcut
+// A helper mixin to output the width and height
+//
+// Parameters:
+// @param [string] $width: Width (Include unit - px, em, rem)
+// @param [string] $height: Height (Include unit - px, em, rem) (Optional)
+//
+//============================================================
+@mixin size($width, $height: null) {
+    @if $height {
+        height: $height;
+        width: $width;
+    }
+    @else {
+        height: $width;
+        width: $width;
+    }
+}
