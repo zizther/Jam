@@ -2,6 +2,7 @@
 
 .text {
     // Alignment
+    &--center { text-align: center !important; }
     &--justify { text-align: justify !important; }
     &--nowrap { white-space: nowrap !important; }
     &--truncate { @include text-truncate; }
