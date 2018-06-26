@@ -1,6 +1,6 @@
 
 /**
- * Flex Grid -
+ * Flex Grid - https://github.com/matthewsimo/scss-flex-grid
  * Version: 0.3.5
  *
  * Simple grid built with flex box and sass.
@@ -93,6 +93,7 @@ $fg-breakpoints: (
 }
 
 
+.#{ $fg-class-col },
 %#{ $fg-class-col } {
   box-sizing: border-box;
   display: flex;
@@ -101,6 +102,12 @@ $fg-breakpoints: (
   flex-shrink: 0;
   min-height: 1px;
   @include spacing( ( $fg-gutter ), padding, horizontal );
+}
+
+.#{ $fg-class-col } {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
 }
 
 %#{ $fg-class-col }-flex {
