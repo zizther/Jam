@@ -1,65 +1,65 @@
 /*
  * Variables
  */
-var paths = {
-        styles: {
-            scss: './scss/',
-            css: './css/'
-        }
+const paths = {
+        scss: './scss/',
+        css: './css/'
     },
-    autoprefixerBrowsers = ['last 4 versions', 'ie >= 10'],
+    autoprefixerBrowsers = ['last 2 versions', 'ie > 10'],
     sassPrecision = 10;
 
 
 /*
  * NPM Packages
  */
-var gulp = require('gulp'),
+const gulp = require('gulp'),
+    autoprefixer = require('autoprefixer'),
+    cssnano = require('cssnano'),
+    pump = require('pump'),
 	notify = require('gulp-notify'),
 	postcss = require('gulp-postcss'),
-	autoprefixer = require('autoprefixer'),
 	sass = require('gulp-sass'),
-	gcmq = require('gulp-group-css-media-queries'),
-    cssnano = require('gulp-cssnano'),
-    pump = require('pump');
+	gcmq = require('gulp-group-css-media-queries');
 
 
 /*
- * Tasks
+ * Functions
  */
-// Scss
-gulp.task('scss', function(cb){
-    var processors = [
-            autoprefixer({
-                browsers: autoprefixerBrowsers
-            })
-        ];
+function scss(cb) {
+
+    var plugins = [
+        autoprefixer({
+            browsers: autoprefixerBrowsers
+        }),
+        cssnano()
+    ];
 
     pump(
         [
-            gulp.src(paths.styles.scss + '**/*.scss'),
+            gulp.src(paths.scss + '**/*.scss'),
 	        sass({
     	        precision: sassPrecision,
     	        sourceComments: false,
     	        outputStyle: 'compressed'
 	        }).on('error', sass.logError),
-        	postcss(processors),
             gcmq(),
-            cssnano(),
-    		gulp.dest(paths.styles.css),
+        	postcss(plugins),
+    		gulp.dest(paths.css),
             notify({ message: 'Scss task complete' })
         ],
         cb
     );
-});
 
-// Watch
-gulp.task('watch', ['scss'], function() {
-    gulp.watch(paths.styles.scss + '**/*.scss', ['scss']); // watch the same files in our sass task
-});
+}// END scss
 
-// Default task
-gulp.task('default', ['watch']);
+function watch() {
 
-// Build task
-gulp.task('build', ['scss']);
+    // Watch Sass
+	gulp.watch(paths.scss + '**/*.scss', scss);
+
+}// END watchFiles
+
+
+// Export tasks
+exports.default = gulp.parallel(scss, watch);
+exports.build = scss;

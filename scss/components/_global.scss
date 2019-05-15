@@ -1,0 +1,15 @@
+/*** Global ***/
+
+// Cleafix
+.clearfix {
+    @include clearfix;
+}
+
+// Container
+.container {
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}

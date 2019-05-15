@@ -6,35 +6,28 @@
 -------------------------------------------------------------- */
 // Settings
 // Quickly modify global styling by enabling or disabling optional features.
-$enable-hover-media-query: false !default; // Enable when support for Media Queries Level 4: http://drafts.csswg.org/mediaqueries/#hover
 $enable-print-styles: true !default;
 
 
 // Colors
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-
 $black: #000 !default;
 $white: #fff !default;
+$grey: #ddd;
 
 $brand-primary: #0275d8 !default;
 $brand-success: #5cb85c !default;
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
-$brand-inverse: $gray-800 !default;
+$brand-inverse: $grey !default;
 
 
 // Theme colors
 $theme-colors: () !default;
 $theme-colors: map-merge((
+    clear: transparent,
+    white: $white,
+    black: $black,
     primary: $brand-primary,
     success: $brand-success,
     info: $brand-info,
@@ -52,42 +45,59 @@ $cursor-disabled: not-allowed !default;
 // Control the default styling of most Jam elements by modifying these
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
-$spacer:   1rem !default;
+$spacer: 1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 
 
 // Breakpoint Sizes
-$x-small: 320px !default; // 20em
+$xsmall: 320px !default; // 20em
 $small: 640px !default; // 40em
 $medium: 768px !default; // 48em
 $large: 1024px !default; // 64em
-$x-large: 1440px !default; // 90em
-$xx-large: 1920px !default; // 120em
+$xlarge: 1440px !default; // 90em
+$xxlarge: 1920px !default; // 120em
 
 
-// Breakpoints
-$screen: "only screen" !default;
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
 
-$landscape: "#{$screen} and (orientation: landscape)" !default;
-$portrait: "#{$screen} and (orientation: portrait)" !default;
+// Grid breakpoints
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// $grid-breakpoints: (
+//     xs: 0,
+//     sm: $small,
+//     md: $medium,
+//     lg: $large,
+//     xl: $xlarge,
+//     xxl: $xxlarge
+// ) !default;
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+// @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
-$bp-x-small: "#{$screen} and (min-width: #{$x-small})" !default;
-$bp-small: "#{$screen} and (min-width: #{$small})" !default;
-$bp-medium: "#{$screen} and (min-width: #{$medium})" !default;
-$bp-large: "#{$screen} and (min-width: #{$large})" !default;
-$bp-x-large: "#{$screen} and (min-width: #{$x-large})" !default;
-$bp-xx-large: "#{$screen} and (min-width: #{$xx-large})" !default;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 
 // Container
-$container-width: 1000px;
+$container-width: 1200px;
+$container-padding: 20px;
 
 
 // Body
 // Settings for the `<body>` element.
 $body-bg: #fff !default;
-$body-color: $gray-800 !default;
 
 
 // Components
@@ -120,9 +130,6 @@ $base-pixel-size: 16px !default;
 $font-size-root: 62.5% !default;
 
 $font-size-base: 1.6rem !default;
-$font-size-lg: 1.25rem !default;
-$font-size-sm: .875rem !default;
-$font-size-xs: .75rem !default;
 
 $line-height-base: 1.5 !default;
 
@@ -132,16 +139,6 @@ $font-size-h3: 1.75rem !default;
 $font-size-h4: 1.5rem !default;
 $font-size-h5: 1.25rem !default;
 $font-size-h6: 1rem !default;
-
-$display1-size: 6rem !default;
-$display2-size: 5.5rem !default;
-$display3-size: 4.5rem !default;
-$display4-size: 3.5rem !default;
-
-$display1-weight: 400 !default;
-$display2-weight: 400 !default;
-$display3-weight: 400 !default;
-$display4-weight: 400 !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family: inherit !default;
@@ -154,9 +151,9 @@ $lead-font-weight: 300 !default;
 
 $small-font-size: 80% !default;
 
-$blockquote-small-color:  $gray-600 !default;
+$blockquote-small-color:  $grey !default;
 $blockquote-font-size: ($font-size-base * 1.25) !default;
-$blockquote-border-color: $gray-200 !default;
+$blockquote-border-color: $grey !default;
 $blockquote-border-width: .25rem !default;
 
 $hr-border-color: rgba(0,0,0,.1) !default;
@@ -179,7 +176,7 @@ $btn-primary-color: #fff !default;
 $btn-primary-bg: $brand-primary !default;
 $btn-primary-border: $btn-primary-bg !default;
 
-$btn-secondary-color: $gray-800 !default;
+$btn-secondary-color: $grey !default;
 $btn-secondary-bg: #fff !default;
 $btn-secondary-border: #ccc !default;
 
@@ -199,7 +196,7 @@ $btn-danger-color: #fff !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: $btn-danger-bg !default;
 
-$btn-link-disabled-color: $gray-600 !default;;
+$btn-link-disabled-color: $grey !default;;
 
 $btn-block-spacing-y: .5rem !default;
 $btn-toolbar-margin: .5rem !default;
@@ -211,9 +208,9 @@ $input-padding-y: .5rem !default;
 $input-line-height: 1.25 !default;
 
 $input-bg: #fff !default;
-$input-bg-disabled: $gray-200 !default;
+$input-bg-disabled: $grey !default;
 
-$input-color: $gray-700 !default;
+$input-color: $grey !default;
 $input-border-color: rgba(0,0,0,.15) !default;
 $input-btn-border-width: $border-width !default; // For form controls and buttons
 $input-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !default;
@@ -234,7 +231,7 @@ $form-group-margin-bottom: $spacer-y !default;
 $form-feedback-valid-color: $brand-success !default;
 $form-feedback-invalid-color: $brand-danger !default;
 
-$input-group-addon-bg: $gray-200 !default;
+$input-group-addon-bg: $grey !default;
 $input-group-addon-border-color: $input-border-color !default;
 
 
@@ -252,15 +249,15 @@ $table-hover-bg: rgba($black, .075) !default;
 $table-active-bg: $table-hover-bg !default;
 
 $table-border-width: $border-width !default;
-$table-border-color: $gray-300  !default;
+$table-border-color: $grey  !default;
 
-$table-head-bg: $gray-200 !default;
-$table-head-color: $gray-700 !default;
+$table-head-bg: $grey !default;
+$table-head-color: $grey !default;
 
-$table-dark-bg: $gray-900 !default;
+$table-dark-bg: $grey !default;
 $table-dark-accent-bg: rgba($white, .05) !default;
 $table-dark-hover-bg: rgba($white, .075) !default;
-$table-dark-border-color: lighten($gray-900, 7.5%) !default;
+$table-dark-border-color: lighten($grey, 7.5%) !default;
 $table-dark-color: $body-bg !default;
 
 $table-striped-order: odd !default;
@@ -314,3 +311,8 @@ $easeInOutSine : cubic-bezier(0.445, 0.050, 0.550, 0.950);
 $easeInBack : cubic-bezier(0.600, -0.280, 0.735, 0.045);
 $easeOutBack : cubic-bezier(0.175,  0.885, 0.320, 1.275);
 $easeInOutBack : cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+
+// Printing
+$print-page-size: a3 !default;
+$print-body-min-width: map-get($grid-breakpoints, "lg") !default;

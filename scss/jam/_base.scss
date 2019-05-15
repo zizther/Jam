@@ -59,8 +59,6 @@ html {
 body {
     // By default, `<body>` has no `background-color` so we set one as a best practice.
 	background-color: $body-bg;
-    // Go easy on the eyes and use something other than `#000` for text
-	color: $body-color;
 	// Make the `body` use the `font-size-root`
 	font-family: $font-family-base;
 	font-size: $font-size-base;
@@ -115,11 +113,17 @@ hr {
 // By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
 // margin for easier control within type scales as it avoids margin collapsing.
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
+.h5,
+h6,
+.h6 {
 	margin-bottom: .5rem;
 	margin-top: 0;
 }
@@ -137,6 +141,7 @@ p {
 ol,
 ul,
 dl {
+    padding-left: 0;
 	margin-top: 0;
 	margin-bottom: 1rem;
 }
@@ -172,6 +177,12 @@ a {
     	color: $link-hover-color;
 		text-decoration: $link-hover-decoration;
   	}
+}
+
+// Strong
+strong,
+.strong {
+    font-weight: 700;
 }
 
 // Abbreviations

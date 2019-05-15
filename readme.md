@@ -1,11 +1,10 @@
-[jam-url]: https://getjam.io
-[changelog-url]: http://getjam.io/changelog
-[license-url]: https://github.com/zizther/Jam/blob/master/LICENSE.
+[product]: Jam
+[license-url]: https://github.com/zizther/Jam/blob/master/LICENSE
 [issues-url]: https://github.com/zizther/Jam/issues
 [issues-new-url]: https://github.com/zizther/Jam/issues
 [docs-url]: https://github.com/zizther/Jam/tree/master/docs
 [normalize-url]: https://github.com/sindresorhus/modern-normalize
-# [Jam][jam-url]
+# [product]
 
 A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.
 
@@ -13,27 +12,28 @@ A simple, lightweight Sass responsive front-end framework to normalise browser b
 
 ## Features
 
-Jam is meant to be a starting point for every website or web app:
-
-* A responsive grid that can be customised to your needs.
+[product] is meant to be a starting point for every website or web app:
 
 * A solid base built on [modern-normalize][normalize-url] to fix cross-browser compatibility
   issues.
 
-* Consistently styled buttons that work with `<a>` and `<button>` elements.
+* A responsive grid that can be customised to your needs.
 
-* Styles for vertical and horizontal menus, including support for dropdown
-  menus.
+* Consistently styled buttons that work with `<a>` and `<button>` elements.
 
 * Useful form alignments that look great on all screen sizes.
 
-* Various common table styles.
+* Table styles.
 
 * An extremely minimalist look that is super-easy to customise.
 
-* Responsive by default, with a non-responsive option.
+* Responsive by default.
 
 * Easy customisation.
+
+* Includes a collection of helpful functions and mixins.
+
+* 7kb when gzipped/deflated.
 
 ---
 
@@ -52,7 +52,7 @@ Run this command at the project root
 ### Using Gulp
 There are 2 tasks available:
 
-	gulp dev
+	gulp
 
 This will perform the watch function to compile the Sass as you develop
 
@@ -66,15 +66,19 @@ Automatic desktop notifications for gulp messages, errors and warnings using Gro
 ---
 
 ## Documentation
-To compile and optimse the assets in the site you will need to have Gulp and other packages installed. To do this you will need Node with NPM installed and Gulp
-
-View full [documentation here][jam-url]
+To compile and optimse the assets in the site you will need to have Gulp and other packages installed. To do this you will need Node with NPM installed and Gulp.
 
 ---
 
-## Changelog
+## Browser support
+[product] looks to support support all major browsers and IE11.
+Autoprefixer is used to add support for browsers, it can be amended if you need to support other versions of browsers.
 
-[View the changelog][changelog-url]
+---
+
+## Structure
+[product] is self contained. Variables can be overridden to update the styles via `scss/app/_variables.scss`
+A base set of components (`scss/components`) have been included, but you can add more as you develop your project.
 
 ---
 
@@ -84,12 +88,9 @@ Have a bug or a feature request? Please first search for existing and closed iss
 
 ---
 
-## License
-Automatic desktop notifications for Gulp errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
-
+## Copyright and license
 This software is free to use under the MIT license.
 See the [LICENSE file][license-url] for license text and copyright information.
 
-## Copyright and license
 
 Code released under the [MIT license][license-url]. Docs released under [Creative Commons][license-url].

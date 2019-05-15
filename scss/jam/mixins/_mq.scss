@@ -1,0 +1,20 @@
+@mixin mq($width, $orientation, $type: min) {
+
+    @if map_has_key($grid-breakpoints, $width) {
+        $width: map_get($grid-breakpoints, $width);
+        $orientationParam: null;
+
+        @if $type == max {
+            $width: $width - 1px;
+        }
+
+        @if $orientation {
+            $orientationParam: 'and (orientation: ' + $orientation + ')';
+        }
+
+        @media only screen and (#{$type}-width: $width) #{$orientationParam} {
+            @content;
+        }
+    }
+
+}

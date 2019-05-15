@@ -1,4 +1,4 @@
-@mixin scrim-gradient($direction: 'to bottom', $startColor: 'black') {
+@mixin scrim-gradient($direction: 'to bottom', $startColor: '#000') {
 
     $scrimCoordinates: (
         0: 1,

@@ -10,7 +10,6 @@
 
 // Vendors
 @import 'jam/vendors/modern-normalize';
-@import 'jam/vendors/grid';
 
 // Utility
 @import "jam/utilities";
@@ -21,15 +20,17 @@
 // Modules
 @import 'jam/buttons';
 @import 'jam/forms';
+@import 'jam/grid';
 @import 'jam/images';
 @import 'jam/tables';
 @import 'jam/typography';
 
-// Project styles
-@import 'app/animation';
-@import 'app/global';
-@import 'app/icons';
-
 // Print styles
 @import 'jam/print';
 @import 'app/print';
+
+// Components
+@import 'components/footer';
+@import 'components/global';
+@import 'components/header';
+@import 'components/type';

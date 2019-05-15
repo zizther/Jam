@@ -7,34 +7,46 @@
 @if $enable-print-styles {
     @media print {
         *,
-        *:before,
-        *:after,
-        *::first-letter,
-        *::first-line {
-            -ms-filter: none !important;
-    		background: transparent !important;
-    		box-shadow: none !important;
-    		color: #000 !important; // Black prints faster: h5bp.com/s
-    		filter: none !important;
-    		text-shadow: none !important;
+        *::before,
+        *::after {
+            background: transparent !important;
+            box-shadow: none !important;
+            color: $black !important; // Black prints faster
+            text-shadow: none !important;
         }
 
-        @page  {
-    		margin: 0.5cm;
-    	}
-
-        a,
-        a:visited {
-            text-decoration: underline;
+        a {
+            &:not(.btn) {
+                text-decoration: underline;
+            }
         }
+
+        // Uncomment to show the link URL after the text
+        /*
+        a[href]::after {
+            content: " (" attr(href) ")";
+        }
+        */
 
         abbr[title]::after {
-            content: " (" attr(title) ")";
+          content: " (" attr(title) ")";
         }
 
+        // Don't show links that are fragment identifiers,
+        // or use the `javascript:` pseudo protocol
+        /*
+        a[href^="#"]::after,
+        a[href^="javascript:"]::after {
+           content: "";
+        }
+        */
+
+        pre {
+            white-space: pre-wrap !important;
+        }
         pre,
         blockquote {
-            border: $border-width solid #999;
+            border: $border-width solid $grey; // Bootstrap custom code; using `$border-width` instead of 1px
             page-break-inside: avoid;
         }
 
@@ -43,7 +55,6 @@
         thead {
             display: table-header-group;
         }
-
         tr,
         img {
             page-break-inside: avoid;
@@ -51,18 +62,35 @@
 
         p,
         h2,
-        h3 {
+        .h2,
+        h3,
+        .h3 {
             orphans: 3;
             widows: 3;
         }
 
         h2,
-        h3 {
+        .h2,
+        h3,
+        .h3 {
             page-break-after: avoid;
         }
 
+        // Specify a size and min-width to make printing closer across browsers.
+        // We don't set margin here because it breaks `size` in Chrome. We also
+        // don't use `!important` on `size` as it breaks in Chrome.
+        @page {
+            size: $print-page-size;
+        }
+        body {
+            min-width: $print-body-min-width !important;
+        }
+        .container {
+            min-width: $print-body-min-width !important;
+        }
+
         // Jam components
-        .button {
+        .btn {
             border-top-color: #000 !important;
         }
 
@@ -77,7 +105,7 @@
         .table-bordered {
             th,
             td {
-                border: 1px solid #ddd !important;
+                border: 1px solid $grey !important;
             }
         }
     }
