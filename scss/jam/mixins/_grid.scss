@@ -19,6 +19,12 @@
         width: 100%;
     }
 
+    .col {
+        &.--reverse {
+            flex-direction: column-reverse;
+        }
+    }
+
     @each $breakpoint in map-keys($breakpoints) {
         $infix: breakpoint-infix($breakpoint, $breakpoints);
 

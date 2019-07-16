@@ -1,4 +1,4 @@
-@mixin mq($width, $orientation, $type: min) {
+@mixin mq($width, $type: min, $orientation: null) {
 
     @if map_has_key($grid-breakpoints, $width) {
         $width: map_get($grid-breakpoints, $width);

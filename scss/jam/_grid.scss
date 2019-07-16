@@ -17,6 +17,9 @@
             padding-right: 0;
         }
     }
+    &.--reverse {
+        flex-direction: row-reverse;
+    }
 }
 
 // Columns
