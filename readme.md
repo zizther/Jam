@@ -33,8 +33,6 @@ Jam is meant to be a starting point for every website or web app:
 
 * Includes a collection of helpful functions and mixins.
 
-* 7kb when gzipped/deflated.
-
 ---
 
 ## Quick setup
