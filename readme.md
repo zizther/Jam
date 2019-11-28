@@ -4,7 +4,7 @@
 [issues-new-url]: https://github.com/zizther/Jam/issues
 [docs-url]: https://github.com/zizther/Jam/tree/master/docs
 [normalize-url]: https://github.com/sindresorhus/modern-normalize
-# [product]
+# Jam
 
 A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.
 
@@ -12,7 +12,7 @@ A simple, lightweight Sass responsive front-end framework to normalise browser b
 
 ## Features
 
-[product] is meant to be a starting point for every website or web app:
+Jam is meant to be a starting point for every website or web app:
 
 * A solid base built on [modern-normalize][normalize-url] to fix cross-browser compatibility
   issues.
@@ -71,13 +71,13 @@ To compile and optimse the assets in the site you will need to have Gulp and oth
 ---
 
 ## Browser support
-[product] looks to support support all major browsers and IE11.
+Jam looks to support support all major browsers and IE11.
 Autoprefixer is used to add support for browsers, it can be amended if you need to support other versions of browsers.
 
 ---
 
 ## Structure
-[product] is self contained. Variables can be overridden to update the styles via `scss/app/_variables.scss`
+Jam is self contained. Variables can be overridden to update the styles via `scss/app/_variables.scss`
 A base set of components (`scss/components`) have been included, but you can add more as you develop your project.
 
 ---
