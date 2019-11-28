@@ -1,4 +1,4 @@
-@mixin mq($width, $type: min, $maxWidth: null, $orientation: null) {
+@mixin mq($width, $type: min) {
 
     // If width matches anything in grid breakpoints, then get that value,
     // else use the value passed
@@ -10,25 +10,7 @@
         $width: $width - 1px;
     }
 
-    $maxWidthParam: null;
-    $orientationParam: null;
-
-    @if $maxWidth {
-        @if $type == min {
-            @if map_has_key($grid-breakpoints, $maxWidth) {
-                $maxWidth: map_get($grid-breakpoints, $maxWidth);
-            }
-
-            $maxWidth: $maxWidth - 1px;
-            $maxWidthParam: ' and (max-width: ' + #{$maxWidth} + ')';
-        }
-    }
-
-    @if $orientation {
-        $orientationParam: ' and (orientation: ' + #{$orientation} + ')';
-    }
-
-    @media only screen and (#{$type}-width: $width)#{$maxWidthParam}#{$orientationParam} {
+    @media only screen and (#{$type}-width: $width) {
         @content;
     }
 
