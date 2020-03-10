@@ -58,12 +58,12 @@ $spacer-y: $spacer !default;
 
 
 // Breakpoint Sizes
-$x-small: 320px !default; // 20em
-$small: 640px !default; // 40em
-$medium: 768px !default; // 48em
-$large: 1024px !default; // 64em
-$x-large: 1440px !default; // 90em
-$xx-large: 1920px !default; // 120em
+$xs: 320px !default; // 20em
+$sm: 640px !default; // 40em
+$md: 768px !default; // 48em
+$lg: 1024px !default; // 64em
+$xl: 1440px !default; // 90em
+$xxl: 1920px !default; // 120em
 
 
 // Breakpoints
@@ -72,13 +72,44 @@ $screen: "only screen" !default;
 $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "#{$screen} and (orientation: portrait)" !default;
 
-$bp-x-small: "#{$screen} and (min-width: #{$x-small})" !default;
-$bp-small: "#{$screen} and (min-width: #{$small})" !default;
-$bp-medium: "#{$screen} and (min-width: #{$medium})" !default;
-$bp-large: "#{$screen} and (min-width: #{$large})" !default;
-$bp-x-large: "#{$screen} and (min-width: #{$x-large})" !default;
-$bp-xx-large: "#{$screen} and (min-width: #{$xx-large})" !default;
+$bp-xs: "#{$screen} and (min-width: #{$xs})" !default;
+$bp-sm: "#{$screen} and (min-width: #{$sm})" !default;
+$bp-md: "#{$screen} and (min-width: #{$md})" !default;
+$bp-lg: "#{$screen} and (min-width: #{$lg})" !default;
+$bp-xl: "#{$screen} and (min-width: #{$xl})" !default;
+$bp-xxl: "#{$screen} and (min-width: #{$xxl})" !default;
 
+// Grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+// @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Embed Responsive aspect ratios
+$embed-responsive-aspect-ratios: (
+    "21by9": (
+        x: 21,
+        y: 9
+    ),
+    "16by9": (
+        x: 16,
+        y: 9
+    ),
+    "4by3": (
+        x: 4,
+        y: 3
+    ),
+    "1by1": (
+        x: 1,
+        y: 1
+    )
+) !default;
 
 // Container
 $container-width: 1000px;
