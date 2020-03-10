@@ -1,38 +1,49 @@
 /*
+ * NPM Packages
+ */
+const gulp = require('gulp'),
+    autoprefixer = require('autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
+    mqpacker = require('css-mqpacker'),
+    cssnano = require('cssnano'),
+    pump = require('pump')
+    environments = require('gulp-environments'),
+    notify = require('gulp-notify'),
+    postcss = require('gulp-postcss'),
+	sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
+
+
+/*
  * Variables
  */
-var paths = {
+const paths = {
         styles: {
             scss: './scss/',
             css: './css/'
         }
     },
-    autoprefixerBrowsers = ['last 4 versions', 'ie >= 10'],
-    sassPrecision = 10;
-
-
-/*
- * NPM Packages
- */
-var gulp = require('gulp'),
-	notify = require('gulp-notify'),
-	postcss = require('gulp-postcss'),
-	autoprefixer = require('autoprefixer'),
-	sass = require('gulp-sass'),
-	gcmq = require('gulp-group-css-media-queries'),
-    cssnano = require('gulp-cssnano'),
-    pump = require('pump');
+    sassPrecision = 10,
+    development = environments.development,
+    production = environments.production;
 
 
 /*
  * Tasks
  */
 // Scss
-gulp.task('scss', function(cb){
-    var processors = [
-            autoprefixer({
-                browsers: autoprefixerBrowsers
-            })
+function scss(cb) {
+
+    let pluginsProd = [
+            autoprefixer(),
+            mqpacker(),
+            cssnano()
+        ],
+        pluginsDev = [
+            autoprefixer(),
+            mqpacker()
         ];
 
     pump(
@@ -40,26 +51,33 @@ gulp.task('scss', function(cb){
             gulp.src(paths.styles.scss + '**/*.scss'),
 	        sass({
     	        precision: sassPrecision,
-    	        sourceComments: false,
-    	        outputStyle: 'compressed'
+    	        sourceComments: production() ? false : true,
+    	        outputStyle: 'nested'
 	        }).on('error', sass.logError),
-        	postcss(processors),
-            gcmq(),
-            cssnano(),
+        	postcss(production() ? pluginsProd : pluginsDev),
     		gulp.dest(paths.styles.css),
-            notify({ message: 'Scss task complete' })
+            development(browserSync.stream()),
+            development(notify({ message: 'Scss task complete' }))
         ],
         cb
     );
-});
+}// END css
 
 // Watch
-gulp.task('watch', ['scss'], function() {
-    gulp.watch(paths.styles.scss + '**/*.scss', ['scss']); // watch the same files in our sass task
-});
+function watch() {
 
-// Default task
-gulp.task('default', ['watch']);
+    // Watch SCSS
+	gulp.watch(paths.styles.scss + '**/*.scss', scss);
 
-// Build task
-gulp.task('build', ['scss']);
+}
+
+
+/**
+* Tasks
+*/
+
+// Export tasks
+exports.watch = watch;
+exports.scss = scss;
+exports.default =  gulp.series(scss, watch);
+exports.build = scss;
