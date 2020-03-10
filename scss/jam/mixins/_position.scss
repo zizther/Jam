@@ -78,3 +78,7 @@
 @mixin relative($args: ()) {
     @include position(relative, $args);
 }
+
+@mixin sticky($args: ()) {
+    @include position(sticky, $args);
+}

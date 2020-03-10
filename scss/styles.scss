@@ -1,18 +1,21 @@
-// Mixins
-@import 'jam/mixins';
-
 // Functions
 @import 'jam/functions';
+@import 'app/functions';
 
 // Variables
 @import "jam/variables";
 @import "app/variables";
 
-// Vendors
-@import 'jam/vendors/modern-normalize';
+// Mixins
+@import 'jam/mixins';
+@import "app/mixins";
 
 // Utility
 @import "jam/utilities";
+
+// Vendors
+@import 'jam/vendors/modern-normalize';
+@import 'jam/vendors/grid';
 
 // Base
 @import 'jam/base';
@@ -20,7 +23,6 @@
 // Modules
 @import 'jam/buttons';
 @import 'jam/forms';
-@import 'jam/grid';
 @import 'jam/images';
 @import 'jam/tables';
 @import 'jam/typography';
@@ -29,8 +31,5 @@
 @import 'jam/print';
 @import 'app/print';
 
-// Components
-@import 'components/footer';
-@import 'components/global';
-@import 'components/header';
-@import 'components/type';
+// Project components
+@import 'app/components/global';

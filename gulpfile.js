@@ -1,65 +1,83 @@
 /*
- * Variables
- */
-const paths = {
-        scss: './scss/',
-        css: './css/'
-    },
-    autoprefixerBrowsers = ['last 2 versions', 'ie > 10'],
-    sassPrecision = 10;
-
-
-/*
  * NPM Packages
  */
 const gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
+    mqpacker = require('css-mqpacker'),
     cssnano = require('cssnano'),
-    pump = require('pump'),
-	notify = require('gulp-notify'),
-	postcss = require('gulp-postcss'),
-	sass = require('gulp-sass'),
-	gcmq = require('gulp-group-css-media-queries');
+    pump = require('pump')
+    environments = require('gulp-environments'),
+    notify = require('gulp-notify'),
+    postcss = require('gulp-postcss'),
+	sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
 
 
 /*
- * Functions
+ * Variables
  */
+const paths = {
+        styles: {
+            scss: './scss/',
+            css: './css/'
+        }
+    },
+    sassPrecision = 10,
+    development = environments.development,
+    production = environments.production;
+
+
+/*
+ * Tasks
+ */
+// Scss
 function scss(cb) {
 
-    var plugins = [
-        autoprefixer({
-            browsers: autoprefixerBrowsers
-        }),
-        cssnano()
-    ];
+    let pluginsProd = [
+            autoprefixer(),
+            mqpacker(),
+            cssnano()
+        ],
+        pluginsDev = [
+            autoprefixer(),
+            mqpacker()
+        ];
 
     pump(
         [
-            gulp.src(paths.scss + '**/*.scss'),
+            gulp.src(paths.styles.scss + '**/*.scss'),
 	        sass({
     	        precision: sassPrecision,
-    	        sourceComments: false,
-    	        outputStyle: 'compressed'
+    	        sourceComments: production() ? false : true,
+    	        outputStyle: 'nested'
 	        }).on('error', sass.logError),
-            gcmq(),
-        	postcss(plugins),
-    		gulp.dest(paths.css),
-            notify({ message: 'Scss task complete' })
+        	postcss(production() ? pluginsProd : pluginsDev),
+    		gulp.dest(paths.styles.css),
+            development(browserSync.stream()),
+            development(notify({ message: 'Scss task complete' }))
         ],
         cb
     );
+}// END css
 
-}// END scss
-
+// Watch
 function watch() {
 
-    // Watch Sass
-	gulp.watch(paths.scss + '**/*.scss', scss);
+    // Watch SCSS
+	gulp.watch(paths.styles.scss + '**/*.scss', scss);
 
-}// END watchFiles
+}
 
+
+/**
+* Tasks
+*/
 
 // Export tasks
-exports.default = gulp.parallel(scss, watch);
+exports.watch = watch;
+exports.scss = scss;
+exports.default =  gulp.series(scss, watch);
 exports.build = scss;

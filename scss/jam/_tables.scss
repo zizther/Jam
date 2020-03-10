@@ -128,14 +128,22 @@
 // Generate series of `.table-responsive-*` classes for configuring the screen
 // size of where your table will overflow.
 .table-responsive {
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
-    display: block;
-    overflow-x: auto;
-    width: 100%;
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($next, $grid-breakpoints);
 
-    // Prevent double border on horizontal scroll due to use of `display: block;`
-    &.table--bordered {
-        border: 0;
+        &#{$infix} {
+            @include media-breakpoint-down($breakpoint) {
+                -webkit-overflow-scrolling: touch;
+                display: block;
+                overflow-x: auto;
+                width: 100%;
+
+                // Prevent double border on horizontal scroll due to use of `display: block;`
+                > .table-bordered {
+                    border: 0;
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "jam",
-    "version": "3.1.1",
+    "version": "3.0.0",
     "description": "A simple, lightweight Sass responsive front-end framework to normalise browser behaviour for accessible websites.",
     "homepage": "https://getjam.io",
     "repository": {
@@ -22,7 +22,7 @@
         "responsive",
         "front-end",
         "framework",
-        "boilerplate"
+        "web"
     ],
     "bugs": {
         "url": "https://github.com/zizther/jam/issues"
@@ -35,7 +35,7 @@
     "style": "css/styles.css",
     "sass": "scss/styles.scss",
     "engines": {
-        "node": ">=10.15"
+        "node": ">= 0.10"
     },
     "files": [
         "scss/**/*.scss",
@@ -45,15 +45,22 @@
         "readme.md",
         "LICENSE.md"
     ],
-    "dependencies": {},
-    "devDependencies": {
-        "autoprefixer": "^9.7.2",
-        "cssnano": "^4.1.10",
-        "pump": "^3.0.0",
-        "gulp": "^4.0.2",
-        "gulp-group-css-media-queries": "^1.2.2",
-        "gulp-notify": "^3.2.0",
-        "gulp-postcss": "^8.0.0",
-        "gulp-sass": "^4.0.2"
-    }
+    "dependencies": {
+        "autoprefixer": "^9.7",
+        "browser-sync": "^2.26",
+        "css-mqpacker": "7.0",
+        "cssnano": "^4.1",
+        "pump": "^3.0",
+        "gulp": "^4.0",
+        "gulp-environments": "^0.1",
+        "gulp-notify": "^3.2",
+        "gulp-postcss": "^8.0",
+        "gulp-sass": "^4.0"
+    },
+    "devDependencies": {},
+    "browserslist": [
+        "last 2 version",
+        "> 1%",
+        "IE 11"
+    ]
 }
