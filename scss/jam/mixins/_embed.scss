@@ -1,0 +1,30 @@
+.embed-responsive {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: '';
+        display: block;
+    }
+
+    .embed-responsive-item,
+    iframe,
+    embed,
+    object,
+    video {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@each $key, $ratio in $embed-responsive-aspect-ratios {
+    .embed-responsive-#{$key} {
+        &::before {
+            padding-top: percentage(map-get($ratio, y) / map-get($ratio, x));
+        }
+    }
+}
