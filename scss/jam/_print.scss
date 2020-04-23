@@ -46,7 +46,7 @@
         }
         pre,
         blockquote {
-            border: $border-width solid $grey; // Bootstrap custom code; using `$border-width` instead of 1px
+            border: $border-width solid $gray-400; // `$border-width` instead of 1px
             page-break-inside: avoid;
         }
 
@@ -76,22 +76,9 @@
             page-break-after: avoid;
         }
 
-        // Specify a size and min-width to make printing closer across browsers.
-        // We don't set margin here because it breaks `size` in Chrome. We also
-        // don't use `!important` on `size` as it breaks in Chrome.
-        @page {
-            size: $print-page-size;
-        }
-        body {
-            min-width: $print-body-min-width !important;
-        }
-        .container {
-            min-width: $print-body-min-width !important;
-        }
-
         // Jam components
         .btn {
-            border-top-color: #000 !important;
+            border-top-color: $black !important;
         }
 
         .table {
@@ -99,13 +86,13 @@
 
             td,
             th {
-                background-color: #fff !important;
+                background-color: $white !important;
             }
         }
         .table-bordered {
             th,
             td {
-                border: 1px solid $grey !important;
+                border: 1px solid $gray-400 !important;
             }
         }
     }
