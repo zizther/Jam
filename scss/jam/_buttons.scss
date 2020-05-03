@@ -2,13 +2,14 @@
 	Buttons
 -------------------------------------------------------------- */
 .btn {
-    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base);
     -webkit-user-drag: none;
-    border: $input-btn-border-width solid transparent;
+    border: none;
     cursor: pointer;
     display: inline-block;
+    font-size: $font-size-base;
     font-weight: $btn-font-weight;
     line-height: $btn-line-height;
+    padding: $btn-padding-y $btn-padding-x;
     text-align: center;
     text-decoration: none;
     transition: all .2s ease-in-out;
@@ -33,46 +34,6 @@
     &.disabled {
         cursor: $cursor-disabled;
         opacity: .65;
-    }
-
-    // Alternate buttons
-    &--primary {
-        @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-    }
-    &--secondary {
-        @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-    }
-    &--info {
-        @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-    }
-    &--success {
-        @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-    }
-    &--warning {
-        @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-    }
-    &--danger {
-        @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
-    }
-
-    // Remove all backgrounds
-    &--outline-primary {
-        @include button-outline-variant($btn-primary-bg);
-    }
-    &--outline-secondary {
-        @include button-outline-variant($btn-secondary-border);
-    }
-    &--outline-info {
-        @include button-outline-variant($btn-info-bg);
-    }
-    &--outline-success {
-        @include button-outline-variant($btn-success-bg);
-    }
-    &--outline-warning {
-        @include button-outline-variant($btn-warning-bg);
-    }
-    &--outline-danger {
-        @include button-outline-variant($btn-danger-bg);
     }
 
     // Link buttons
